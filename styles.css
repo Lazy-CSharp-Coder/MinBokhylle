@@ -94,6 +94,14 @@ header {
   width: 50%;
 }
 
+.showBookInfoDiv
+{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  grid-template-rows: repeat(11, auto);
+}
+
+
 /* OVERGANGER */
 .buttonContainer {
   display: flex;

@@ -78,8 +78,8 @@ header {
 
 .hero {
   display: flex;
-  align-items:first baseline;
-  justify-content: center;
+  align-items:flex-start;
+  justify-content:flex-start;
   gap: 50px;
 }
 
@@ -124,6 +124,7 @@ header {
 
 .authorImage {
   width: 100px;
+
 }
 
 /* OVERGANGER */

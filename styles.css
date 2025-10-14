@@ -1,6 +1,10 @@
 /* GENERAL */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+:root{
+  --primaryBorder : 2px solid darkblue;
+}
+
 /* BODY */
 body {
   margin: 0;
@@ -60,30 +64,19 @@ header {
   }
 }
 
+.flex {
+  display: flex;
+}
 /* MAIN */
 .section {
   height: 100vh;
-}
-
-#transition {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-
-#animation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
 }
 
 .hero {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 50px;
 }
 
 .heroText {
@@ -94,11 +87,22 @@ header {
   width: 50%;
 }
 
+.listOfBooks
+{
+  flex-direction: column;
+  gap: 20px;
+}
+
+.authorsList {
+  padding : 0;
+}
 .showBookInfoDiv
 {
   display: grid;
   grid-template-columns: 2fr 2fr;
   grid-template-rows: repeat(11, auto);
+  border: var(--primaryBorder);
+  padding: 20px 40px;
 }
 
 

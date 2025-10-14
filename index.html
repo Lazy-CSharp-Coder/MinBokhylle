@@ -37,20 +37,32 @@
     </header>
 
     <main>
-      <section id="home" class="section hero">
-        <!-- Hero / Main / Home -->
-        <div class="heroText">
-          <h1>Hero</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Voluptatibus, pariatur?
-          </p>
-        </div>
-        <img
-          class="heroImg"
-          src="https://images.unsplash.com/photo-1753454116069-a4fba9e75e4c?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Midlertidig placeholder bilde"
-        />
+      <section id="hero" class="section hero">
+        <ul id="listOfBooks" class="listOfBooks">
+          <li>The Way of Shadows</li>
+          <li>Beyond The Shadows</li>
+          <li>Ship Of Magic</li>
+       </ul>
+       <div id ="showBookInfo" class="showBookInfo">
+          <div class="categoryClass"> <p class="keyTitleClass">Book name :</p> <p #id="bookName" class="dataText"></p> </div>
+          <ul id="authors" class="authors">
+            <li>Brent Weeks</li>  
+          </ul>
+          <div class="seriesInfo">
+            <p class="keyTitleClass">Series name :</p> <p id="seriesName" class="dataText">The Night Angel Trioligy </p>
+            <p class="keyTitleClass">Number in series :</p> <p id="seriesNumber" class="dataText">1</p>
+            <p class="keyTitleClass">Series completed :</p> <p id="seriedCompleted" class="dataText">Yes</p>
+            <button id="otherBooksButton" class="otherBooksButton">Other books in series</button>
+          </div>
+            <p class="keyTitleClass">Genre : </p> <p id="genre" class="dataText">Fantasy, Fiction</p>
+            <p class="keyTitleClass">Characters :</p> <p id="characters" class="dataText">Sturm, Laurana, Tanis</p>
+            <p class="keyTitleClass">Language :</p> <p id="language" class="dataText">English</p>
+            <p class="keyTitleClass">Published</p> <p id="published" class="dataText">3rd March 1977</p>
+            <p class="keyTitleClass">Publisher :</p> <p id="publisher" class="dataText">Origin</p>
+            <button id="publisherButton" class="publisherButton">Search Database </button>
+         </div>
+       </div>
+     
       </section>
 
       <!-- Transition section -->

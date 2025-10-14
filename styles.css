@@ -78,7 +78,7 @@ header {
 
 .hero {
   display: flex;
-  align-items: center;
+  align-items:first baseline;
   justify-content: center;
   gap: 50px;
 }

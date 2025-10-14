@@ -111,6 +111,17 @@ header {
   column-gap: 40px;
 }
 
+.showAuthorInfoStats
+{
+  display: grid;
+  grid-template-columns: auto 250px;
+  grid-template-rows: repeat(4, auto);
+  border:var(--primaryBorder);
+  border-radius: 8px;
+  padding: 20px 40px;
+  column-gap: 20px;
+}
+
 
 /* OVERGANGER */
 .buttonContainer {

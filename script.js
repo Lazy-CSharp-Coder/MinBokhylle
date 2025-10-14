@@ -7,7 +7,8 @@ const books =  [
     characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
                    "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
     language : "english",
-    published : new date(2008, 10, 1)
+    published : new date(2008, 10, 1),
+    publisher : "Orbit"
   }, 
   {
     name : "Beyond The Shadows",
@@ -17,7 +18,8 @@ const books =  [
     characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
                    "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
     language : "english",
-    published : new date(2008, 10, 28)
+    published : new date(2008, 10, 28),
+    pubisher : "Orbit"
 
   },
   {
@@ -28,7 +30,8 @@ const books =  [
     language : "english",
     characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
                    "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
-    published : new date(2008, 11, 25)
+    published : new date(2008, 11, 25),
+    publisher : "Orbit"
 
   },
   {
@@ -40,6 +43,7 @@ const books =  [
     characters : [ "Althea Vestrit", "Ephron Vestrit", "Ronica Vestrit", "Keffria Vestrit", "Kyle Haven", "Wintrow Haven", "Malta Haven", 
                    "Vivacia", "Paragon (Liveship)", "Brashen Trell", "Amber (Liveship Traders)", "Kennit"],
     published: new date(1998, 3, 2);
+    publisher : "Bantam"
 
   },
   {
@@ -54,25 +58,50 @@ const books =  [
                    "Alhana Starbreeze"," Riverwind", "Goldmoon", "kylan Iverson", "Garn", "Aylaen", "Norgaard", "Wulfe", "Raegar", "Gilthanas", "Derek Crownguard"],
     language : "english",
     published: new date(1985, 7, 1);
+    publisher : "TSR"
 
   },
   {
     name : "The Serpent Mage ",
     author : [ { name: "Margaret Weiss", born: new date(1948, 3, 16), location : "Independence, Missouri U.S"}, 
                { name: "Tracy Hickman", born: new date(1955, 11, 25), location : "Salt Lake City, Utah U.S"}  ],
-    series : { name : "The Death Gate Cycle", number : 4, seriesCompleted: true, othersInSeries : ["Dragon Wing", "Elven Star", "Fire Sea", "The Hand Of Chaos", "Into The Labyrinth", "The Seventh Gate"] } ,
+    series : { name : "The Death Gate Cycle", number : 4, seriesCompleted: true, othersInSeries : ["Dragon Wing", "Elven Star", " Fire Sea", "The Hand Of Chaos", "Into The Labyrinth", "The Seventh Gate"] } ,
     genre : [ "Fantasy", "Fiction", "Epic Fantasy"],
     language : "english",
     characters : ["Haplo", "Alfred", "Devon", "Grundle", "Alake", "Sang-Drax"],
-    published: new date(1992, 1, 1);
+    published: new date(1992, 1, 1),
+    pubisher : "Bantam"
 
   }
 ]; 
 
+const publishers = [
+  {
+    name : "Orbit",
+    fulllName : "Orbit UK",
+    founded : new date(1974),
+    countryOfORigin : "United Kingdom",
+    webPage : "https://www.orbit-books.co.uk/",
 
-
-
-
+  },
+  { 
+    name : "Bantam",
+    fullName : "Batam Books",
+    founded : new date(1945),
+    countryOfOrigin : "United States",
+    fouuders :  ["Walter B. Pitkin, Jr." , "Sidney B. Kramer"," Ian Ballantine","Betty Ballantine"] ,
+    webPage : "https://www.randomhousebooks.com/imprint/bantam-books/"
+  },
+  { 
+    name : "TSR",
+    fullName : "TSR Inc. (now : Wizards Of The Coast)",
+    founded : new date(1983),
+    countryOfOrigin : "United States",
+    fouuders :  ["Gary Gygax", "Don Kaye"],
+    webPage : "https://company.wizards.com/en"
+  },
+  
+];
 
 
 

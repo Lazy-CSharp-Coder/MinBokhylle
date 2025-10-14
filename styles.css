@@ -3,12 +3,16 @@
 
 :root{
   --primaryBorder : 2px solid darkblue;
+  --primaryBackgroundColor : black;
+  --primaryTextColor: #dcdcdc;
 }
 
 /* BODY */
 body {
   margin: 0;
   font-family: "Roboto";
+  background-color: var(--primaryBackgroundColor);
+  color: var(--primaryTextColor)
 }
 
 /* HEADER */
@@ -99,10 +103,11 @@ header {
 .showBookInfoDiv
 {
   display: grid;
-  grid-template-columns: 2fr 2fr;
+  grid-template-columns: auto 300px;
   grid-template-rows: repeat(11, auto);
   border: var(--primaryBorder);
   padding: 20px 40px;
+  column-gap: 40px;
 }
 
 

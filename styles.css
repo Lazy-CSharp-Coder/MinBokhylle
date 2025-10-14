@@ -1,0 +1,265 @@
+/* GENERAL */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* BODY */
+body {
+  margin: 0;
+  font-family: "Roboto";
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  padding: 0 16px;
+}
+
+.headerNav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  list-style-type: none;
+}
+
+.hamburgerIcon {
+  height: 32px;
+  width: 32px;
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER styling mobile L or less */
+@media (max-width: 426px) {
+  .headerNav {
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .navList {
+    display: none;
+  }
+
+  .hamburgerIcon {
+    display: flex;
+  }
+}
+
+/* MAIN */
+.section {
+  height: 100vh;
+}
+
+#transition {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+#animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroText {
+  width: 50%;
+}
+
+.heroImg {
+  width: 50%;
+}
+
+/* OVERGANGER */
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px 12px;
+  width: 100px;
+  border-radius: 40px;
+  border: 2px solid lightgray;
+}
+
+.buttonColor {
+  background-color: plum;
+  /* Long hand */
+  transition-property: background-color; /* Egenskap som skal endres */
+  transition-timing-function: ease-in-out; /* Hvordan den skal bevege seg */
+  transition-delay: 0.5s; /* Hvor lenge den skal vente før start */
+  transition-duration: 1s; /* Hvor lang tid skal overgangen ta */
+
+  /* Short hand */
+  /* transition: background-color ease-in-out 0.5s 1s; */
+}
+
+.buttonColor:hover {
+  background-color: springgreen;
+}
+
+.buttonSize {
+  width: inherit;
+
+  /* Long hand */
+  transition-property: scale;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.5s;
+  transition-duration: 1s;
+
+  /* Short hand */
+  /* transition: scale ease-in-out 0.5s 1s; */
+}
+
+.buttonSize:hover {
+  scale: 0.5;
+}
+
+.buttonOpacity {
+  opacity: 0.5;
+
+  /* Long hand */
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0.5s;
+  transition-duration: 1s;
+
+  /* Short hand */
+  /* transition: opacity ease-in-out 0.5s 1s; */
+}
+
+.buttonOpacity:hover {
+  opacity: 1;
+}
+
+/* ANIMASJONER */
+.card {
+  max-width: 500px;
+  border: 2px solid lightgray;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.slideInLeftCard {
+  background-color: beige;
+
+  /* Long hand */
+  animation-name: slideInLeft; /* Navnet @keyframe bruker for å bruke animation-egenskapene*/
+  animation-duration: 3s; /* Hvor lang tid tar animasjonen */
+  animation-timing-function: ease-in; /* Hvordan skal animasjonen bevege seg */
+  animation-delay: 0.5s; /* Hvor lenge animasjonen skal vente før start */
+  animation-iteration-count: 2; /* Hvor mange ganger animasjonen skal skje */
+  animation-fill-mode: forwards; /* Hva som skjer når animasjonen er ferdig */
+
+  /* Short hand */
+  /* animation: slideInLeft 3s ease-in 0.5s 2 forwards; */
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-1000px);
+    background-color: yellow;
+  }
+
+  to {
+    transform: translateX(0);
+    background-color: darkslateblue;
+  }
+}
+
+.slideInRightCard {
+  background-color: beige;
+
+  /* Long hand */
+  animation-name: slideInRight;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.5s;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+
+  /* Short hand */
+  /* animation: slideInRight 3s ease-in 0.5s 2 forwards; */
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(1000px);
+  }
+  50% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.rotateCard {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  background-color: lightskyblue;
+
+  /* Long hand */
+  animation-name: rotate;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.5s;
+  animation-iteration-count: 2;
+  animation-fill-mode: forwards;
+
+  /* Short hand */
+  /* animation: rotate 3s ease-in 0.5s 2 forwards; */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 426px) {
+  .hero {
+    flex-direction: column;
+  }
+
+  .heroText,
+  .heroImg {
+    width: 100%;
+  }
+}
+
+/* FOOTER */
+footer {
+  /* display: flex;
+  justify-content: center; */
+  text-align: center;
+}

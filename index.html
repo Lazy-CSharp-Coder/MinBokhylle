@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="no">
+  <!-- head = informasjon til nettleser -->
+  <head>
+    <title>Hjem</title>
+    <link href="code.png" rel="icon" type="image/png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <!-- External files -->
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <!-- body = informasjon til nettsiden -->
+  <body>
+    <header>
+      <img src="code.png" alt="Ikon av HTML klammetegn" />
+
+      <nav class="headerNav">
+        <ul class="navList">
+          <li>
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#transition">Overganger</a>
+          </li>
+          <li>
+            <a href="#animation">Animasjoner</a>
+          </li>
+        </ul>
+        <img
+          onclick="hamburgerToggle()"
+          class="hamburgerIcon"
+          src="hamburger.png"
+          alt="Hamburger meny ikon"
+        />
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="section hero">
+        <!-- Hero / Main / Home -->
+        <div class="heroText">
+          <h1>Hero</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatibus, pariatur?
+          </p>
+        </div>
+        <img
+          class="heroImg"
+          src="https://images.unsplash.com/photo-1753454116069-a4fba9e75e4c?q=80&w=3132&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Midlertidig placeholder bilde"
+        />
+      </section>
+
+      <!-- Transition section -->
+      <section id="transition" class="section">
+        <div class="buttonContainer">
+          <button class="button buttonColor">Farge</button>
+          <button class="button buttonSize">Størrelse</button>
+          <button class="button buttonOpacity">Synlighet</button>
+        </div>
+      </section>
+
+      <!-- Animation section -->
+      <section id="animation" class="section">
+        <div class="card slideInLeftCard">
+          <h3>Slide fra venstre</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="card slideInRightCard">
+          <h3>Slide fra høyre</h3>
+          <p>Lorem ipsum dolor sit amet.</p>
+        </div>
+
+        <div class="rotateCard">
+          <h3>Roter</h3>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <h3>Laget av Julie Hauge</h3>
+    </footer>
+  </body>
+</html>

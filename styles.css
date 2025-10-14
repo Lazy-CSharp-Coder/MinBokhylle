@@ -122,6 +122,9 @@ header {
   column-gap: 20px;
 }
 
+.authorImage {
+  width: 100px;
+}
 
 /* OVERGANGER */
 .buttonContainer {

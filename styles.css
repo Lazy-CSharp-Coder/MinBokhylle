@@ -57,7 +57,7 @@ header {
 }
 
 .show {
-  display: grid;
+  opacity: 1;
 }
 
 /* HEADER styling mobile L or less */
@@ -128,11 +128,13 @@ header {
   border-radius: 8px;
   padding: 20px 40px;
   column-gap: 40px;
+  opacity: 0;
 }
 
 .showAuthorInfoStats
 {
   display: grid;
+  opacity: 0;
   grid-template-columns: auto 250px;
   grid-template-rows: repeat(4, auto);
   border:var(--primaryBorder);

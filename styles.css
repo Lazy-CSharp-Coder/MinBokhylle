@@ -121,7 +121,7 @@ header {
 }
 .showBookInfoDiv
 {
-  /* display: grid; */
+  display: grid;
   grid-template-columns: auto 300px;
   grid-template-rows: repeat(11, auto);
   border: var(--primaryBorder);

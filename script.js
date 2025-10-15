@@ -166,9 +166,9 @@ function showAuthor(event)
    else
    {  
      showAuthorInfoStats.classList.add("scaleBookInAnim");
-    showAuthorInfoStats.classList.add("show");
-    showAuthorInfoStats.classList.remove("hidden");
-    showAuthorInfoStats.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim");}, { once:true}) ;
+     showAuthorInfoStats.classList.add("show");
+     showAuthorInfoStats.classList.remove("hidden");
+     showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.remove("scaleBookInAnim");}, { once:true}) ;
      isAuthorShowing = true;
    }
  

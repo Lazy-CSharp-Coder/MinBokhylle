@@ -67,7 +67,7 @@ const books =  [
     name : "The Serpent Mage ",
     author : [ { name: "Margaret Weis", born: new Date(1948, 3, 16), location : "Independence, Missouri U.S"}, 
                { name: "Tracy Hickman", born: new Date(1955, 11, 25), location : "Salt Lake City, Utah U.S"}  ],
-    series : { name : "The Death Gate Cycle", number : 4, completed: true, othersBooksInSeries : ["Dragon Wing", "Elven Star", " Fire Sea", "The Hand Of Chaos", "Into The Labyrinth", "The Seventh Gate"] } ,
+    series : { name : "The Death Gate Cycle", number : 4, completed: true, otherBooksInSeries : ["Dragon Wing", "Elven Star", " Fire Sea", "The Hand Of Chaos", "Into The Labyrinth", "The Seventh Gate"] } ,
     genre : [ "Fantasy", "Fiction", "Epic Fantasy"],
     language : "English",
     characters : ["Haplo", "Alfred", "Devon", "Grundle", "Alake", "Sang-Drax"],
@@ -161,7 +161,8 @@ const showBookInfoItems =
     if(books[numberInArray].series.completed) this.seriesCompleted = "Yes";
     else this.seriesCompleted = "No";
     
-    books[numberInArray].series.otherBooksInSeries.join(", ");
+    books[numberInArray].series.otherBooksInSeries.join(" - ");
+    console.log(books[numberInArray].series.otherBooksInSeries);
     this.otherBooksInSeries.textContent = books[numberInArray].series.otherBooksInSeries.toString();
     this.genre.textContent = books[numberInArray].genre.toString();
     this.characters.textContent = books[numberInArray].characters.toString();

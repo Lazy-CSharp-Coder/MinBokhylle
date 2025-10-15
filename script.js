@@ -27,7 +27,7 @@ const books =  [
   {
     name : "Shadows Edge",
     author :  { name : "Brent Weeks", born : new Date(1977, 3, 7), location : "Montana U.S" } ,
-    series :  { name :"The Night Angel Trioligy", number: 2, completed : true, otherBooksInSeries : ["The Way Of Shadows", "Beyond The Shadows"]  } ,
+    series :  { name :"The Night Angel Trioligy", number: 3, completed : true, otherBooksInSeries : ["The Way Of Shadows", "Beyond The Shadows"]  } ,
     genre :  [ "Fantary", "Fiction" ],
     language : "English",
     characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 

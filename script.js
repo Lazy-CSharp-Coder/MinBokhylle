@@ -130,11 +130,17 @@ const listOfBooks = document.querySelector("#listOfBooks");
 
 function displayBook(event)
 {
+
+  // finne child nummer for å vite hvilket objekt i arrayen jeg skal bruke
+
   console.log("inne i display book");  
   const childElements = Array.from(listOfBooks.children);
-  const childNumber = childElements.indexOf(event.target);
-  console.log(childNumber);
-    
+  const objectNumber = childElements.indexOf(event.target);
+  console.log(objectNumber);
+  
+  // legge inn data
+
+
 
 }
 

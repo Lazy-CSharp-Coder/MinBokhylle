@@ -149,7 +149,7 @@ header {
 
 .scaleBookInAnim {
   animation-name: scaleIn;
-  animation-duration: 1.8s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
@@ -163,16 +163,17 @@ header {
 
 .scaleBookOutAnim {
   animation-name: scaleOut;
-  animation-duration: 1.8s;
+  animation-duration: 1.5s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 
 @keyframes scaleOut {
   0% { transform: scale(1, 1);}
-  5% { transform: scale(0.8, 0.8);}
-  30% { transform: scale(0, 1);}
-  100% {transform : scale(0, 0) ;}
+  5% { transform: scale(1, 0.8);}
+  30% { transform: scale(1, 0.2);}
+  /* 80% { transform: scale(0.2, 0.2);} */
+  100% {transform : scale(0.2, 0.2) ;}
 }
 @media (max-width: 426px) {
   .hero {

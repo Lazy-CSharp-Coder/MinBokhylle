@@ -232,8 +232,8 @@ function displayBook(event)
     showBookInfoDiv.classList.add("scaleBookOutAnim");
     showBookInfoDiv.addEventListener("animationend", function() 
     { 
-      showBookInfoDiv.classList.remove("scaleBookOutAnim");
       showBookInfoDiv.classList.add("scaleBookInAnim");
+      showBookInfoDiv.classList.remove("scaleBookOutAnim");
       showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim");}) ;
     
     }, {once:true}) ;     
@@ -241,7 +241,8 @@ function displayBook(event)
   else
   {  
     showBookInfoDiv.classList.add("scaleBookInAnim");
-    showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}) ;
+    showBookInfoDiv.classList.remove("hidden");
+    showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}, { once:true}) ;
     isBookShowing = true;
   }
 

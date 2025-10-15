@@ -240,6 +240,7 @@ function displayBook(event)
   }
   else
   {  
+    showBookInfoDiv.classList.add("show");
     showBookInfoDiv.classList.add("scaleBookInAnim");
     // showBookInfoDiv.classList.add("show");
     // showBookInfoDiv.classList.remove("hidden");

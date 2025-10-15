@@ -270,7 +270,6 @@ function displayBook(event)
     if(isAuthorShowing)
     {
       showAuthorInfoStats.classList.add("scaleBookOutAnim");
-      showAuthorInfoStats.classList.remove("hidden");
       showAuthorInfoStats.addEventListener("animationend", function() 
       { 
         showAuthorInfoStats.classList.remove("scaleBookOutAnim");
@@ -296,7 +295,7 @@ function displayBook(event)
     showBookInfoDiv.classList.add("scaleBookInAnim");
     showBookInfoDiv.classList.add("show");
     showBookInfoDiv.classList.remove("hidden");
-    showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}, { once:true}) ;
+    showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim");}, { once:true}) ;
     isBookShowing = true;
   }
 

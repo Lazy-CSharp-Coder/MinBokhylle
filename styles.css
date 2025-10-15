@@ -146,6 +146,18 @@ li:hover{
 .titleBookText {
   color:darkorange;
 }
+
+.dataText {
+  color:azure;
+
+}
+
+.seriesText {
+  color : lightseagreen;
+}
+.keyTitleClass {
+  color: #dcdcdc;
+}
 .showAuthorInfoStats
 {
   display: grid;

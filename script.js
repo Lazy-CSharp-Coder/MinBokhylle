@@ -119,12 +119,14 @@ function getDateString(date)
 const showAuthorItems =
 {
   authorName : document.querySelector("#authorName"),
+  authorImage : document.querySelector("#authorImage"),
   authorBorn : document.querySelector("#authorBorn"),
   authorLocation : document.querySelector("#authorLocation"),
   authorPensAs : document.querySelector("aurthorPensAs"),
 
   retrieveAuthor: function(authorObject)
   {
+    this.authorImage.src = authorObject.image;
     this.authorName.textContent = authorObject.name;
     this.authorBorn.textContent = getDateString(authorObject.born);
     this.authorLocation.textContent = authorObject.location;

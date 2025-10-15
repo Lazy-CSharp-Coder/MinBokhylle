@@ -72,7 +72,7 @@ const books =  [
     language : "English",
     characters : ["Haplo", "Alfred", "Devon", "Grundle", "Alake", "Sang-Drax"],
     published: new Date(1992, 1, 1),
-    pubisher : "Bantam"
+    publisher : "Bantam"
 
   }
 ]; 
@@ -153,7 +153,7 @@ const showBookInfoItems =
   characters : document.querySelector("#characters"),
   language : document.querySelector("#language"),
   published : document.querySelector("#published"),
-  pubisher : document.querySelector("#publisher"),
+  publisher : document.querySelector("#publisher"),
 
   clearAuthorList()
   {
@@ -189,7 +189,7 @@ const showBookInfoItems =
     this.characters.textContent = books[numberInArray].characters.join(", ");
     this.language.textContent = books[numberInArray].language;
     this.published.textContent = getDateString(books[numberInArray].published);
-    this.pubisher.textContent = books[numberInArray].publisher;
+    this.publisher.textContent = books[numberInArray].publisher;
 
     // legge inn forfattere
 

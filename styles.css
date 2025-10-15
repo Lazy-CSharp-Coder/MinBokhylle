@@ -118,11 +118,11 @@ header {
 li {
   transition: color;
   transition-duration: 0.1s;
-  
+
 }
 
 li:hover{
-  color:lightblue;
+  color:lightskyblue;
 
 }
 .authorsList {

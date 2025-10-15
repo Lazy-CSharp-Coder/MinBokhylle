@@ -131,7 +131,7 @@ const showAuthorItems =
     this.authorBorn.textContent = getDateString(authorObject.born);
     this.authorLocation.textContent = authorObject.location;
     if(authorObject.pensAs == undefined) this.authorPensAs.textContent = authorObject.name;
-    else this.authorPensAs.textContent = authorObject.penAs.toString(); 
+    else this.authorPensAs.textContent = authorObject.penAs.join(", "); 
   }
 }
 

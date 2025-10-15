@@ -115,7 +115,16 @@ header {
   flex-direction: column;
   gap: 20px;
 }
+li {
+  transition: color;
+  transition-duration: 0.1s;
+  
+}
 
+li:hover{
+  color:lightblue;
+
+}
 .authorsList {
   padding-left : 17px;
 }
@@ -174,7 +183,7 @@ header {
   5% { transform: scale(1, 0.8);}
   30% { transform: scale(1, 0.2);}
   /* 80% { transform: scale(0.2, 0.2);} */
-  100% {transform : scale(0.2, 0.2) ;}
+  100% {transform : scale(0, 0.3) ;}
 }
 @media (max-width: 426px) {
   .hero {

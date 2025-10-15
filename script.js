@@ -131,12 +131,15 @@ const showAuthorItems =
     if(authorObject.pensAs == undefined) this.authorPensAs.textContent = authorObject.name;
     else this.authorPensAs.textContent = authorObject.penAs.toString(); 
   }
-
 }
 
 function showAuthor(event)
 {
+   if(Array.isArray(books[currentBookArrayNumber].author))
+   {
 
+   }
+   else showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author);
 
 }
 
@@ -210,6 +213,7 @@ const showBookInfoItems =
 // henter list element, legger til eventlistener og legger inn bøkenes tittel
 const listOfBooks = document.querySelector("#listOfBooks");
 let isBookShowing = false;
+let currentBookArrayNumber = 0;
 
 function displayBook(event)
 {
@@ -218,12 +222,12 @@ function displayBook(event)
 
   console.log("inne i display book");  
   const childElements = Array.from(listOfBooks.children);
-  const objectNumber = childElements.indexOf(event.target);
+  currentBookArrayNumber = childElements.indexOf(event.target);
   console.log(objectNumber);
   
   // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)
 
-  showBookInfoItems.retrieveBook(objectNumber);
+  showBookInfoItems.retrieveBook(currentBookArrayNumber);
 
   const showBookInfoDiv = document.querySelector("#showBookInfoDiv");
   

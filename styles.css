@@ -12,7 +12,12 @@
 
 /* BODY */
 body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
+  top: 0;
+  height: 100%;
+  min-height: 100vh;
   font-family: "Roboto";
   background-color: var(--primaryBackgroundColor);
   color: var(--primaryTextColor)
@@ -27,6 +32,7 @@ header {
   top: 0;
   padding: 0 16px;
   border : 1px solid white;
+  height: 106px;
 }
 
 .headerNav {
@@ -78,9 +84,11 @@ header {
 /* MAIN */
 .main {
   flex-grow: 1;
+  display: flex;
+
 }
 .section {
-  
+  margin: 40px 10px;  
 }
 
 .hero {

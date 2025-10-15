@@ -274,9 +274,9 @@ function displayBook(event)
       showAuthorInfoStats.addEventListener("animationend", function() 
       { 
         showAuthorInfoStats.classList.remove("scaleBookOutAnim");
-        showAuthorInfoStats.classList.add("hidden"); }, {once: true});
-
-      }
+        showAuthorInfoStats.classList.add("hidden"); 
+      }, {once: true});
+      
       isAuthorShowing = false;
     }
     showBookInfoDiv.classList.add("show");
@@ -286,9 +286,9 @@ function displayBook(event)
     { 
       showBookInfoDiv.classList.add("scaleBookInAnim");
       showBookInfoDiv.classList.remove("scaleBookOutAnim");
-      showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim");}) ;
-    
-    }, {once:true}) ;     
+      showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim"); }, 
+      {once:true}); 
+    }, {once:true});
   }
   else
   {  

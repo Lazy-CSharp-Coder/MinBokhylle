@@ -3,8 +3,8 @@
 const books =  [
   { 
     name : "The Way Of Shadows", 
-    author :  { name : "Brent Weeks", born : new Date(1977, 3, 7), location : "Montana U.S" } ,
-    series :  { name :"The Night Angel Trioligy", number: 1, completed : true, otherBooksInSeries : ["Beyond The Shadows", "Shadows Edge"] } ,
+    author :  { name : "Brent Weeks", image: "/Images/brentweeks.png", born : new Date(1977, 3, 7), location : "Montana U.S" } ,
+    series :  { name :"The Night Angel Trioligy",  number: 1, completed : true, otherBooksInSeries : ["Beyond The Shadows", "Shadows Edge"] } ,
     genre :  [ "Fantary", "Fiction" ],
     characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
                    "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
@@ -14,7 +14,7 @@ const books =  [
   }, 
   {
     name : "Beyond The Shadows",
-    author : { name : "Brent Weeks", born : new Date(1977, 3, 7), location : "Montana U.S" } ,
+    author : { name : "Brent Weeks", image: "/Images/brentweeks.png", born : new Date(1977, 3, 7), location : "Montana U.S" } ,
     series : { name :"The Night Angel Trioligy", number: 2, completed : true, otherBooksInSeries : ["The Way Of Shadows", "Shadows Edge"] } ,
     genre :  [ "Fantary", "Fiction" ],
     characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
@@ -26,7 +26,7 @@ const books =  [
   },
   {
     name : "Shadows Edge",
-    author :  { name : "Brent Weeks", born : new Date(1977, 3, 7), location : "Montana U.S" } ,
+    author :  { name : "Brent Weeks", image: "/Images/brentweeks.png", born : new Date(1977, 3, 7), location : "Montana U.S" } ,
     series :  { name :"The Night Angel Trioligy", number: 3, completed : true, otherBooksInSeries : ["The Way Of Shadows", "Beyond The Shadows"]  } ,
     genre :  [ "Fantary", "Fiction" ],
     language : "English",
@@ -38,7 +38,7 @@ const books =  [
   },
   {
     name : "Ship Of Magic",
-    author : { name: "Robin Hobb", born: new Date(1952, 3, 5), location : "Berkley, California U.S", penAs : ["Robin Hobb", "Megan Lindholm" ]} ,
+    author : { name: "Robin Hobb", image: "/Images/robinhobb.png", born: new Date(1952, 3, 5), location : "Berkley, California U.S", penAs : ["Robin Hobb", "Megan Lindholm" ]} ,
     series : { name : "The Live Ship Traders", number : 1, completed: true,  otherBooksInSeries : ["The Mad Ship", "Ship Of Destiny"] } ,
     genre : [ "Fantasy", "Fiction" ],
     language : "English",
@@ -51,8 +51,8 @@ const books =  [
   {
     name : "Dragons Of Winter Night",
     author : [ 
-               { name: "Margaret Weis", born: new Date(1948, 3, 16), location : "Independence, Missouri U.S"}, 
-               { name: "Tracy Hickman", born: new Date(1955, 11, 25), location : "Salt Lake City, Utah U.S"}
+               { name: "Margaret Weis", image: "/Images/margaretweis.png", born: new Date(1948, 3, 16), location : "Independence, Missouri U.S"}, 
+               { name: "Tracy Hickman", image: "/Images/tracyhickman.png", born: new Date(1955, 11, 25), location : "Salt Lake City, Utah U.S"}
              ],
     series : { name : "The DragonLance Saga", number : 2, completed: true,  otherBooksInSeries : ["Dragons Of Autumn Twilight", "Dragons Of Spring Dawning"] } ,
     genre : [ "Fantasy", "Fiction", "Epic Fantasy"],
@@ -65,8 +65,8 @@ const books =  [
   },
   {
     name : "The Serpent Mage ",
-    author : [ { name: "Margaret Weis", born: new Date(1948, 3, 16), location : "Independence, Missouri U.S"}, 
-               { name: "Tracy Hickman", born: new Date(1955, 11, 25), location : "Salt Lake City, Utah U.S"}  ],
+    author : [ { name: "Margaret Weis", image: "/Images/margaretweis.png", born: new Date(1948, 3, 16), location : "Independence, Missouri U.S"}, 
+               { name: "Tracy Hickman", image: "/Images/tracyhickman.png", born: new Date(1955, 11, 25), location : "Salt Lake City, Utah U.S"}  ],
     series : { name : "The Death Gate Cycle", number : 4, completed: true, otherBooksInSeries : ["Dragon Wing", "Elven Star", " Fire Sea", "The Hand Of Chaos", "Into The Labyrinth", "The Seventh Gate"] } ,
     genre : [ "Fantasy", "Fiction", "Epic Fantasy"],
     language : "English",
@@ -137,7 +137,11 @@ function showAuthor(event)
 {
    if(Array.isArray(books[currentBookArrayNumber].author))
    {
-
+      const allNodes = Array.from(this.parentNode.children);
+      console.log(allNodes);
+      const numInList = allNodes.indexOf(event.target);
+      console.log(numInList);
+      showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author[numInList]);
    }
    else showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author);
 
@@ -223,7 +227,7 @@ function displayBook(event)
   console.log("inne i display book");  
   const childElements = Array.from(listOfBooks.children);
   currentBookArrayNumber = childElements.indexOf(event.target);
-  console.log(objectNumber);
+
   
   // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)
 

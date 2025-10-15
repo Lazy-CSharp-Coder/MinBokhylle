@@ -81,6 +81,11 @@ header {
   display: flex;
 }
 /* MAIN */
+ul li::marker {
+  content: "💠"; /* Use an emoji or a character */
+
+}
+
 .main {
   flex-grow: 1;
   display: flex;
@@ -119,6 +124,8 @@ header {
 li {
   transition: color scale;
   transition-duration: 0.2s;
+  padding-left: 5px;
+
 
 }
 

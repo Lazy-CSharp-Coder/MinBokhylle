@@ -165,11 +165,10 @@ function showAuthor(event)
    }
    else
    {  
- 
-    showAuthorInfoStats.classList.add("scaleBookInAnim");
+     showAuthorInfoStats.classList.add("scaleBookInAnim");
     showAuthorInfoStats.classList.add("show");
     showAuthorInfoStats.classList.remove("hidden");
-    showAuthorInfoStats.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}, { once:true}) ;
+    showAuthorInfoStats.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim");}, { once:true}) ;
      isAuthorShowing = true;
    }
  
@@ -268,7 +267,6 @@ function displayBook(event)
   {
     if(isAuthorShowing)
     {
-      showAuthorInfoStats.classList.add("show");
       showAuthorInfoStats.classList.add("scaleBookOutAnim");
       showAuthorInfoStats.classList.remove("hidden");
       showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.add("hidden"); }, {once: true});

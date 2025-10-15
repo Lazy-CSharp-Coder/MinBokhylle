@@ -224,6 +224,9 @@ function displayBook(event)
 
   showBookInfoItems.retrieveBook(objectNumber);
 
+  const showBookInfoDiv = document.querySelector("#showBookInfoDiv");
+  showBookInfoDiv.classList.add("scaleBookAnim");
+
   
 
 }

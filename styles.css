@@ -1,6 +1,9 @@
 /* GENERAL */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
+* {
+  box-sizing: border-box;
+}
 :root{
   --primaryBorder : 2px solid darkblue;
   --primaryBackgroundColor : black;
@@ -18,11 +21,12 @@ body {
 /* HEADER */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   position: sticky;
   top: 0;
   padding: 0 16px;
+  border : 1px solid white;
 }
 
 .headerNav {
@@ -72,8 +76,11 @@ header {
   display: flex;
 }
 /* MAIN */
+.main {
+  flex-grow: 1;
+}
 .section {
-  height: 100vh;
+  
 }
 
 .hero {

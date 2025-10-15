@@ -112,7 +112,7 @@ const publishers = [
 const listOfBooks = document.querySelector("#listOfBooks");
 books.forEach(function(item) 
 {
-  const newListItem = document.createElement("<li>");
+  const newListItem = document.createElement("li");
   newListItem.textContent = item.name;
   listOfBooks.appendChild(newListItem);
 });

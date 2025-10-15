@@ -122,7 +122,7 @@ const showAuthorItems =
   authorImage : document.querySelector("#authorImage"),
   authorBorn : document.querySelector("#authorBorn"),
   authorLocation : document.querySelector("#authorLocation"),
-  authorPensAs : document.querySelector("aurthorPensAs"),
+  authorPensAs : document.querySelector("#authorPensAs"),
 
   retrieveAuthor: function(authorObject)
   {
@@ -150,7 +150,7 @@ function showAuthor(event)
    }
    else showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author);
    // legg til anim for 
-   if(!isAuthorShowing) 
+   if(isAuthorShowing) 
    {
      showAuthorInfoStats.classList.add("show");
      showAuthorInfoStats.classList.add("scaleBookOutAnim");
@@ -266,6 +266,14 @@ function displayBook(event)
   
   if(isBookShowing) 
   {
+    if(isAuthorShowing)
+    {
+      showAuthorInfoStats.classList.add("show");
+      showAuthorInfoStats.classList.add("scaleBookOutAnim");
+      showAuthorInfoStats.classList.remove("hidden");
+      showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.add("hidden"); }, {once: true});
+      isAuthorShowing = false;
+    }
     showBookInfoDiv.classList.add("show");
     showBookInfoDiv.classList.add("scaleBookOutAnim");
     showBookInfoDiv.classList.remove("hidden");

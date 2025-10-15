@@ -241,9 +241,9 @@ function displayBook(event)
   else
   {  
     showBookInfoDiv.classList.add("scaleBookInAnim");
-    showBookInfoDiv.classList.remove("hidden");
     showBookInfoDiv.classList.add("show");
-    showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}, { once:true}) ;
+    showBookInfoDiv.classList.remove("hidden");
+     showBookInfoDiv.addEventLsistener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}, { once:true}) ;
     isBookShowing = true;
   }
 

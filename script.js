@@ -137,6 +137,7 @@ const showBookInfoItems =
 
   retrieveBook: function(numberInArray) 
   {
+    console.log(numberInArray + books[numberInArray].name);
     this.bookname.textContent = books[numberInArray].name;
     this.seriesName.textContent = books[numberInArray].series.name;
     this.seriesNumber.textContent = books[numberInArray].series.number;

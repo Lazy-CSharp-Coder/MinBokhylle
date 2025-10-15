@@ -173,10 +173,9 @@ const showBookInfoItems =
 
     if(Array.isArray(books[numberInArray].author))
     {
-      books[numberInArray].author.forEach(function(item)
+      books[numberInArray].author.forEach( item =>
       { 
         console.log(item.name);
-        console.log(this.addAuthor(item.name));
         this.addAuthor(item.name);
 
       });

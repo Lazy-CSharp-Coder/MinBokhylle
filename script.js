@@ -209,6 +209,7 @@ const showBookInfoItems =
 
 // henter list element, legger til eventlistener og legger inn bøkenes tittel
 const listOfBooks = document.querySelector("#listOfBooks");
+let isBookShowing = true;
 
 function displayBook(event)
 {
@@ -225,7 +226,24 @@ function displayBook(event)
   showBookInfoItems.retrieveBook(objectNumber);
 
   const showBookInfoDiv = document.querySelector("#showBookInfoDiv");
-  showBookInfoDiv.classList.add("scaleBookAnim");
+  
+  if(isBookShowing) 
+  {
+    showBookInfoDiv.classList.add("scaleBookOutAnim");
+    showBookInfoDiv.addEventListener("animationend", function() 
+    { 
+      showBookInfoDiv.classList.remove("scaleBookOutAnim");
+      showBookInfoDiv.classList.add("scaleBookInAnim");
+      showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim");}) ;
+    
+    }, {once:true}) ;     
+  }
+  else
+  {  
+    showBookInfoDiv.classList.add("scaleBookInAnim");
+    showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}) ;
+    isBookShowing = true;
+  }
 
   
 

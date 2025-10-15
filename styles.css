@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 :root{
-  --primaryBorder : 2px solid darkblue;
+  --primaryBorder : 2px solid lightskyblue;
   --primaryBackgroundColor : black;
   --primaryTextColor: #dcdcdc;
 }
@@ -115,16 +115,19 @@ header {
   flex-direction: column;
   gap: 20px;
 }
+
 li {
-  transition: color;
-  transition-duration: 0.1s;
+  transition: color scale;
+  transition-duration: 0.2s;
 
 }
 
 li:hover{
   color:lightskyblue;
+  scale : 1.04;
 
 }
+
 .authorsList {
   padding-left : 17px;
 }
@@ -140,6 +143,9 @@ li:hover{
 
 }
 
+.titleBookText {
+  color:darkorange;
+}
 .showAuthorInfoStats
 {
   display: grid;

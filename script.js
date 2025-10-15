@@ -135,6 +135,9 @@ const showAuthorItems =
   }
 }
 
+let isAuthorShowing = false;
+const showAuthorInfoStats = document.querySelector("#showAuthorInfoStats");
+
 function showAuthor(event)
 {
    if(Array.isArray(books[currentBookArrayNumber].author))
@@ -146,6 +149,30 @@ function showAuthor(event)
       showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author[numInList]);
    }
    else showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author);
+   // legg til anim for 
+   if(!isAuthorShowing) 
+   {
+     showAuthorInfoStats.classList.add("show");
+     showAuthorInfoStats.classList.add("scaleBookOutAnim");
+     showAuthorInfoStats.classList.remove("hidden");
+     showAuthorInfoStats.addEventListener("animationend", function() 
+     { 
+      showAuthorInfoStats.classList.add("scaleBookInAnim");
+      showAuthorInfoStats.classList.remove("scaleBookOutAnim");
+      showAuthorInfoStats.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim");}) ;
+     
+     }, {once:true}) ;     
+   }
+   else
+   {  
+ 
+    showAuthorInfoStats.classList.add("scaleBookInAnim");
+    showAuthorInfoStats.classList.add("show");
+    showAuthorInfoStats.classList.remove("hidden");
+    showAuthorInfoStats.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}, { once:true}) ;
+     isAuthorShowing = true;
+   }
+ 
 
 }
 

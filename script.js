@@ -179,8 +179,8 @@ const showBookInfoItems =
     this.bookname.textContent = books[numberInArray].name;
     this.seriesName.textContent = books[numberInArray].series.name;
     this.seriesNumber.textContent = books[numberInArray].series.number;
-    if(books[numberInArray].series.completed) this.seriesCompleted = "Yes";
-    else this.seriesCompleted = "No";
+    if(books[numberInArray].series.completed) this.seriesCompleted.textContent = "Yes";
+    else this.seriesCompleted.textContent = "No";
     
     
     console.log(books[numberInArray].series.otherBooksInSeries);
@@ -241,8 +241,8 @@ function displayBook(event)
   else
   {  
     showBookInfoDiv.classList.add("scaleBookInAnim");
-    showBookInfoDiv.classList.add("show");
-    showBookInfoDiv.classList.remove("hidden");
+    // showBookInfoDiv.classList.add("show");
+    // showBookInfoDiv.classList.remove("hidden");
      showBookInfoDiv.addEventLsistener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}, { once:true}) ;
     isBookShowing = true;
   }

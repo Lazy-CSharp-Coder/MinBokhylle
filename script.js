@@ -242,6 +242,7 @@ function displayBook(event)
   {  
     showBookInfoDiv.classList.add("scaleBookInAnim");
     showBookInfoDiv.classList.remove("hidden");
+    showBookInfoDiv.classList.add("show");
     showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookAnim");}, { once:true}) ;
     isBookShowing = true;
   }

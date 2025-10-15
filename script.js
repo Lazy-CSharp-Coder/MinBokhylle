@@ -110,9 +110,12 @@ const publishers = [
 // henter list element og legger inn bøkenes tittel
 
 const listOfBooks = document.querySelector("#listOfBooks");
+console.log(listOfBooks);
+
 books.forEach(function(item) 
 {
   const newListItem = document.createElement("li");
+  console.log(newListItem);
   newListItem.textContent = item.name;
   listOfBooks.appendChild(newListItem);
 });

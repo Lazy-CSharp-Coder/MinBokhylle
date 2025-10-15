@@ -129,20 +129,39 @@ const showBookInfoItems =
   published : document.querySelector("#published"),
   pubisher : document.querySelector("#publisher"),
 
+  clearAuthorList()
+  {
+     while(this.authorsList.lastChild) this.authorsList.lastChild.remove();
+
+  },
   getDateString : function(date)
   {
      return `${date.getDate()} - ${date.getMonth()} - ${date.getFullYear()}`;
 
   },
 
-  retrieveBook: function(numberInArray) 
+  addAuthor : function(name)
+  { 
+    const autorListItem = document.createElement("li");
+    autorListItem.textContent = name;
+    this.authorsList.appendChild(autorListItem);
+    autorListItem.addEventListener("click", showAuthor);
+  },
+
+  retrieveBook : function(numberInArray) 
   {
     console.log(numberInArray + books[numberInArray].name);
+    console.log(this.bookname);
+
+    this.clearAuthorList();
+
     this.bookname.textContent = books[numberInArray].name;
     this.seriesName.textContent = books[numberInArray].series.name;
     this.seriesNumber.textContent = books[numberInArray].series.number;
     if(books[numberInArray].series.completed) this.seriesCompleted = "Yes";
     else this.seriesCompleted = "No";
+    
+    books[numberInArray].series.otherBooksInSeries.join(", ");
     this.otherBooksInSeries.textContent = books[numberInArray].series.otherBooksInSeries.toString();
     this.genre.textContent = books[numberInArray].genre.toString();
     this.characters.textContent = books[numberInArray].characters.toString();
@@ -152,15 +171,19 @@ const showBookInfoItems =
 
     // legge inn forfattere
 
-    books[numberInArray].author.forEach(function(item)
+    if(Array.isArray(books[numberInArray].author))
     {
-       const autorListItem = document.createElement("li");
-       autorListItem.textContent = item.name;
-       this.authorsList.appendChild(autorListItem);
-       autorListItem.addEventListener("click", showAuthor);
-    });
+      books[numberInArray].author.forEach(function(item)
+      { 
+        console.log(item.name);
+        console.log(this.addAuthor(item.name));
+        this.addAuthor(item.name);
 
+      });
+    }
+    else this.addAuthor(books[numberInArray].author.name);
   }
+
 };
 
 // henter list element, legger til eventlistener og legger inn bøkenes tittel

@@ -300,10 +300,7 @@ function displayBook(event)
     isBookShowing = true;
   }
 
-  
-
 }
-
 
 console.log(listOfBooks);
 

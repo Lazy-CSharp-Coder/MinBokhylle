@@ -126,15 +126,19 @@ const showBookInfoItems =
 };
 
 // henter list element, legger til eventlistener og legger inn bøkenes tittel
+const listOfBooks = document.querySelector("#listOfBooks");
 
 function displayBook(event)
 {
   console.log("inne i display book");  
+  const childElements = Array.from(listOfBooks.children);
+  const childNumber = childElements.indexOf(event.target);
+  console.log(childNumber);
     
 
 }
 
-const listOfBooks = document.querySelector("#listOfBooks");
+
 console.log(listOfBooks);
 
 books.forEach(function(item) 

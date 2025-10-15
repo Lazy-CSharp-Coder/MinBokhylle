@@ -167,8 +167,8 @@ function showAuthor(event)
    {  
 
      showAuthorInfoStats.classList.remove("hidden");
-     showAuthorInfoStats.classList.add("scaleBookInAnim");
      showAuthorInfoStats.classList.add("show");
+     showAuthorInfoStats.classList.add("scaleBookInAnim");
 
      showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.remove("scaleBookInAnim");}, { once:true});
      isAuthorShowing = true;
@@ -271,7 +271,12 @@ function displayBook(event)
     {
       showAuthorInfoStats.classList.add("scaleBookOutAnim");
       showAuthorInfoStats.classList.remove("hidden");
-      showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.add("hidden"); }, {once: true});
+      showAuthorInfoStats.addEventListener("animationend", function() 
+      { 
+        showAuthorInfoStats.classList.remove("scaleBookOutAnim");
+        showAuthorInfoStats.classList.add("hidden"); }, {once: true});
+
+      }
       isAuthorShowing = false;
     }
     showBookInfoDiv.classList.add("show");

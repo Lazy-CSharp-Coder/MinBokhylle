@@ -21,7 +21,7 @@ const books =  [
                    "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
     language : "English",
     published : new Date(2008, 10, 28),
-    pubisher : "Orbit"
+    publisher : "Orbit"
 
   },
   {
@@ -111,7 +111,7 @@ const publishers = [
 
 function getDateString(date)
 {
-   return `${date.getDate()} - ${date.getMonth()} - ${date.getFullYear()}`;
+   return `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`;
 
 }
 
@@ -188,8 +188,8 @@ const showBookInfoItems =
     this.genre.textContent = books[numberInArray].genre.join(", ");
     this.characters.textContent = books[numberInArray].characters.join(", ");
     this.language.textContent = books[numberInArray].language;
-    this.published = getDateString(books[numberInArray].published);
-    this.pubisher = books[numberInArray].publisher;
+    this.published.textContent = getDateString(books[numberInArray].published);
+    this.pubisher.textContent = books[numberInArray].publisher;
 
     // legge inn forfattere
 

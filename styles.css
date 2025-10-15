@@ -91,6 +91,11 @@ header {
   width: 50%;
 }
 
+.headerAndListDiv {
+  flex-direction: column;
+  
+}
+
 .listOfBooks
 {
   flex-direction: column;

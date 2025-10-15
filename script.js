@@ -57,7 +57,7 @@ const books =  [
     series : { name : "The DragonLance Saga", number : 2, completed: true,  otherBooksInSeries : ["Dragons Of Autumn Twilight", "Dragons Of Spring Dawning"] } ,
     genre : [ "Fantasy", "Fiction", "Epic Fantasy"],
     characters : [ "Tanis Half-Elven", "Sturm Brightblade", "Flint Fireforge", "Tika Waylan", "Caramon Majere", "Raistlin Majere", "Lauralanthalasa", "Kitiara uth Matar", "Tasslehoff Burrfoot", 
-                   "Alhana Starbreeze"," Riverwind", "Goldmoon", "kylan Iverson", "Garn", "Aylaen", "Norgaard", "Wulfe", "Raegar", "Gilthanas", "Derek Crownguard"],
+                   "Alhana Starbreeze"," Riverwind", "Goldmoon", "Kylan Iverson", "Garn", "Aylaen", "Norgaard", "Wulfe", "Raegar", "Gilthanas", "Derek Crownguard"],
     language : "English",
     published: new Date(1985, 7, 1),
     publisher : "TSR"
@@ -107,10 +107,36 @@ const publishers = [
   
 ];
 
+// funksjon som returnerer en string med en dato som passer
+
+function getDateString(date)
+{
+   return `${date.getDate()} - ${date.getMonth()} - ${date.getFullYear()}`;
+
+}
+
 // lager ett objekt som inneholder alle feltene til boken som skal manipuleres
+const showAuthorItems =
+{
+  authorName : document.querySelector("#authorName"),
+  authorBorn : document.querySelector("#authorBorn"),
+  authorLocation : document.querySelector("#authorLocation"),
+  authorPensAs : document.querySelector("aurthorPensAs"),
+
+  retrieveAuthor: function(authorObject)
+  {
+    this.authorName.textContent = authorObject.name;
+    this.authorBorn.textContent = getDateString(authorObject.born);
+    this.authorLocation.textContent = authorObject.location;
+    if(authorObject.pensAs == undefined) this.authorPensAs.textContent = authorObject.name;
+    else this.authorPensAs.textContent = authorObject.penAs.toString(); 
+  }
+
+}
 
 function showAuthor(event)
 {
+
 
 }
 
@@ -132,11 +158,6 @@ const showBookInfoItems =
   clearAuthorList()
   {
      while(this.authorsList.lastChild) this.authorsList.lastChild.remove();
-
-  },
-  getDateString : function(date)
-  {
-     return `${date.getDate()} - ${date.getMonth()} - ${date.getFullYear()}`;
 
   },
 
@@ -161,13 +182,13 @@ const showBookInfoItems =
     if(books[numberInArray].series.completed) this.seriesCompleted = "Yes";
     else this.seriesCompleted = "No";
     
-    books[numberInArray].series.otherBooksInSeries.join(" - ");
+    
     console.log(books[numberInArray].series.otherBooksInSeries);
-    this.otherBooksInSeries.textContent = books[numberInArray].series.otherBooksInSeries.toString();
-    this.genre.textContent = books[numberInArray].genre.toString();
-    this.characters.textContent = books[numberInArray].characters.toString();
+    this.otherBooksInSeries.textContent = books[numberInArray].series.otherBooksInSeries.join(", ");
+    this.genre.textContent = books[numberInArray].genre.join(", ");
+    this.characters.textContent = books[numberInArray].characters.join(", ");
     this.language.textContent = books[numberInArray].language;
-    this.published = this.getDateString(books[numberInArray].published);
+    this.published = getDateString(books[numberInArray].published);
     this.pubisher = books[numberInArray].publisher;
 
     // legge inn forfattere
@@ -183,7 +204,7 @@ const showBookInfoItems =
     }
     else this.addAuthor(books[numberInArray].author.name);
   }
-
+  
 };
 
 // henter list element, legger til eventlistener og legger inn bøkenes tittel
@@ -199,9 +220,11 @@ function displayBook(event)
   const objectNumber = childElements.indexOf(event.target);
   console.log(objectNumber);
   
-  // legge inn data
+  // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)
 
   showBookInfoItems.retrieveBook(objectNumber);
+
+  
 
 }
 

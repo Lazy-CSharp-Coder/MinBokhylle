@@ -371,9 +371,8 @@ const showBookInfoItems =
 
   retrieveBook : function(numberInArray) 
   {
-    console.log(numberInArray + books[numberInArray].name);
-    console.log(this.bookname);
-
+    console.log(numberInArray + bookDatabase.books[numberInArray].name);
+  
     this.clearAuthorList();
 
     this.bookname.textContent = bookDatabase.books[numberInArray].name;
@@ -392,13 +391,14 @@ const showBookInfoItems =
     this.publisher.textContent = bookDatabase.books[numberInArray].publisher;
 
     // legge inn forfattere
-
-    if(Array.isArray(bookDatabase.books[numberInArray].author))
+    const author = bookDatabase.books[numberInArray].author;
+    if(Array.isArray(author))
     {
-      bookDatabase.books[numberInArray].author.forEach( item =>
+      author.forEach( item =>
       { 
-        console.log(item.name);
-        this.addAuthor(item.name);
+        console.log("inne i foreach");
+        console.log(item);
+        this.addAuthor(item);
 
       });
     }

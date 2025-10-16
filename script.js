@@ -201,13 +201,12 @@ function showAuthor(event)
       numInList = allNodes.indexOf(event.target);
       console.log(numInList);
    
-    } 
+    } else numInList = 0;
     console.log ("is authorShowing" + isAuthorShowing + numInList + authorNumberShowing);
-    if(isAuthorShowing && numInList != -1 && numInList == authorNumberShowing) return;
-    // console.log("Num in list : " + numInList);
-    // legg til anim for 
-   if(isAuthorShowing) 
-   {
+
+    if(isAuthorShowing)
+    {
+      
       showAuthorInfoStats.classList.add("scaleBookOutAnim");
       showAuthorInfoStats.addEventListener("animationend", function() 
       {
@@ -218,7 +217,7 @@ function showAuthor(event)
          isAuthorShowing = true;
          authorNumberShowing = numInList;
   
-      }, { once: true});
+      }, { once: true})
 
    }
    else
@@ -234,8 +233,7 @@ function showAuthor(event)
       if(completed)
       {
          showAuthorInfo();
-         if(numInList != -1 ) authorNumberShowing = numInList;
-         else authorNumberShowing = 0;
+         authorNumberShowing = numInList;
          isAuthorShowing = true;
       }
       else

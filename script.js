@@ -175,12 +175,14 @@ function showAuthor(event)
   
     if(Array.isArray(books[currentBookArrayNumber].author))
     {
-      const allNodes = Array.from(this.parentNode.children);
+      const allNodes = Array.from(event.target.parentNode.children);
       console.log(allNodes);
       numInList = allNodes.indexOf(event.target);
       console.log(numInList);
    
-    }
+    } 
+
+    console.log("Num in list : " + numInList);
     // legg til anim for 
    if(isAuthorShowing) 
    {
@@ -196,7 +198,12 @@ function showAuthor(event)
    }
    else
    {  
+      if(numInList != -1) showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author[numInList]);
+      else showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author);
+
       showAuthorInfo();
+  
+
 
     //  showAuthorInfoStats.classList.remove("hidden");
     //  showAuthorInfoStats.classList.add("show");

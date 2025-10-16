@@ -138,6 +138,28 @@ const showAuthorItems =
 let isAuthorShowing = false;
 const showAuthorInfoStats = document.querySelector("#showAuthorInfoStats");
 
+
+function showAuthorInfo()
+{
+  showAuthorInfoStats.classList.remove("scaleBookOutAnim");
+  showAuthorInfoStats.classList.add("scaleBookInAnim");
+  // showAuthorInfoStats.classList.remove("scaleBookOutAnim");
+  showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.remove("scaleBookInAnim");}, {once:true});
+}
+
+function removeAuthorInfo() 
+{
+  // showAuthorInfoStats.classList.add("show");
+  showAuthorInfoStats.classList.add("scaleBookOutAnim");
+  showAuthorInfoStats.addEventListener("animationend", function() 
+    {
+       showAuthorInfoStats.classList.add("hidden");
+
+    }, { once: true});
+  // showAuthorInfoStats.classList.remove("hidden");
+  
+}
+
 function showAuthor(event)
 {
    if(Array.isArray(books[currentBookArrayNumber].author))
@@ -152,16 +174,7 @@ function showAuthor(event)
    // legg til anim for 
    if(isAuthorShowing) 
    {
-     showAuthorInfoStats.classList.add("show");
-     showAuthorInfoStats.classList.add("scaleBookOutAnim");
-     showAuthorInfoStats.classList.remove("hidden");
-     showAuthorInfoStats.addEventListener("animationend", function() 
-     { 
-      showAuthorInfoStats.classList.add("scaleBookInAnim");
-      showAuthorInfoStats.classList.remove("scaleBookOutAnim");
-      showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.remove("scaleBookInAnim");}) ;
-     
-     }, {once:true}) ;     
+      removeAuthorInfo();
    }
    else
    {  

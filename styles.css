@@ -89,7 +89,7 @@ ul li::marker {
 
 .main {
   flex-grow: 1;
-  display: flex;
+
 
 }
 .section {

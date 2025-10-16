@@ -386,14 +386,14 @@ const showBookInfoItems =
 
     if(Array.isArray(bookDatabase.books[numberInArray].author))
     {
-      books[numberInArray].author.forEach( item =>
+      bookDatabase.books[numberInArray].author.forEach( item =>
       { 
         console.log(item.name);
         this.addAuthor(item.name);
 
       });
     }
-    else this.addAuthor(bookDatabase.books[numberInArray].author.name);
+    else this.addAuthor(bookDatabase.books[numberInArray].author);
   }
   
 };

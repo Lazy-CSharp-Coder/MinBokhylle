@@ -202,8 +202,9 @@ function showAuthor(event)
       console.log(numInList);
    
     } 
+    console.log ("is authorShowing" + isAuthorShowing + numInList + authorNumberShowing);
     if(isAuthorShowing && numInList != -1 && numInList == authorNumberShowing) return;
-    console.log("Num in list : " + numInList);
+    // console.log("Num in list : " + numInList);
     // legg til anim for 
    if(isAuthorShowing) 
    {
@@ -227,8 +228,7 @@ function showAuthor(event)
       if(numInList != -1)
       {
         completed = showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
-        authorNumberShowing = numInList;
-
+      
       }
       else completed = showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
       if(completed)
@@ -236,6 +236,7 @@ function showAuthor(event)
          showAuthorInfo();
          if(numInList != -1 ) authorNumberShowing = numInList;
          else authorNumberShowing = 0;
+         isAuthorShowing = true;
       }
       else
       {

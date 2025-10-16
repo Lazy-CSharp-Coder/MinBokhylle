@@ -193,7 +193,7 @@ function showAuthor(event)
 {
     let numInList = -1;
   
-    if(Array.isArray(books[currentBookArrayNumber].author))
+    if(Array.isArray(bookDatabase.books[currentBookArrayNumber].author))
     {
       const allNodes = Array.from(event.target.parentNode.children);
       console.log(allNodes);
@@ -353,7 +353,7 @@ function displayBook(event)
 
 console.log(listOfBooks);
 
-books.forEach(function(item) 
+bookDatabase.books.forEach(function(item) 
 {
   const newListItem = document.createElement("li");
   console.log(newListItem);

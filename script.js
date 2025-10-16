@@ -201,7 +201,7 @@ function showAuthor(event)
       numInList = allNodes.indexOf(event.target);
       console.log(numInList);
    
-    } else numInList = 0;
+    }
     console.log ("is authorShowing" + isAuthorShowing + numInList + authorNumberShowing);
 
     if(isAuthorShowing)

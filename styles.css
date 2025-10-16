@@ -20,7 +20,8 @@ body {
   min-height: 100vh;
   font-family: "Roboto";
   background-color: var(--primaryBackgroundColor);
-  color: var(--primaryTextColor)
+  color: var(--primaryTextColor);
+  cursor: pointer;
 }
 
 /* HEADER */

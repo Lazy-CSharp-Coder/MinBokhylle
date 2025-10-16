@@ -171,20 +171,28 @@ function removeAuthorInfo()
 
 function showAuthor(event)
 {
-   if(Array.isArray(books[currentBookArrayNumber].author))
-   {
+    let numInList = -1;
+  
+    if(Array.isArray(books[currentBookArrayNumber].author))
+    {
       const allNodes = Array.from(this.parentNode.children);
       console.log(allNodes);
-      const numInList = allNodes.indexOf(event.target);
+      numInList = allNodes.indexOf(event.target);
       console.log(numInList);
-      showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author[numInList]);
-   }
-   else showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author);
-   // legg til anim for 
+   
+    }
+    // legg til anim for 
    if(isAuthorShowing) 
    {
-      removeAuthorInfo();
-      showAuthorInfoStats.addEventListener("animationend", showAuthorInfo(), {once:true});
+      showAuthorInfoStats.classList.add("scaleBookOutAnim");
+      showAuthorInfoStats.addEventListener("animationend", function() 
+      {
+         showAuthorInfoStats.classList.add("scaleBookInAnim");
+         showAuthorInfoStats.classList.remove("scaleBookOutAnim");
+         if(numInList != -1) showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author[numInList]);
+         else showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author);
+  
+      }, { once: true});
    }
    else
    {  
@@ -281,6 +289,7 @@ function displayBook(event)
   console.log("inne i display book");  
   const childElements = Array.from(listOfBooks.children);
   currentBookArrayNumber = childElements.indexOf(event.target);
+  console.log(currentBookArrayNumber);
 
   
   // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)

@@ -237,8 +237,10 @@ const showAuthorItems =
   authorLocation : document.querySelector("#authorLocation"),
   authorPensAs : document.querySelector("#authorPensAs"),
 
-  retrieveAuthor: function(authorObject)
+  retrieveAuthor: function(authorString)
   {
+    // legg inn søk i author key
+    
     this.authorImage.src = authorObject.image;
     this.authorName.textContent = authorObject.name;
     this.authorBorn.textContent = getDateString(authorObject.born);
@@ -304,15 +306,15 @@ function showAuthor(event)
       {
          showAuthorInfoStats.classList.add("scaleBookInAnim");
          showAuthorInfoStats.classList.remove("scaleBookOutAnim");
-         if(numInList != -1) showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author[numInList]);
-         else showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author);
+         if(numInList != -1) showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+         else showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
   
       }, { once: true});
    }
    else
    {  
-      if(numInList != -1) showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author[numInList]);
-      else showAuthorItems.retrieveAuthor(books[currentBookArrayNumber].author);
+      if(numInList != -1) showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+      else showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
 
       showAuthorInfo();
   
@@ -365,24 +367,24 @@ const showBookInfoItems =
 
     this.clearAuthorList();
 
-    this.bookname.textContent = books[numberInArray].name;
-    this.seriesName.textContent = books[numberInArray].series.name;
-    this.seriesNumber.textContent = books[numberInArray].series.number;
-    if(books[numberInArray].series.completed) this.seriesCompleted.textContent = "Yes";
+    this.bookname.textContent = bookDatabase.books[numberInArray].name;
+    this.seriesName.textContent = bookDatabase.books[numberInArray].series.name;
+    this.seriesNumber.textContent = bookDatabase.books[numberInArray].series.number;
+    if(bookDatabase.books[numberInArray].series.completed) this.seriesCompleted.textContent = "Yes";
     else this.seriesCompleted.textContent = "No";
     
     
-    console.log(books[numberInArray].series.otherBooksInSeries);
-    this.otherBooksInSeries.textContent = books[numberInArray].series.otherBooksInSeries.join(", ");
-    this.genre.textContent = books[numberInArray].genre.join(", ");
-    this.characters.textContent = books[numberInArray].characters.join(", ");
-    this.language.textContent = books[numberInArray].language;
-    this.published.textContent = getDateString(books[numberInArray].published);
-    this.publisher.textContent = books[numberInArray].publisher;
+    console.log(bookDatabase.books[numberInArray].series.otherBooksInSeries);
+    this.otherBooksInSeries.textContent = bookDatabase.books[numberInArray].series.otherBooksInSeries.join(", ");
+    this.genre.textContent = bookDatabase.books[numberInArray].genre.join(", ");
+    this.characters.textContent = bookDatabase.books[numberInArray].characters.join(", ");
+    this.language.textContent = bookDatabase.books[numberInArray].language;
+    this.published.textContent = getDateString(bookDatabase.books[numberInArray].published);
+    this.publisher.textContent = bookDatabase.books[numberInArray].publisher;
 
     // legge inn forfattere
 
-    if(Array.isArray(books[numberInArray].author))
+    if(Array.isArray(bookDatabase.books[numberInArray].author))
     {
       books[numberInArray].author.forEach( item =>
       { 
@@ -391,7 +393,7 @@ const showBookInfoItems =
 
       });
     }
-    else this.addAuthor(books[numberInArray].author.name);
+    else this.addAuthor(bookDatabase.books[numberInArray].author.name);
   }
   
 };

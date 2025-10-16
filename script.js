@@ -156,6 +156,7 @@ const showAuthorItems =
 }
 
 let isAuthorShowing = false;
+let authorNumberShowing = -1;
 const showAuthorInfoStats = document.querySelector("#showAuthorInfoStats");
 
 
@@ -171,7 +172,7 @@ function showAuthorInfo()
     showAuthorInfoStats.classList.add("show");
     showAuthorInfoStats.classList.remove("scaleBookInAnim");
   }, {once:true});
-  isAuthorShowing = true;
+
 }
 
 function removeAuthorInfo() 
@@ -201,7 +202,7 @@ function showAuthor(event)
       console.log(numInList);
    
     } 
-
+    if(isAuthorShowing && numInList != -1 && numInList == authorNumberShowing) return;
     console.log("Num in list : " + numInList);
     // legg til anim for 
    if(isAuthorShowing) 
@@ -213,15 +214,29 @@ function showAuthor(event)
          showAuthorInfoStats.classList.remove("scaleBookOutAnim");
          if(numInList != -1) showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
          else showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
+         isAuthorShowing = true;
+         authorNumberShowing = numInList;
   
       }, { once: true});
+
    }
    else
    {  
       let completed = 0;
-      if(numInList != -1) completed =showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
-      else completed =showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
-      if(completed) showAuthorInfo();
+      
+      if(numInList != -1)
+      {
+        completed = showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+        authorNumberShowing = numInList;
+
+      }
+      else completed = showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
+      if(completed)
+      {
+         showAuthorInfo();
+         if(numInList != -1 ) authorNumberShowing = numInList;
+         else authorNumberShowing = 0;
+      }
       else
       {
         // vis feilmelding om at forfatteren var ikke i databasen

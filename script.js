@@ -145,6 +145,7 @@ function showAuthorInfo()
   showAuthorInfoStats.classList.add("scaleBookInAnim");
   // showAuthorInfoStats.classList.remove("scaleBookOutAnim");
   showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.remove("scaleBookInAnim");}, {once:true});
+  isAuthorShowing = true;
 }
 
 function removeAuthorInfo() 
@@ -175,16 +176,17 @@ function showAuthor(event)
    if(isAuthorShowing) 
    {
       removeAuthorInfo();
+      showAuthorInfoStats.addEventListener("animationend", showAuthorInfo(), {once:true});
    }
    else
    {  
 
-     showAuthorInfoStats.classList.remove("hidden");
-     showAuthorInfoStats.classList.add("show");
-     showAuthorInfoStats.classList.add("scaleBookInAnim");
+    //  showAuthorInfoStats.classList.remove("hidden");
+    //  showAuthorInfoStats.classList.add("show");
+    //  showAuthorInfoStats.classList.add("scaleBookInAnim");
 
-     showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.remove("scaleBookInAnim");}, { once:true});
-     isAuthorShowing = true;
+    //  showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.remove("scaleBookInAnim");}, { once:true});
+    //  isAuthorShowing = true;
    }
  
 

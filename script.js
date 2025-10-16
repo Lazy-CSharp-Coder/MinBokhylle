@@ -239,14 +239,27 @@ const showAuthorItems =
 
   retrieveAuthor: function(authorString)
   {
+    let authorObject = 0;
     // legg inn søk i author key
-    
+    for(let i = 0; i < bookDatabase.authors.length; ++i)
+    {
+        if(bookDatabase.authors[i].name === authorString) 
+        {
+           authorObject = bookDatabase.authors[i];
+           i = bookDatabase.authors.length;
+        }
+    }
+
+    if(authorObject == 0) return 0;
+    // legg inn data 
     this.authorImage.src = authorObject.image;
     this.authorName.textContent = authorObject.name;
     this.authorBorn.textContent = getDateString(authorObject.born);
     this.authorLocation.textContent = authorObject.location;
     if(authorObject.pensAs == undefined) this.authorPensAs.textContent = authorObject.name;
     else this.authorPensAs.textContent = authorObject.penAs.join(", "); 
+
+    return 1;
   }
 }
 
@@ -313,19 +326,15 @@ function showAuthor(event)
    }
    else
    {  
-      if(numInList != -1) showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
-      else showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
-
-      showAuthorInfo();
+      let completed = 0;
+      if(numInList != -1) completed =showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+      else completed =showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
+      if(completed) showAuthorInfo();
+      else
+      {
+        // vis feilmelding om at forfatteren var ikke i databasen
+      }
   
-
-
-    //  showAuthorInfoStats.classList.remove("hidden");
-    //  showAuthorInfoStats.classList.add("show");
-    //  showAuthorInfoStats.classList.add("scaleBookInAnim");
-
-    //  showAuthorInfoStats.addEventListener("animationend", function() { showAuthorInfoStats.classList.remove("scaleBookInAnim");}, { once:true});
-    //  isAuthorShowing = true;
    }
  
 

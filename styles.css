@@ -11,6 +11,7 @@
   --primaryBackgroundColor : black;
   --primaryTextColor: #dcdcdc;
   --primaryFontFamily : "BBH Sans Bogle";
+  --secondaryFontFamily : "Roboto"
 }
 
 /* BODY */
@@ -324,7 +325,9 @@ footer {
 
 .myInfoDiv {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
   
   color: lightskyblue;
 }
@@ -336,4 +339,10 @@ footer {
 
 .emailIcon, .githubIcon {
   width: 40px;
+}
+
+.footerTextName {
+  font-family: var(--primaryFontFamily);
+  font-size: 16px;
+  color:orange;
 }

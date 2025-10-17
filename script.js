@@ -258,18 +258,26 @@ const displayPublisherItems =
    retreivePublisher : function (publisherString)
    {
       const publisherArray = bookDatabase.publishers;
+      console.log(publisherArray);
       let publisherFound = false;
       for(let i = 0; i < publisherArray.length; ++i)
       {
-          if(publisherString === publisherArray[i].name)
+          if(publisherString == publisherArray[i].name)
           {
-             this.name = publisherArray[i].fullName;
-             this.founded = getDateString(publisherArray[i].founded);
-             this.country = publisherArray[i].countryOfOrigin;
-             this.founders = publisherArray[i].founders.join(", ");
+             console.log("publisher found in retriev function");
+             this.name.textContent = publisherArray[i].fullName;
+             this.founded.textContent = getDateString(publisherArray[i].founded);
+             this.country.textContent = publisherArray[i].countryOfOrigin;
+             if(publisherArray[i].founders != undefined)
+             {
+                if(Array.isArray(publisherArray[i].founders)) this.founders.textContent = publisherArray[i].founders.join(", ");
+                else this.founders.textContent = publisherArray[i].founders;
+             }
+             else this.founders.textContent = "not specified";
              this.webpage = publisherArray[i].webPage;
              publisherFound = true;
              i = publisherArray.length;
+             
           }
 
       }
@@ -288,9 +296,10 @@ const showPublisherStats = document.querySelector("showPublisherStats");
 function showPublisher()
 {
    const publisherString = bookDatabase.books[currentBookArrayNumber].publisher;
-   if(displayPublisherItems.retreivePublisher()) // publisher found
+   console.log(publisherString);
+   if(displayPublisherItems.retreivePublisher(publisherString)) // publisher found
    {
-     
+      console.log("Publisher found");
     
 
    }

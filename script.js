@@ -246,7 +246,7 @@ function showAuthor(event)
 
 }
 
-let isPublisherDisplaying = false;
+let isPublisherShowing = false;
 
 const displayPublisherItems = 
 {
@@ -303,8 +303,23 @@ function showPublisher()
    if(displayPublisherItems.retreivePublisher(publisherString)) // publisher found
    {
       console.log("Publisher found");
-    
+      if(isPublisherShowing)
+      {
 
+      }
+      else
+      {
+        showPublisherStats.classList.add("scaleIn");
+        showPublisherStats.classList.add("show");
+        showPublisherStats.classList.remove("hidden");
+        showPublisherStats.addEventListener("animationend", function() 
+        {
+            showPublisherStats.classList.remove("scaleIn");
+            isPublisherShowing = true;
+
+        }, { once: true});
+      }
+  
    }
    
 }

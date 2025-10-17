@@ -114,7 +114,7 @@ const bookDatabase =
 
 const soundEffects = 
 {
-   enterListItems : "/Sounds/enterlistitems.mp3
+   enterListItems : "/Sounds/enterlistitems.mp3"
 }
 
 // funksjon som returnerer en string med en dato som passer
@@ -487,10 +487,11 @@ bookDatabase.books.forEach(function(item)
 
   setTimeout(() => 
   { newListItem.classList.add("slideInTopAnim");
+    newListItem.addEventListener("animationend", ()=> { mySound.play(); }) ;
     listOfBooks.appendChild(newListItem); 
   }, delay);
   
-  newListItem.addEventListener("animationend", ()=> { mySound.play(); }) ;
+ 
   delay += delayInc;
 
   newListItem.addEventListener("click", displayBook);

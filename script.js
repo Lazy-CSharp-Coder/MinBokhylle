@@ -242,8 +242,59 @@ function showAuthor(event)
       }
   
    }
- 
 
+}
+
+let isPublisherDisplaying = false;
+
+const displayPublisherItems = 
+{
+   name : document.querySelector("#publisherName"),
+   founded : document.querySelector("#publisherFounded"),
+   country : document.querySelector("#publisherCountry"),
+   founders : document.querySelector("#publisherFounders"),
+   webpage : document.querySelector("publisherWebPage"),
+
+   retreivePublisher : function (publisherString)
+   {
+      const publisherArray = bookDatabase[currentBookArrayNumber].publishers;
+      let publisherFound = false;
+      for(let i = 0; i < publisherArray.length; ++i)
+      {
+          if(publisherString === publisherArray[i].name)
+          {
+             this.name = publisherArray[i].fullName;
+             this.founded = getDateString(publisherArray[i].founded);
+             this.country = publisherArray[i].countryOfOrigin;
+             this.founders = publisherArray[i].founders.join(", ");
+             this.webpage = publisherArray[i].webPage;
+             publisherFound = true;
+             i = publisherArray.length;
+          }
+
+      }
+      if(publisherFound) return 1;
+      else return 0;
+      
+   }
+};
+
+// endre denne til button hvis du får tid til det
+
+const publisherButton = document.querySelector("#publisher");
+publisherButton.addEventListener("click", showPublisher);
+const showPublisherStats = document.querySelector("showPublisherStats");
+
+function showPublisher()
+{
+   const publisherString = bookDatabase[currentBookArrayNumber].publisher;
+   if(displayPublisherItems.retreivePublisher()) // publisher found
+   {
+     
+    
+
+   }
+   
 }
 
 const showBookInfoItems =

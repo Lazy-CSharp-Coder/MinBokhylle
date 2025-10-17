@@ -92,7 +92,7 @@ const bookDatabase =
                   fullName : "Orbit UK",
                   founded : new Date(1974),
                   countryOfOrigin : "United Kingdom",
-                  founders : ["test", "test2"],
+                  
                   webPage : "https://www.orbit-books.co.uk/",
                 },
                 { name : "Bantam",

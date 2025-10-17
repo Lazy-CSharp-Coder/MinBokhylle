@@ -265,7 +265,9 @@ const displayPublisherItems =
           if(publisherString == publisherArray[i].name)
           {
              console.log("publisher found in retriev function");
+             console.log(publisherArray[i]);
              this.name.textContent = publisherArray[i].fullName;
+          
              this.founded.textContent = getDateString(publisherArray[i].founded);
              this.country.textContent = publisherArray[i].countryOfOrigin;
              if(publisherArray[i].founders != undefined)

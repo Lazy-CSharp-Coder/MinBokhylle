@@ -115,7 +115,8 @@ const bookDatabase =
 const soundEffects = 
 {
    enterListItems : "/Sounds/enterlistitems.mp3",
-   accessingBooks : "/Sounds/accessingbooks.mp3"
+   accessingBooks : "/Sounds/accessingbooks.mp3",
+   accessing : "/Sounds/accessing.mp3"
 }
 
 // funksjon som returnerer en string med en dato som passer

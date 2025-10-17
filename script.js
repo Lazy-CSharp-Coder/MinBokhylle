@@ -112,6 +112,10 @@ const bookDatabase =
               ]
 };
 
+const soundEffects = 
+{
+   enterListItems : "/Sounds/enterlistitems.mp3
+}
 
 // funksjon som returnerer en string med en dato som passer
 
@@ -473,6 +477,8 @@ console.log(listOfBooks);
 let delay = 0;
 const delayInc = 300;
 
+let mySound = new Audio(soundEffects.enterListItems);
+
 bookDatabase.books.forEach(function(item) 
 {
   const newListItem = document.createElement("li");
@@ -484,6 +490,7 @@ bookDatabase.books.forEach(function(item)
     listOfBooks.appendChild(newListItem); 
   }, delay);
   
+  newListItem.addEventListener("animationend", ()=> { mySound.play(); }) ;
   delay += delayInc;
 
   newListItem.addEventListener("click", displayBook);

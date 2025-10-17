@@ -310,12 +310,29 @@ li:hover{
 /* søke div som er skjult */
 
 .searchDiv {
+  display: flex;
+  align-items: flex-start;
   width: 350px;
+  height: 500px;
   background-color: aqua;
+  border: var(--primaryBorder);
+  border-radius: 4px;
 
 }
 
+.searchIcon {
+  width : 40px;
+  animation-name: rotateRight;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
 
+@keyframes rotateRight {
+  0% { transform: rotate(0);  }
+  100% { transform: rotate(360deg);}
+}
 
 /* FOOTER */
 footer {

@@ -114,10 +114,11 @@ const bookDatabase =
 
 const soundEffects = 
 {
-   enterListItems : "/Sounds/enterlistitems.mp3",
-   accessingBooks : "/Sounds/accessingbooks.mp3",
-   accessing : "/Sounds/accessing.mp3"
+   enterListItems : new Audio("/Sounds/enterlistitems.mp3"),
+   accessingBooks : new Audio("/Sounds/accessingbooks.mp3"),
+   accessing : new Audio("/Sounds/accessing.mp3")
 }
+
 
 // funksjon som returnerer en string med en dato som passer
 
@@ -456,7 +457,7 @@ function displayBook(event)
     showBookInfoDiv.classList.remove("hidden");
     showBookInfoDiv.addEventListener("animationend", function() 
     { 
-      accessSound.play();
+      soundEffects.accessingBooks.play();
       showBookInfoDiv.classList.add("scaleBookInAnim");
       showBookInfoDiv.classList.remove("scaleBookOutAnim");
       showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim"); }, 
@@ -465,7 +466,7 @@ function displayBook(event)
   }
   else
   {  
-    accessSound.play();
+    soundEffects.accessingBooks.play();
     showBookInfoDiv.classList.add("scaleBookInAnim");
     showBookInfoDiv.classList.add("show");
     showBookInfoDiv.classList.remove("hidden");

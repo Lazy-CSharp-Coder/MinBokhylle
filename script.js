@@ -304,7 +304,7 @@ const displayPublisherItems =
 
 // endre denne til button hvis du får tid til det
 
-const publisherButton = document.querySelector("#publisher");
+const publisherButton = document.querySelector("#publisherButton");
 publisherButton.addEventListener("click", showPublisher);
 const showPublisherStats = document.querySelector("#showPublisherStats");
 console.log(showPublisherStats);

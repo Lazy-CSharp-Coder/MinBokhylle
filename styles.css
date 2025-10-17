@@ -73,7 +73,7 @@ header {
 }
 
 .hiddenDisplay {
-  display: flex;
+  display: none;
 }
 .show {
   opacity: 1;
@@ -133,9 +133,10 @@ h2 {
 }
 
 .hero {
-  display: flex;
-  align-items:flex-start;
-  justify-content:center;
+  display: grid;
+  grid-template-columns: 200px 500px 500px;
+  /* align-items:flex-start; */
+  /* justify-content:center; */
   gap: 50px;
 
 }

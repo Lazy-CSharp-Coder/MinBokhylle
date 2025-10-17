@@ -209,6 +209,9 @@ li:hover{
   column-gap: 20px;
 }
 
+.publisherWeb {
+  font-size: 10px;
+}
 .authorImage {
   width: 100px;
 

@@ -252,6 +252,12 @@ li:hover{
   /* 80% { transform: scale(0.2, 0.2);} */
   100% {transform : scale(0, 0.3) ;}
 }
+
+.slideInTopAnim {
+
+}
+
+
 @media (max-width: 426px) {
   .hero {
     flex-direction: column;

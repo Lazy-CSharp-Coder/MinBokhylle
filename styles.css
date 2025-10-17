@@ -197,6 +197,18 @@ li:hover{
   column-gap: 20px;
 }
 
+.showPublisherStats
+{
+  display: grid;
+  /* opacity: 0; */
+  grid-template-columns: auto 250px;
+  grid-template-rows: repeat(5, auto);
+  border:var(--primaryBorder);
+  border-radius: 8px;
+  padding: 20px 40px;
+  column-gap: 20px;
+}
+
 .authorImage {
   width: 100px;
 

@@ -322,6 +322,13 @@ footer {
   align-items: center;
 }
 
+.myInfoDiv {
+  display: flex;
+  flex-direction: column;
+  
+  color: lightskyblue;
+}
+
 .contactInfo {
   gap : 20px;
   font-size: 14px;

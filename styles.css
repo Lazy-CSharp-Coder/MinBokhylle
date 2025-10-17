@@ -239,7 +239,7 @@ li:hover{
 }
 
 .scaleBookOutAnim {
-  animation-name: scaleOut;
+  animation-name: scaleOut; 
   animation-duration: 1.2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -254,9 +254,16 @@ li:hover{
 }
 
 .slideInTopAnim {
-
+  animation-name : slideInTop;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
+@keyframes slideInTop {
+  0% { transform: translateY(-1000px);}
+  100% { transform : translateY(0); }
+}
 
 @media (max-width: 426px) {
   .hero {

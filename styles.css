@@ -215,6 +215,13 @@ li:hover{
   align-items: center;
 }
 
+.publisherButton, .otherBooksButton {
+  font-family: var(--primaryFontFamily);
+  border-radius : 2px;
+  padding : 1px 2px;
+  margin : 4px;
+}
+
 .showPublisherStats
 {
   display: grid;

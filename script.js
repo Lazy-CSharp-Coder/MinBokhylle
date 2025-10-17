@@ -436,11 +436,13 @@ function displayBook(event)
   
   if(isBookShowing) 
   {
+    const delay = 0;
+    if(isPublisherShowing) setTimeout(() => {removePublisher();
+      console.log("er her i set timeout"); }, delay);
     if(isAuthorShowing)
     {
        removeAuthorInfo();
-       if(isPublisherShowing)setTimeout(() => {removePublisher();
-      console.log("er her i set timeout"); }, 200);
+      
       
     }
     showBookInfoDiv.classList.add("show");

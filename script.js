@@ -450,13 +450,15 @@ function displayBook(event)
   if(isBookShowing) 
   {
     const delay = 0;
-    if(isPublisherShowing) setTimeout(() => {removePublisher();
+    if(isPublisherShowing) setTimeout(() => {
+      removePublisher();
+      isPublisherShowing = false;
       console.log("er her i set timeout"); }, delay);
     if(isAuthorShowing)
     {
        removeAuthorInfo();
-      
-      
+       isAuthorShowing = false;
+            
     }
     showBookInfoDiv.classList.add("show");
     showBookInfoDiv.classList.add("scaleBookOutAnim");

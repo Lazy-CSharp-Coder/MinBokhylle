@@ -92,7 +92,7 @@ const bookDatabase =
                   fulllName : "Orbit UK",
                   founded : new Date(1974),
                   countryOfORigin : "United Kingdom",
-                  founders : "test",
+                  founders : ["test", "test2"],
                   webPage : "https://www.orbit-books.co.uk/",
                 },
                 { name : "Bantam",
@@ -265,7 +265,7 @@ const displayPublisherItems =
       {
           if(publisherString == publisherArray[i].name)
           {
-             console.log("publisher found in retriev function. Number in array : " + i);
+             console.log("publisher found in retriev function. Number in array : " + i + " - publisher :" + publisherArray[i].name);
              console.log(publisherArray[i]);
              this.name.textContent = publisherArray[i].fullName;
           

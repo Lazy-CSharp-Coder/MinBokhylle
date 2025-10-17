@@ -41,7 +41,7 @@ header {
   height: 106px;
 }
 
-.booksIcon {
+.booksIcon, .darklightIcon {
   width : 64px;
 }
 

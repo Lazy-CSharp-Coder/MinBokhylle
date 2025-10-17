@@ -314,23 +314,59 @@ li:hover{
   align-items: flex-start;
   width: 350px;
   height: 500px;
-  background-color: aqua;
+  background-color:black;
   border: var(--primaryBorder);
+
   border-radius: 4px;
 
 }
 
-.searchIcon {
-  width : 40px;
+.searchingIcon {
+  width : 32px;
+  margin: 20px 30px;
   animation-name: rotateRight;
   animation-duration: 1s;
-  animation-timing-function: ease;
+  animation-timing-function:linear;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
 
+.searchingText {
+  font-size: 20px;
+
+}
+
+.searchPoint {
+  font-size: 20px;
+}
+
+.point1Anim, .point2Anim, .point3Anim {
+  animation-name: fadeInOut;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+
+.point1Anim {
+  animation-delay: 0.2s;
+}
+
+.point2Anim {
+  animation-delay: 1s;
+}
+
+.point3Anim {
+  animation-delay: 1.8s;
+}
+
+@keyframes fadeInOut {
+  0% { opacity:1}
+  100% { opacity: 0}
+}
+
 @keyframes rotateRight {
-  0% { transform: rotate(0);  }
+  0% { transform: rotate(0deg);  }
   100% { transform: rotate(360deg);}
 }
 

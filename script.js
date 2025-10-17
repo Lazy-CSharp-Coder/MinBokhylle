@@ -115,7 +115,7 @@ const bookDatabase =
 const soundEffects = 
 {
    enterListItems : new Audio("/Sounds/enterlistitems.mp3"),
-   accessingBooks : new Audio("/Sounds/accessingbooks.mp3"),
+   accessingBooks : new Audio("/Sounds/accessing.mp3"),
    accessing : new Audio("/Sounds/accessing.mp3")
 }
 
@@ -218,6 +218,7 @@ function showAuthor(event)
       showAuthorInfoStats.classList.add("scaleBookOutAnim");
       showAuthorInfoStats.addEventListener("animationend", function() 
       {
+        soundEffects.accessing.play();
          showAuthorInfoStats.classList.add("scaleBookInAnim");
          showAuthorInfoStats.classList.remove("scaleBookOutAnim");
          if(numInList != -1) showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
@@ -240,7 +241,8 @@ function showAuthor(event)
       else completed = showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
       if(completed)
       {
-         showAuthorInfo();
+        soundEffects.accessing.play(); 
+        showAuthorInfo();
          authorNumberShowing = numInList;
          isAuthorShowing = true;
       }
@@ -336,7 +338,8 @@ function showPublisher()
       }
       else
       {
-        console.log("er i animation for å vise publisher")
+        console.log("er i animation for å vise publisher");
+        soundEffects.accessing.play();
         showPublisherStats.classList.add("scaleBookInAnim");
         showPublisherStats.classList.remove("hidden");
         showPublisherStats.classList.add("show");

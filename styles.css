@@ -10,6 +10,7 @@
   --primaryBorder : 2px solid lightskyblue;
   --primaryBackgroundColor : black;
   --primaryTextColor: #dcdcdc;
+  --primaryFontFamily : "BBH Sans Bogle";
 }
 
 /* BODY */
@@ -295,6 +296,7 @@ li:hover{
 footer {
   /* display: flex;
   justify-content: center; */
+  font-family: var(--primaryFontFamily);
   flex-direction: row;
   justify-content: space-between;
   align-items: center;

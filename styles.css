@@ -412,12 +412,16 @@ footer {
 }
 
 .contactInfo {
-  gap : 20px;
+  gap : 10px;
   font-size: 14px;
 }
 
-.emailIcon, .githubIcon {
+.emailIcon {
   width: 40px;
+}
+
+.githubIcon {
+  width: 30px;
 }
 
 .footerTextName {

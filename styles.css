@@ -109,6 +109,12 @@ h1 {
 h2 {
   font-family: "BBH Sans Bogle";
   font-weight: 100;
+  animation-name: slideInTop;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+
 }
 
 .main {

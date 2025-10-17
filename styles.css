@@ -165,7 +165,6 @@ li:hover{
   border-radius: 8px;
   padding: 20px 40px;
   column-gap: 40px;
-
 }
 
 .titleBookText {
@@ -180,10 +179,12 @@ li:hover{
 .seriesText {
   color : lightseagreen;
 }
+
 .keyTitleClass {
   color: #dcdcdc;
   font-family: "BBH Sans Bogle";
 }
+
 .showAuthorInfoStats
 {
   display: grid;

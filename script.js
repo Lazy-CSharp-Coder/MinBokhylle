@@ -89,9 +89,9 @@ const bookDatabase =
             ],
 
   publishers: [ { name : "Orbit",
-                  fulllName : "Orbit UK",
+                  fullName : "Orbit UK",
                   founded : new Date(1974),
-                  countryOfORigin : "United Kingdom",
+                  countryOfOrigin : "United Kingdom",
                   founders : ["test", "test2"],
                   webPage : "https://www.orbit-books.co.uk/",
                 },
@@ -277,7 +277,7 @@ const displayPublisherItems =
                 else this.founders.textContent = publisherArray[i].founders;
              }
              else this.founders.textContent = "not specified";
-             this.webpage = publisherArray[i].webPage;
+             this.webpage  = publisherArray[i].webPage;
              publisherFound = true;
              i = publisherArray.length;
              

@@ -290,7 +290,13 @@ footer {
   /* display: flex;
   justify-content: center; */
   flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   text-align: center;
   height: 106px;
   border: 1px solid white;
+}
+
+.kodeloftLogoImg {
+  width : 100px;
 }

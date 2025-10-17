@@ -470,12 +470,22 @@ function displayBook(event)
 
 console.log(listOfBooks);
 
+let delay = 0;
+const delayInc = 300;
+
 bookDatabase.books.forEach(function(item) 
 {
   const newListItem = document.createElement("li");
   console.log(newListItem);
   newListItem.textContent = item.name;
-  listOfBooks.appendChild(newListItem);
+
+  setTimeout(() => 
+  { newListItem.classList.add("slideInTopAnim");
+    listOfBooks.appendChild(newListItem); 
+  }, delay);
+  
+  delay += delayInc;
+
   newListItem.addEventListener("click", displayBook);
 });
 

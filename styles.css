@@ -219,6 +219,11 @@ li:hover{
 
 }
 
+.authorPublisherWrapper {
+  flex-direction: column;
+  gap: 30px;
+}
+
 .scaleBookInAnim {
   animation-name: scaleIn;
   animation-duration: 1.5s;

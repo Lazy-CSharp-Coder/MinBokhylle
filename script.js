@@ -114,7 +114,8 @@ const bookDatabase =
 
 const soundEffects = 
 {
-   enterListItems : "/Sounds/enterlistitems.mp3"
+   enterListItems : "/Sounds/enterlistitems.mp3",
+   accessingBooks : "/Sounds/accessingbooks.mp3"
 }
 
 // funksjon som returnerer en string med en dato som passer
@@ -437,7 +438,7 @@ function displayBook(event)
   showBookInfoItems.retrieveBook(currentBookArrayNumber);
 
   const showBookInfoDiv = document.querySelector("#showBookInfoDiv");
-  
+  const accessSound = new Audio(soundEffectsl.accessingBooks);
   if(isBookShowing) 
   {
     const delay = 0;

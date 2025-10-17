@@ -98,8 +98,7 @@ header {
 }
 /* MAIN */
 ul li::marker {
-  content: "💠"; /* Use an emoji or a character */
-
+  content: "💠";  /* Use an emoji or a character */
 }
 
 h1 {
@@ -114,7 +113,7 @@ h2 {
   animation-name: slideInTop;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
-  animation-delay: 0.5s;
+  animation-delay: 0s;
   animation-fill-mode: backwards;
 
 }
@@ -218,10 +217,15 @@ li:hover{
 .publisherButton, .otherBooksButton {
   font-family: var(--primaryFontFamily);
   border-radius : 2px;
-  padding : 1px 2px;
-  margin : 4px;
+  padding : 3px 6px;
+  margin : 3px 3px;
+
 }
 
+.publisherButton {
+  margin-left : 30px;
+  padding: 3px 6px;
+}
 .showPublisherStats
 {
   display: grid;

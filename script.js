@@ -294,7 +294,7 @@ const displayPublisherItems =
 
 const publisherButton = document.querySelector("#publisher");
 publisherButton.addEventListener("click", showPublisher);
-const showPublisherStats = document.querySelector("showPublisherStats");
+const showPublisherStats = document.querySelector("#showPublisherStats");
 console.log(showPublisherStats);
 let isPublisherShowing = false;
 

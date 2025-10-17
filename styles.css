@@ -316,14 +316,14 @@ li:hover{
   height: 500px;
   background-color:black;
   border: var(--primaryBorder);
-
+  gap: 5px;
   border-radius: 4px;
 
 }
 
 .searchingIcon {
   width : 32px;
-  margin: 20px 30px;
+  margin: 15px 20px;
   animation-name: rotateRight;
   animation-duration: 1s;
   animation-timing-function:linear;
@@ -332,11 +332,13 @@ li:hover{
 }
 
 .searchingText {
+  font-family: var(--primaryFontFamily);
   font-size: 20px;
 
 }
 
 .searchPoint {
+  font-family: var(--primaryFontFamily);
   font-size: 20px;
 }
 
@@ -349,7 +351,7 @@ li:hover{
 }
 
 .point1Anim {
-  animation-delay: 0.2s;
+  animation-delay: 1.8s;
 }
 
 .point2Anim {
@@ -357,7 +359,7 @@ li:hover{
 }
 
 .point3Anim {
-  animation-delay: 1.8s;
+  animation-delay: 0.2s;
 }
 
 @keyframes fadeInOut {

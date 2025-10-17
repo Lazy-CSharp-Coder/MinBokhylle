@@ -195,6 +195,7 @@ li:hover{
   border-radius: 8px;
   padding: 20px 40px;
   column-gap: 20px;
+  align-items: center;
 }
 
 .showPublisherStats
@@ -207,6 +208,7 @@ li:hover{
   border-radius: 8px;
   padding: 20px 40px;
   column-gap: 20px;
+  align-items: center;
 }
 
 .publisherWeb {

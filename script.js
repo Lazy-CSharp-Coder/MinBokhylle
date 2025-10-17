@@ -320,9 +320,11 @@ function removePublisher()
        showPublisherStats.classList.add("hidden");
        showPublisherStats.classList.remove("show");
        showPublisherStats.classList.remove("scaleBookOutAnim");
+       publisherButton.textContent = "Search database";
 
      }, {once:true});
      isPublisherShowing = false;
+  
    
    }
 }
@@ -350,6 +352,7 @@ function showPublisher()
         {
             showPublisherStats.classList.remove("scaleBookInAnim");
             isPublisherShowing = true;
+            publisherButton.textContent = "Close database";
 
         }, { once: true});
       }

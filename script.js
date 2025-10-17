@@ -438,7 +438,7 @@ function displayBook(event)
   showBookInfoItems.retrieveBook(currentBookArrayNumber);
 
   const showBookInfoDiv = document.querySelector("#showBookInfoDiv");
-  const accessSound = new Audio(soundEffectsl.accessingBooks);
+  const accessSound = new Audio(soundEffects.accessingBooks);
   if(isBookShowing) 
   {
     const delay = 0;
@@ -455,6 +455,7 @@ function displayBook(event)
     showBookInfoDiv.classList.remove("hidden");
     showBookInfoDiv.addEventListener("animationend", function() 
     { 
+      accessSound.play();
       showBookInfoDiv.classList.add("scaleBookInAnim");
       showBookInfoDiv.classList.remove("scaleBookOutAnim");
       showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim"); }, 

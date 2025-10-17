@@ -298,6 +298,23 @@ const showPublisherStats = document.querySelector("#showPublisherStats");
 console.log(showPublisherStats);
 let isPublisherShowing = false;
 
+function removePublisher() 
+{
+   if(isPublisherShowing)
+   {
+     showPublisherStats.classList.add("scaleBookOutAnim");
+     showPublisherStats.addEventListener("animationend", function() 
+     {
+       showPublisherStats.classList.add("hidden");
+       showPublisherStats.classList.remove("show");
+       showPublisherStats.classList.remove("scaleBookOutAnim");
+
+     }, {once:true});
+     isPublisherShowing = false;
+   
+   }
+}
+
 function showPublisher()
 {
    const publisherString = bookDatabase.books[currentBookArrayNumber].publisher;
@@ -307,7 +324,8 @@ function showPublisher()
       console.log("Publisher found");
       if(isPublisherShowing)
       {
-
+          removePublisher();
+        
       }
       else
       {
@@ -317,7 +335,7 @@ function showPublisher()
         showPublisherStats.classList.add("show");
         showPublisherStats.addEventListener("animationend", function() 
         {
-            showPublisherStats.classList.remove("scaleIn");
+            showPublisherStats.classList.remove("scaleBookInAnim");
             isPublisherShowing = true;
 
         }, { once: true});
@@ -421,6 +439,8 @@ function displayBook(event)
     if(isAuthorShowing)
     {
        removeAuthorInfo();
+       if(isPublisherShowing)setTimeout(() => {removePublisher();
+      console.log("er her i set timeout"); }, 200);
       
     }
     showBookInfoDiv.classList.add("show");

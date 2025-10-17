@@ -464,7 +464,7 @@ function displayBook(event)
   }
   else
   {  
-
+    accessSound.play();
     showBookInfoDiv.classList.add("scaleBookInAnim");
     showBookInfoDiv.classList.add("show");
     showBookInfoDiv.classList.remove("hidden");

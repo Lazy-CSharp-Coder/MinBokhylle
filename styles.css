@@ -72,6 +72,9 @@ header {
   opacity: 0;
 }
 
+.hiddenDisplay {
+  display: flex;
+}
 .show {
   opacity: 1;
 }

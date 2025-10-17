@@ -175,9 +175,10 @@ li:hover{
   column-gap: 40px;
 }
 
-.titleBookText {
+.titleBookText, .colorMain {
   color:darkorange;
 }
+
 
 .dataText {
   color:azure;

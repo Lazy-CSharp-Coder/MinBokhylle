@@ -306,6 +306,27 @@ footer {
   padding : 0 20px;
 }
 
+.creditButton {
+  font-family: var(--primaryFontFamily);
+  font-weight: 100;
+  font-size: 12xp;
+  border-radius: 5px;
+}
+
 .kodeloftLogoImg {
   width : 100px;
+}
+
+.myInfoWrapper {
+  gap: 20px;
+  align-items: center;
+}
+
+.contactInfo {
+  gap : 20px;
+  font-size: 14px;
+}
+
+.emailIcon, .githubIcon {
+  width: 40px;
 }

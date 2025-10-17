@@ -246,7 +246,7 @@ function showAuthor(event)
 
 }
 
-let isPublisherShowing = false;
+
 
 const displayPublisherItems = 
 {
@@ -295,6 +295,8 @@ const displayPublisherItems =
 const publisherButton = document.querySelector("#publisher");
 publisherButton.addEventListener("click", showPublisher);
 const showPublisherStats = document.querySelector("showPublisherStats");
+console.log(showPublisherStats);
+let isPublisherShowing = false;
 
 function showPublisher()
 {
@@ -309,9 +311,10 @@ function showPublisher()
       }
       else
       {
-        showPublisherStats.classList.add("scaleIn");
-        showPublisherStats.classList.add("show");
+        console.log("er i animation for å vise publisher")
+        showPublisherStats.classList.add("scaleBookInAnim");
         showPublisherStats.classList.remove("hidden");
+        showPublisherStats.classList.add("show");
         showPublisherStats.addEventListener("animationend", function() 
         {
             showPublisherStats.classList.remove("scaleIn");

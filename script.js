@@ -372,7 +372,7 @@ const showBookInfoItems =
   language : document.querySelector("#language"),
   published : document.querySelector("#published"),
   publisher : document.querySelector("#publisher"),
-
+  
   clearAuthorList()
   {
      while(this.authorsList.lastChild) this.authorsList.lastChild.remove();
@@ -402,11 +402,13 @@ const showBookInfoItems =
     
     console.log(bookDatabase.books[numberInArray].series.otherBooksInSeries);
     this.otherBooksInSeries.textContent = bookDatabase.books[numberInArray].series.otherBooksInSeries.join(", ");
+    this.otherBooksInSeries.appendChild(this.otherBooksButton);
     this.genre.textContent = bookDatabase.books[numberInArray].genre.join(", ");
     this.characters.textContent = bookDatabase.books[numberInArray].characters.join(", ");
     this.language.textContent = bookDatabase.books[numberInArray].language;
     this.published.textContent = getDateString(bookDatabase.books[numberInArray].published);
     this.publisher.textContent = bookDatabase.books[numberInArray].publisher;
+    this.publisher.appendChild(publisherButton);
 
     // legge inn forfattere
     const author = bookDatabase.books[numberInArray].author;

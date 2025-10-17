@@ -164,7 +164,8 @@ const showAuthorItems =
 }
 
 let isAuthorShowing = false;
-let authorNumberShowing = -1;
+let authorNumberShowing = 0;
+
 const showAuthorInfoStats = document.querySelector("#showAuthorInfoStats");
 
 
@@ -218,16 +219,18 @@ function showAuthor(event)
       showAuthorInfoStats.classList.add("scaleBookOutAnim");
       showAuthorInfoStats.addEventListener("animationend", function() 
       {
-        soundEffects.accessing.play();
-         showAuthorInfoStats.classList.add("scaleBookInAnim");
-         showAuthorInfoStats.classList.remove("scaleBookOutAnim");
-         if(numInList != -1) showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
-         else showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
-         isAuthorShowing = true;
-         authorNumberShowing = numInList;
-  
-      }, { once: true})
-
+        if(authorNumberShowing != numInList)
+        {
+          soundEffects.accessing.play();
+          showAuthorInfoStats.classList.add("scaleBookInAnim");
+          showAuthorInfoStats.classList.remove("scaleBookOutAnim");
+          if(numInList != -1) showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+          else showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
+          isAuthorShowing = true;
+          authorNumberShowing = numInList;
+        }
+        else isAuthorShowing = false;
+      }, { once: true});
    }
    else
    {  

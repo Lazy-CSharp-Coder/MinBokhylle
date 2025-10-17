@@ -255,13 +255,13 @@ li:hover{
 
 .slideInTopAnim {
   animation-name : slideInTop;
-  animation-duration: 0.5s;
+  animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 
 @keyframes slideInTop {
-  0% { transform: translateY(-1000px);}
+  0% { transform: translateY(-600px);}
   100% { transform : translateY(0); }
 }
 

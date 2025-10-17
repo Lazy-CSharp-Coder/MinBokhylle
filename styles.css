@@ -36,12 +36,16 @@ header {
   align-items: center;
   position: sticky;
   top: 0;
-  padding: 0 16px;
+  padding: 0 30px;
   border : 1px solid white;
   height: 106px;
 }
 
-.booksIcon, .darklightIcon {
+.booksIcon {
+  width : 50px;
+}
+
+.darklightIcon {
   width : 64px;
 }
 

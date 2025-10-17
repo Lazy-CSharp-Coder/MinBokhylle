@@ -257,7 +257,7 @@ const displayPublisherItems =
 
    retreivePublisher : function (publisherString)
    {
-      const publisherArray = bookDatabase[currentBookArrayNumber].publishers;
+      const publisherArray = bookDatabase.publishers;
       let publisherFound = false;
       for(let i = 0; i < publisherArray.length; ++i)
       {
@@ -287,7 +287,7 @@ const showPublisherStats = document.querySelector("showPublisherStats");
 
 function showPublisher()
 {
-   const publisherString = bookDatabase[currentBookArrayNumber].publisher;
+   const publisherString = bookDatabase.books[currentBookArrayNumber].publisher;
    if(displayPublisherItems.retreivePublisher()) // publisher found
    {
      

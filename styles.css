@@ -69,7 +69,8 @@ header {
 }
 
 .hidden {
-  opacity: 0;
+  opacity: 0;  
+  /* display: none; */
 }
 
 .hiddenDisplay {
@@ -77,6 +78,7 @@ header {
 }
 .show {
   opacity: 1;
+  /* display: block; */
 }
 
 /* HEADER styling mobile L or less */
@@ -134,7 +136,8 @@ h2 {
 
 .hero {
   display: grid;
-  grid-template-columns: 200px 500px 500px;
+  grid-template-columns: 200px auto auto;
+  justify-self:center;
   /* align-items:flex-start; */
   /* justify-content:center; */
   gap: 50px;
@@ -168,7 +171,9 @@ li:hover{
 }
 
 .authorsList li::marker {
-  content: "🤵🏼";
+  /* content: "🤵🏼"; */
+  /* content : "📚";   */
+  content :"📖";
 
 }
 
@@ -312,6 +317,7 @@ li:hover{
 
 .searchDiv {
   /* display: flex; */
+  display: none;
   align-items: flex-start;
   width: 350px;
   height: 500px;

@@ -271,6 +271,7 @@ function showAuthor(event)
         console.log("in error");
          showAuthorItems.setErrorMsg();
          showAuthorInfo();
+         isAuthorShowing = true;
         // vis feilmelding om at forfatteren var ikke i databasen
       }
   
@@ -387,7 +388,7 @@ function showPublisher()
    else
    {
       console.log("error publisher routine");
-      
+
    }
    
 }
@@ -731,6 +732,8 @@ function closeSearchWindow()
       searchDiv.classList.remove("showDisplay");
       searchDiv.classList.remove("slideOutRightAnim");
       searchDiv.classList.add("hiddenDisplay");
+
+
       inSearchMode = false;
     }, {once: true});
    }

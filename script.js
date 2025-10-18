@@ -452,7 +452,7 @@ function displayBook(event)
 {
 
   // finne child nummer for å vite hvilket objekt i arrayen jeg skal bruke
-
+  closeSearchWindow();
   console.log("inne i display book");  
   const childElements = Array.from(listOfBooks.children);
   currentBookArrayNumber = childElements.indexOf(event.target);
@@ -609,8 +609,7 @@ function removeAllAndDisplaySearch()
    if(windowOpenNode) windowOpenNode.addEventListener("animationend", function () 
    {
      searchAndListResults();
-     showAuthorInfoStats.style.display = "none";
-     showPublisherStats.style.display = "none";
+    
 
    }, {once:true});
 
@@ -624,8 +623,8 @@ function searchAndListResults()
 {
   // lukk author og publisher hvis de er åpne
 
-  if(isAuthorShowing) removeAuthorInfo();
-  if(isPublisherShowing) removePublisher();
+  showAuthorInfoStats.style.display = "none";
+  showPublisherStats.style.display = "none";
 
   // vis searchDiv og begynn
 
@@ -712,6 +711,7 @@ function closeSearchWindow()
       searchAndListResults.classList.remove("showDisplay");
       searchAndListResults.classList.remove("slideOutBottom");
       searchAndListResults.classList.add("hideDisplay");
+      inSearchMode = false;
     });
    }
 }

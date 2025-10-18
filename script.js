@@ -572,9 +572,36 @@ const searchingStatus = document.querySelector("#searchingStatus");
 const matchFoundText = document.querySelector("#matchFoundText");
 const searchResultsList = document.querySelector("#searchResultsList");
 
+function removeAllAndDisplaySearch()
+{
+   let windowOpenNode = undefined;
+
+   if(isAuthorShowing)
+   {
+     windowOpenNode = showAuthorInfoStats;
+     removeAuthorInfo();
+   }
+   if(isPublisherShowing)
+   {
+     if(windowOpenNode == undefined) windowOpenNode = showPublisherStats;
+     removePublisher();
+   }
+   
+   if(windowOpenNode) windowOpenNode.addEventListener("animationend", function () 
+   {
+     searchAndListResults();
+
+   }, {once:true});
+   else searchAndListResults();
+}
+
+
 function searchAndListResults()
 {
-  
+  // lukk author og publisher hvis de er åpne
+
+  if(isAuthorShowing) removeAuthorInfo();
+  if(isPublisherShowing) removePublisher();
 
   // vis searchDiv og begynn
 
@@ -651,5 +678,5 @@ function searchAndListResults()
 }
 
 const otherBooksButton = document.querySelector("#otherBooksButton");
-otherBooksButton.addEventListener("click", searchAndListResults);
+otherBooksButton.addEventListener("click", removeAllAndDisplaySearch);
 

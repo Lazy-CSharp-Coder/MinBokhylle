@@ -141,7 +141,10 @@ const showAuthorItems =
   setErrorMsg: function() 
   {
     this.authorImage.src = "/Icons/error.png";
-    this.authorName.src = "The author does not exists in the database";
+    this.authorName.textContent = "Entry not found ";
+    this.authorBorn.textContent = "";
+    this.authorLocation.textContent = "";
+    this.authorPensAs.textContent = "";
   },
 
   retrieveAuthor: function(authorString)
@@ -380,6 +383,11 @@ function showPublisher()
         }, { once: true});
       }
   
+   }
+   else
+   {
+      console.log("error publisher routine");
+      
    }
    
 }

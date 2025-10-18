@@ -728,11 +728,11 @@ function closeSearchWindow()
    {
     
     searchDiv.classList.remove("slideInTopAnim");
-    searchDiv.classList.add("slideOutRightAnim");
+    searchDiv.classList.add("slideOutTopAnim");
     searchDiv.addEventListener("animationend", () =>
     {
       searchDiv.classList.remove("showDisplay");
-      searchDiv.classList.remove("slideOutRightAnim");
+      searchDiv.classList.remove("slideOutTopAnim");
       searchDiv.classList.add("hiddenDisplay");
 
       showAuthorInfoStats.classList.add("grid");

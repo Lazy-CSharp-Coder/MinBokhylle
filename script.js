@@ -353,20 +353,23 @@ function removePublisher()
 const windowPublisher = 1;
 const windowAuthor = 2;
 let timeleft = 5;
-const closeWindowText = document.querySelector("#closeWindowText");
+const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
+const authorcloseWindowText = document.querySelector("#authorErrorCountText")
 let errorWindowToDisplay = windowPublisher;
-const publisherError = document.querySelector("#publisherError");
+const publisherErrorWin = document.querySelector("#publisherError");
+
 
 function errorCountDown()
 {
    if(errorWindowToDisplay == windowPublisher)
    {
-     closeWindowText.textContent = timeleft;
+     publisherErrorCountText.textContent = timeleft;
      if(timeleft <= 0) 
      {
-      publisherError.classList.remove("flex");
-      publisherError.classList.add("hiddenDisplay");
-      clearInterval(timerInterval);
+      publisherErrorWin.classList.remove("flex");
+      publisherErrorWin.classList.remove("scaleBookInAnim");
+      publisherErrorWin.classList.add("hiddenDisplay");
+      clearInterval(setInterval(errorCountDown,1000));
      }
      else --timeleft;
    }   
@@ -418,8 +421,11 @@ function showPublisher()
 
       publisherError.classList.add("flex");
       publisherError.classList.remove("hiddenDisplay");
-
-      setInterval(errorCountDown, 1000);
+      publisherError.classList.add("scaleBookInAnim");
+      publisherError.addEventListener("animationend", function()
+      {
+          setInterval(errorCountDown, 1000);
+      }, {once:true});
     }
    
 }

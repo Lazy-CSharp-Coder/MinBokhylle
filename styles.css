@@ -252,9 +252,10 @@ li:hover{
 
 }
 
-.closeWindowText {
+.errorCountText {
   font-family: var(--primaryFontFamily);
   font-size: 20px;
+  color:darkred;
 }
 .authorImage {
   width: 100px;

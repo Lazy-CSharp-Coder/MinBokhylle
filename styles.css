@@ -279,7 +279,7 @@ li:hover{
   animation-name : slideInTop;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
-  animation-fill-mode: b;
+  animation-fill-mode: forwards;
 }
 
 @keyframes slideInTop {

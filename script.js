@@ -606,6 +606,7 @@ function searchAndListResults()
   // vis searchDiv og begynn
 
   searchDiv.classList.add("showDisplay");
+  searchDiv.classList.add("slideInTopAnim");
   searchDiv.classList.remove("hiddenDisplay");
 
   let matchFound = false;
@@ -636,7 +637,7 @@ function searchAndListResults()
   if(matchFound)
   { 
     console.log(newListArray);
-    let delay = 1;
+    let delay = 2;
     const delayInc = 1;     
 
    

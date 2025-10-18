@@ -140,7 +140,7 @@ const showAuthorItems =
 
   setErrorMsg: function() 
   {
-    this.authorImage.src = "/Images/error.png";
+    this.authorImage.src = "/Icons/error.png";
     this.authorName.src = "The author does not exists in the database";
   },
 

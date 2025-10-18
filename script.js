@@ -568,12 +568,13 @@ function setSearchingPointsChildren(parent)
 
 
 const searchDiv = document.querySelector("#searchDiv");
+const searchingStatus = document.querySelector("#searchingStatus");
+const matchFoundText = document.querySelector("#matchFoundText");
+const searchResultsList = document.querySelector("#searchResultsList");
 
 function searchAndListResults()
 {
-  const searchingStatus = document.querySelector("#searchingStatus");
-  const matchFoundText = document.querySelector("#matchFoundText");
-  const searchResultsList = document.querySelector("#searchResultsList");
+  
 
   // vis searchDiv og begynn
 
@@ -608,26 +609,39 @@ function searchAndListResults()
   if(matchFound)
   { 
     console.log(newListArray);
-    let delay = 0;
-    const delayInc = 0.8;     
+    let delay = 1;
+    const delayInc = 1;     
 
-    newListArray.forEach(function(item, index)
+   
+    newListArray.forEach(function(item, index, array)
     {
-      searchingStatus.textContent = "Loading";
-                  
+                 
       item.classList.add("slideInTopAnim");
       item.classList.add("hidden");
       item.style.animationDelay = delay + "s";
 
+
+
       item.addEventListener("animationstart", () =>
       {
-      
+
+        searchingStatus.textContent = "Loading";
+        if(array.length > 1)  matchFoundText.textContent = "Adding entries";
+        else matchFoundText.textContent = "Adding entry"
+
         item.classList.remove("hidden");
-        const entryString = `Entries found - adding entry ${index +1} to list`
-        matchFoundText.textContent = entryString;
+       
 
       });
-      item.addEventListener("animationend", () => { soundEffects.enterListItems.play(); })
+      item.addEventListener("animationend", () => 
+      { 
+              // soundEffects.enterListItems.play(); 
+        if(index == array.length -1)
+        { 
+          searchingStatus.textContent = "Awaiting user input";
+          matchFoundText.textContent = "Entries added";
+        }
+      });
       searchResultsList.appendChild(item); 
       delay += delayInc;
     } );

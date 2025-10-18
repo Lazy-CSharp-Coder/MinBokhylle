@@ -514,7 +514,15 @@ bookDatabase.books.forEach(function(item)
   newListItem.addEventListener("click", displayBook);
 });
 
+const creditButton = document.querySelector("creditButton");
+creditButton.addEventListener("click", function () 
+{
+   const creditIconDiv = document.querySelector("#credtiIconDiv");
+   creditIconDiv.classList.add("showDisplay");
+   creditIconDiv.classList.remove("hiddenDisplay");
+   creditIconDiv.classList.add("slideInBottmAnim");
 
+});
 
 function hamburgerToggle() {
   console.log("Hi from hamburgerToggle");

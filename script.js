@@ -128,6 +128,7 @@ function getDateString(date)
 
 }
 
+
 // lager ett objekt som inneholder alle feltene til boken som skal manipuleres
 const showAuthorItems =
 {
@@ -281,7 +282,7 @@ const displayPublisherItems =
              console.log(publisherArray[i]);
              this.name.textContent = publisherArray[i].fullName;
           
-             this.founded.textContent = getDateString(publisherArray[i].founded);
+             this.founded.textContent = publisherArray[i].founded.getFullYear();
              this.country.textContent = publisherArray[i].countryOfOrigin;
              if(publisherArray[i].founders != undefined)
              {

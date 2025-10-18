@@ -255,7 +255,7 @@ li:hover{
 .errorCountText {
   font-family: var(--primaryFontFamily);
   font-size: 20px;
-  color:darkred;
+  color:red;
 }
 .authorImage {
   width: 100px;

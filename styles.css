@@ -419,7 +419,7 @@ li:hover{
   background-color: black;
   padding: 25px;
   width:fit-content;
-
+  left: 50%;
   border: var(--primaryBorder);
   border-radius: 4px;
   gap: 10px;
@@ -454,11 +454,14 @@ li:hover{
 @keyframes slideInBottom {
   0%  { transform: translateY(300px);} 
   /* 80% { transform: translateY(-100px);} */
-  100% { transform: translateY(0);}
+  100% { transform: translateY(0);
+        transform: translateX(-50%); }
 }
 
 @keyframes slideOutBottom  {
-  0%  { transform: translateY(0px);} 
+  0%  { transform: translateY(0px);
+        transform: translateX(-50%);    
+  } 
   /* 20% { transform: translateY(-100px);} */
   100% { transform: translateY(300px);}
 }
@@ -492,12 +495,6 @@ footer {
 
 .kodeloftLogoImg {
   width : 100px;
-}
-
-.logoDivStart {
-  display: flex;
-  gap : 30px;
-  align-items: center;
 }
 
 

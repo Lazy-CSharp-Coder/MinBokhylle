@@ -230,6 +230,7 @@ li:hover{
   padding: 20px 40px;
   column-gap: 20px;
   align-items: center;
+  font-size: 15px;
 }
 
 .publisherWeb {
@@ -437,10 +438,26 @@ li:hover{
   animation-fill-mode: forwards;
 }
 
+.slideInBottomAnim {
+  animation-name: slideOutBottom;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+
+
+
 @keyframes slideInBottom {
-  0%  { transform: translateY(2500px);} 
+  0%  { transform: translateY(1500px);} 
   80% { transform: translateY(-100px);}
   100% { transform: translateY(0);}
+}
+
+@keyframes slideOutBottom  {
+  0%  { transform: translateY(0px);} 
+  20% { transform: translateY(-100px);}
+  100% { transform: translateY(1500px);}
 }
 
 /* FOOTER */

@@ -514,13 +514,32 @@ bookDatabase.books.forEach(function(item)
   newListItem.addEventListener("click", displayBook);
 });
 
-const creditButton = document.querySelector("creditButton");
+// sette opp credit button med eventlistnere og animasjon
+
+const creditButton = document.querySelector("#creditButton");
+let isCreditsDisplaying = false;
 creditButton.addEventListener("click", function () 
 {
-   const creditIconDiv = document.querySelector("#credtiIconDiv");
+  const creditIconDiv = document.querySelector("#creditIconDiv");
+  if(isCreditsDisplaying)
+  {
+    creditIconDiv.classList.remove("slideInBottomAnim");
+    creditIconDiv.classList.add("slideOutBottomAnim");
+    creditIconDiv.addEventListener("animationend", function() 
+    {
+      creditIconDiv.remove("showDisplay");
+      creditIconDiv.add("hiddenDisplay");
+      creditIconDiv.remove("slideOutBottomAnim");
+    } , {once: true});
+
+  }
+  else
+  {
    creditIconDiv.classList.add("showDisplay");
+   creditIconDiv.classList.add("slideInBottomAnim");
    creditIconDiv.classList.remove("hiddenDisplay");
-   creditIconDiv.classList.add("slideInBottmAnim");
+   isCreditsDisplaying = true;
+  }
 
 });
 

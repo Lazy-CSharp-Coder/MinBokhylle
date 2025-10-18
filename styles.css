@@ -110,11 +110,14 @@ main {
 }
 
 .hero {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 200px auto auto;
-  justify-self:center;
-  /* align-items:flex-start; */
-  /* justify-content:center; */
+  justify-self:center; */
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
   gap: 50px;
 
 }
@@ -128,6 +131,7 @@ main {
 .listOfBooks
 {
   flex-direction: column;
+  width:200px;
   gap: 20px;
 }
 

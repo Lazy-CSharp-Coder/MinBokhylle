@@ -110,18 +110,15 @@ main {
 }
 
 .hero {
-  /* display: grid;
-  grid-template-columns: 200px auto auto;
-  justify-self:center; */
+  display: grid;
+  grid-template-columns: 200px 562px 468px;
+  justify-self:center;
 
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  justify-content: center;
-
+  justify-content: center; */
   gap: 50px;
-
 }
-
 
 .headerAndListDiv {
   flex-direction: column;

@@ -527,9 +527,9 @@ creditButton.addEventListener("click", function ()
     creditIconDiv.classList.add("slideOutBottomAnim");
     creditIconDiv.addEventListener("animationend", function() 
     {
-      creditIconDiv.remove("showDisplay");
-      creditIconDiv.add("hiddenDisplay");
-      creditIconDiv.remove("slideOutBottomAnim");
+      creditIconDiv.classList.remove("showDisplay");
+      creditIconDiv.classList.add("hiddenDisplay");
+      creditIconDiv.classList.remove("slideOutBottomAnim");
     } , {once: true});
     isCreditsDisplaying = false;
 

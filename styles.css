@@ -433,14 +433,14 @@ li:hover{
 
 .slideInBottomAnim {
   animation-name: slideInBottom;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 
-.slideInBottomAnim {
+.slideOutBottomAnim {
   animation-name: slideOutBottom;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
@@ -449,15 +449,15 @@ li:hover{
 
 
 @keyframes slideInBottom {
-  0%  { transform: translateY(1500px);} 
-  80% { transform: translateY(-100px);}
+  0%  { transform: translateY(300px);} 
+  /* 80% { transform: translateY(-100px);} */
   100% { transform: translateY(0);}
 }
 
 @keyframes slideOutBottom  {
   0%  { transform: translateY(0px);} 
-  20% { transform: translateY(-100px);}
-  100% { transform: translateY(1500px);}
+  /* 20% { transform: translateY(-100px);} */
+  100% { transform: translateY(300px);}
 }
 
 /* FOOTER */

@@ -432,6 +432,8 @@ li:hover{
   color:darkgrey;
 }
 
+
+
 .slideInBottomAnim {
   animation-name: slideInBottom;
   animation-duration: 1s;
@@ -491,6 +493,13 @@ footer {
 .kodeloftLogoImg {
   width : 100px;
 }
+
+.logoDivStart {
+  display: flex;
+  gap : 30px;
+  align-items: center;
+}
+
 
 .myInfoWrapper {
   gap: 20px;

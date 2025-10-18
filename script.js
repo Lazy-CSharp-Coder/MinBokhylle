@@ -1,7 +1,7 @@
 // books array med litt info
 const bookDatabase = 
 {  books : [  { name : "The Way Of Shadows", 
-              author :  "Brent Weeks",
+              author :  "Brent Weeks2",
               series :  { name :"The Night Angel Trioligy",  number: 1, completed : true, otherBooksInSeries : ["Beyond The Shadows", "Shadows Edge"] } ,
               genre :  [ "Fantasy", "Fiction" ],
               characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
@@ -138,6 +138,12 @@ const showAuthorItems =
   authorLocation : document.querySelector("#authorLocation"),
   authorPensAs : document.querySelector("#authorPensAs"),
 
+  setErrorMsg: function() 
+  {
+    this.authorImage.src = "/Images/error.png";
+    this.authorName.src = "The author does not exists in the database";
+  },
+
   retrieveAuthor: function(authorString)
   {
     let authorObject = 0;
@@ -152,6 +158,7 @@ const showAuthorItems =
     }
 
     if(authorObject == 0) return 0;
+    
     // legg inn data 
     this.authorImage.src = authorObject.image;
     this.authorName.textContent = authorObject.name;
@@ -253,11 +260,13 @@ function showAuthor(event)
       {
         soundEffects.accessing.play(); 
         showAuthorInfo();
-         authorNumberShowing = numInList;
-         isAuthorShowing = true;
+        authorNumberShowing = numInList;
+        isAuthorShowing = true;
       }
       else
       {
+         showAuthorItems.setErrorMsg();
+         showAuthorInfo();
         // vis feilmelding om at forfatteren var ikke i databasen
       }
   

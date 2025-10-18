@@ -356,7 +356,7 @@ let timeleft = 5;
 const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
 const authorcloseWindowText = document.querySelector("#authorErrorCountText")
 let errorWindowToDisplay = windowPublisher;
-const publisherErrorWin = document.querySelector("#publisherError");
+const publisherErrorWin = document.querySelector("#publisherErrorWin");
 const timerInterval = setInterVal(errorCountDown, 1000);
 
 function errorCountDown()

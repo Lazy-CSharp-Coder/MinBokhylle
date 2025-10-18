@@ -344,8 +344,8 @@ li:hover{
 /* søke div som er skjult */
 
 .searchDiv {
-  /* display: flex; */
-  display: none;
+  display: flex;
+  /* display: none; */
   align-items: flex-start;
   width: 350px;
   height: 500px;
@@ -397,7 +397,10 @@ li:hover{
   animation-delay: 0.2s;
 }
 
-
+.statusSearchDiv {
+  display: flex;
+  flex-direction: column;
+}
 
 
 

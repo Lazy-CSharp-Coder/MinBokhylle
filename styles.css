@@ -41,6 +41,8 @@ header {
   padding: 0 30px;
   border : 1px solid white;
   height: 106px;
+  z-index: 10;
+  background-color: black;
 }
 
 .booksIcon {
@@ -49,23 +51,6 @@ header {
 
 .darklightIcon {
   width : 64px;
-}
-
-.headerNav {
-  display: flex;
-}
-
-.navList {
-  display: flex;
-  justify-content: center;
-  gap: 16px;
-  list-style-type: none;
-}
-
-.hamburgerIcon {
-  height: 32px;
-  width: 32px;
-  display: none;
 }
 
 .hidden {
@@ -83,19 +68,9 @@ header {
 
 /* HEADER styling mobile L or less */
 @media (max-width: 426px) {
-  .headerNav {
-    flex-direction: column-reverse;
-    align-items: flex-end;
-    justify-content: flex-end;
-  }
-
-  .navList {
-    display: none;
-  }
-
-  .hamburgerIcon {
-    display: flex;
-  }
+    h1 {
+      font-size: 15px;
+    }
 }
 
 .flex {
@@ -180,6 +155,7 @@ li:hover{
 .authorsList {
   padding-left : 17px;
 }
+
 .showBookInfoDiv
 {
   display: grid;
@@ -304,14 +280,57 @@ li:hover{
 
 @media (max-width: 426px) {
   .hero {
-    flex-direction: column;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
   }
 
   .heroText,
   .heroImg {
     width: 100%;
   }
+
+  h2 {
+    font-size: 15px;
+  }
+
+  .listOfBooks {
+    font-size: 12px;
+    gap: 5px;
+    width: 200px;
+  }
+
+  .showBookInfoDiv
+  {
+    display: grid;
+    font-size: 10px;
+    grid-template-columns: auto 200px;
+    grid-template-rows: repeat(11, auto);
+    
+  }
+
+  .showPublisherStats
+  {
+    display: grid;
+    font-size: 10px;
+    /* opacity: 0; */
+    grid-template-columns: auto 250px;
+    grid-template-rows: repeat(5, auto);
+  
+  }
+
+  .showAuthorInfoStats
+  {
+    display: grid;
+    font-size:10px;
+    /* opacity: 0; */
+    grid-template-columns: auto 250px;
+    grid-template-rows: repeat(4, auto);
+  
+  }
 }
+
+
 
 /* søke div som er skjult */
 
@@ -435,4 +454,14 @@ footer {
   font-family: var(--primaryFontFamily);
   font-size: 16px;
   color:orange;
+}
+
+@media (max-width:426px)
+{
+  .myInfoDiv {
+    display: none;
+  }
+
+ 
+
 }

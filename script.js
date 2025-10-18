@@ -272,14 +272,14 @@ function showAuthor(event)
         showAuthorInfoStats.classList.remove("grid");
         showAuthorInfoStats.classList.add("hiddenDisplay");
 
-        authtorErrorWin.classList.add("flex");
-        publisherErrorWin.classList.remove("hiddenDisplay");
-        publisherErrorWin.classList.add("scaleBookInAnim");
-        publisherErrorWin.addEventListener("animationend", function()
+        authorErrorWin.classList.add("flex");
+        authorErrorWin.classList.remove("hiddenDisplay");
+        authorErrorWin.classList.add("scaleBookInAnim");
+        authorErrorWin.addEventListener("animationend", function()
         {
-          const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
-          const publisherErrorWin = document.querySelector("#publisherErrorWin");
-          closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5);
+          const authorErrorCountText = document.querySelector("#authorErrorCountText");
+          
+          closeWindowAutomatically(authorErrorWin, authorErrorCountText, 5);
 
         }, {once:true});
         }

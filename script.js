@@ -627,10 +627,10 @@ function searchAndListResults()
   showPublisherStats.style.display = "none";
 
   // vis searchDiv og begynn
-
+  searchDiv.classList.remove("hiddenDisplay");
   searchDiv.classList.add("showDisplay");
   searchDiv.classList.add("slideInTopAnim");
-  searchDiv.classList.remove("hiddenDisplay");
+
 
   let matchFound = false;
   const otherBooksList = bookDatabase.books[currentBookArrayNumber].series.otherBooksInSeries;
@@ -714,7 +714,7 @@ function closeSearchWindow()
       searchDiv.classList.remove("slideOutRightAnim");
       searchDiv.classList.add("hiddenDisplay");
       inSearchMode = false;
-    });
+    }, {once: true});
    }
 }
 

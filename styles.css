@@ -459,14 +459,14 @@ li:hover{
 
 .slideOutRightAnim {
   animation-name: slideOutRight;
-  animation-duration: 1.5s;
+  animation-duration: 1.2s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
 
 @keyframes slideOutRight {
   0% { transform: translateX(0);}
-  100% { transform: translateX(1000);}
+  100% { transform: translateX(2000px);}
 }
 
 

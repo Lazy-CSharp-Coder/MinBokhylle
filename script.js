@@ -613,7 +613,7 @@ function searchAndListResults()
     const delayInc = 1;     
 
    
-    newListArray.forEach(function(item, index, array)
+    newListArray.forEach(function(item, index, array)  
     {
                  
       item.classList.add("slideInTopAnim");

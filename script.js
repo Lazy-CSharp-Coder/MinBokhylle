@@ -572,7 +572,7 @@ const searchDiv = document.querySelector("#searchDiv");
 function searchAndListResults()
 {
   const searchingStatus = document.querySelector("#searchingStatus");
-  const matchFoundText = document.querySelector("matchFoundText");
+  const matchFoundText = document.querySelector("#matchFoundText");
   const searchResultsList = document.querySelector("#searchResultsList");
 
   // vis searchDiv og begynn
@@ -581,31 +581,58 @@ function searchAndListResults()
   searchDiv.classList.remove("hiddenDisplay");
 
   let matchFound = false;
-  const otherBooksList = bookDatabase.books[currentBookArrayNumber].otherBooksInSeries;
-  const delay = 0;
-  const delayInc = 300;
+  const otherBooksList = bookDatabase.books[currentBookArrayNumber].series.otherBooksInSeries;
+ 
+
+  const list = Array.from(listOfBooks.children);
+  const newListArray = [];
+
+  while(searchResultsList.lastChild) searchResultsList.lastChild.remove();
 
   for(let i = 0; i < otherBooksList.length; ++i)
   {
-     listOfBooks.forEach(item =>
+     list.forEach(item =>
      {
         if(otherBooksList[i] === item.textContent)  
         {
             const newListItem = document.createElement("li");
             newListItem.textContent = item.textContent;
-            searchResultsList.appendChild(newListItem);
+            // newListItem.classList.add("hiddenDisplay");
+
+            newListArray.push(newListItem);
+          
             matchFound = true;
         }
      });
   }
   if(matchFound)
   { 
-    
-    setTimeout(matchFoundText, () => 
-    {  
-        matchFoundText.textContent = "Entries found - adding to list";
-    }, delay);
+    console.log(newListArray);
+    let delay = 0;
+    const delayInc = 0.8;     
+
+    newListArray.forEach(function(item, index)
+    {
+      searchingStatus.textContent = "Loading";
+                  
+      item.classList.add("slideInTopAnim");
+      item.classList.add("hidden");
+      item.style.animationDelay = delay + "s";
+
+      item.addEventListener("animationstart", () =>
+      {
+        item.classList.remove("hidden");
+        const entryString = `Entries found - adding entry ${index +1} to list`
+        matchFoundText.textContent = entryString;
+
+
+      });
+      searchResultsList.appendChild(item); 
+      delay += delayInc;
+    } );
+      
   }
+  
 }
 
 const otherBooksButton = document.querySelector("#otherBooksButton");

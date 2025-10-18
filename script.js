@@ -128,6 +128,28 @@ function getDateString(date)
 
 }
 
+// funskjon for å lukke ett vindu med timer
+
+function closeWindowAutomatically(divNode, countDisplay, duration)
+{
+  let remainingTime = duration;
+
+  countDisplay.textContent = remainingTime;
+
+  const countDownInterval = setInterval(() =>
+  {
+    remainingTime--;
+    countDisplay.textContent = remainingTime;
+
+    if(remainingTime <= 0)
+    {
+      clearInterval(countDownInterval);
+      divNode.classList.remove("flex");
+      divNode.classList.add("hiddenDisplay");
+    }
+  }, 1000);
+
+}
 
 // lager ett objekt som inneholder alle feltene til boken som skal manipuleres
 const showAuthorItems =
@@ -278,7 +300,7 @@ function showAuthor(event)
         authorErrorWin.addEventListener("animationend", function()
         {
           const authorErrorCountText = document.querySelector("#authorErrorCountText");
-          
+          authorErrorWin.classList.remove("scaleBookInAnim");
           closeWindowAutomatically(authorErrorWin, authorErrorCountText, 5);
 
         }, {once:true});
@@ -362,26 +384,7 @@ function removePublisher()
 const publisherErrorWin = document.querySelector("#publisherErrorWin");
 const authorErrorWin = document.querySelector("#authorErrorWin");
 
-function closeWindowAutomatically(divNode, countDisplay, duration)
-{
-  let remainingTime = duration;
 
-  countDisplay.textContent = remainingTime;
-
-  const countDownInterval = setInterval(() =>
-  {
-    remainingTime--;
-    countDisplay.textContent = remainingTime;
-
-    if(remainingTime <= 0)
-    {
-      clearInterval(countDownInterval);
-      divNode.classList.remove("flex");
-      divNode.classList.add("hiddenDisplay");
-    }
-  }, 1000);
-
-}
 
 function showPublisher()
 {

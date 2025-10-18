@@ -393,9 +393,9 @@ function showPublisher()
       showPublisherStats.classList.remove("grid");
       showPublisherStats.classList.add("hiddenDisplay");
 
-      const errorPublisher = document.querySelector("#errorPublisher");
+      const errorPublisher = document.querySelector("#publisherError");
+      errorPublisher.classList.add("flex");
       errorPublisher.classList.remove("hiddenDisplay");
-    
 
       isPublisherShowing = true;
     }

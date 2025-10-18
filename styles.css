@@ -241,6 +241,17 @@ li:hover{
 .publisherWeb {
   font-size: 10px;
 }
+
+.publisherError {
+  border:var(--primaryBorder);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 20px;
+
+}
+
+
 .authorImage {
   width: 100px;
 

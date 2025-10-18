@@ -642,8 +642,10 @@ function searchAndListResults()
 {
   // lukk author og publisher hvis de er åpne
 
-  showAuthorInfoStats.style.display = "none";
-  showPublisherStats.style.display = "none";
+  showAuthorInfoStats.classList.remove("grid");
+  showAuthorInfoStats.classList.add("hiddenDisplay");
+  showPublisherStats.classList.remove("grid");
+  showPublisherStats.classList.add("hiddenDisplay");
 
   // vis searchDiv og begynn
   searchDiv.classList.remove("hiddenDisplay");
@@ -732,6 +734,11 @@ function closeSearchWindow()
       searchDiv.classList.remove("showDisplay");
       searchDiv.classList.remove("slideOutRightAnim");
       searchDiv.classList.add("hiddenDisplay");
+
+      showAuthorInfoStats.classList.add("grid");
+      showAuthorInfoStats.classList.remove("hiddenDisplay");
+      showPublisherStats.classList.add("grid");
+      showPublisherStats.classList.remove("hiddenDisplay"); 
 
 
       inSearchMode = false;

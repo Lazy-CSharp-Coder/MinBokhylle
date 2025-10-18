@@ -419,7 +419,7 @@ li:hover{
   background-color: black;
   padding: 25px;
   width:fit-content;
-  align-self: center;
+
   border: var(--primaryBorder);
   border-radius: 4px;
   gap: 10px;
@@ -460,6 +460,11 @@ li:hover{
   100% { transform: translateY(300px);}
 }
 
+@media (max-width:426px) {
+  .creditAnchor {
+    font-size: 10px;
+  }
+}
 /* FOOTER */
 footer {
   /* display: flex;

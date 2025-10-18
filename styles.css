@@ -389,6 +389,17 @@ li:hover{
   animation-delay: 0.2s;
 }
 
+.creditIconDiv 
+{
+  flex-direction: column;
+  position: fixed;
+  bottom:110px;
+  background-color: var(--headerBackgroundColor);
+  padding: 25px;
+  width:fit-content;
+  align-self: center;
+}
+
 @keyframes fadeInOut {
   0% { opacity:1}
   100% { opacity: 0}

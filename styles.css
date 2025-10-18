@@ -123,8 +123,8 @@ h2 {
 
 }
 
-.main {
-  display: flex;
+main {
+  /* display: flex; */
   flex-grow: 1;
 
 }

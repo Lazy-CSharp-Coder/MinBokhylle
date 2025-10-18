@@ -265,6 +265,7 @@ function showAuthor(event)
       }
       else
       {
+        console.log("in error");
          showAuthorItems.setErrorMsg();
          showAuthorInfo();
         // vis feilmelding om at forfatteren var ikke i databasen

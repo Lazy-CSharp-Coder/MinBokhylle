@@ -599,7 +599,7 @@ function removeAllAndDisplaySearch()
    {
      windowOpenNode = showAuthorInfoStats;
      removeAuthorInfo();
-   }
+  }
    if(isPublisherShowing)
    {
      if(windowOpenNode == undefined) windowOpenNode = showPublisherStats;
@@ -609,6 +609,8 @@ function removeAllAndDisplaySearch()
    if(windowOpenNode) windowOpenNode.addEventListener("animationend", function () 
    {
      searchAndListResults();
+     showAuthorInfoStats.style.display = "none";
+     showPublisherStats.style.display = "none";
 
    }, {once:true});
 
@@ -698,6 +700,20 @@ function searchAndListResults()
       
   }
   
+}
+
+function closeSearchWindow()
+{
+   if(inSearchMode)
+   {
+    searchAndListResults.classList.add("slideOutBottom");
+    searchAndListResults.addEventListener("animationend", () =>
+    {
+      searchAndListResults.classList.remove("showDisplay");
+      searchAndListResults.classList.remove("slideOutBottom");
+      searchAndListResults.classList.add("hideDisplay");
+    });
+   }
 }
 
 const otherBooksButton = document.querySelector("#otherBooksButton");

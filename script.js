@@ -350,6 +350,28 @@ function removePublisher()
    }
 }
 
+const windowPublisher = 1;
+const windowAuthor = 2;
+let timeleft = 5;
+const closeWindowText = document.querySelector("#closeWindowText");
+let errorWindowToDisplay = windowPublisher;
+const publisherError = document.querySelector("#publisherError");
+
+function errorCountDown()
+{
+   if(errorWindowToDisplay == windowPublisher)
+   {
+     closeWindowText.textContent = timeleft;
+     if(timeleft <= 0) 
+     {
+      publisherError.classList.remove("flex");
+      publisherError.classList.add("hiddenDisplay");
+      clearInterval(timerInterval);
+     }
+     else --timeleft;
+   }   
+}
+
 function showPublisher()
 {
    if(inSearchMode)
@@ -393,11 +415,11 @@ function showPublisher()
       showPublisherStats.classList.remove("grid");
       showPublisherStats.classList.add("hiddenDisplay");
 
-      const errorPublisher = document.querySelector("#publisherError");
-      errorPublisher.classList.add("flex");
-      errorPublisher.classList.remove("hiddenDisplay");
 
-      isPublisherShowing = true;
+      publisherError.classList.add("flex");
+      publisherError.classList.remove("hiddenDisplay");
+
+      setInterval(errorCountDown, 1000);
     }
    
 }

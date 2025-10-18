@@ -29,6 +29,7 @@ body {
   background-color: var(--primaryBackgroundColor);
   color: var(--primaryTextColor);
   cursor: pointer;
+  overflow: hidden;
 }
 
 /* HEADER */

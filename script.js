@@ -545,20 +545,69 @@ creditButton.addEventListener("click", function ()
 
 });
 
-function hamburgerToggle() {
-  console.log("Hi from hamburgerToggle");
 
-  const navListElement = document.querySelector(".navList"); // Bevist brukt klasse for kun et element med det klassenavnet
-  console.log(navListElement);
+// searching med tilhørende animasjon
 
-  // Metode 1: Skrive CSS i JS som blir inline-CSS
-  navListElement.style.display = "flex";
-  navListElement.style.flexDirection = "column";
+function setSearchingPointsChildren(parent)
+{
+   const pointChild = [];
+   let animDelay = 1.8;
+   const delayDecrease = 0.8;
 
-  // Metode 2: Endre aktivt klassenavn via external-CSS fil
-  /*navListElement.classList.add("show");
-  navListElement.classList.remove("hidden");*/
+   for(let i = 0; i < 3; i++)
+   {
+       pointChild[i] = document.createElement("p");
+       pointChild[i].classList.add("pointAnim");
+       pointChild[i].style.animationDelay = animDelay + "s";
+       animDelay -= delayDecrease;
+       parent.appendChild(pointChild[i]);
+   }
+
+   return parent;
 }
 
-// Gjør funksjonen tilgjengelig i globalt scope slik at den kan brukes i inline onclick-egenskaper.
-//globalThis.hamburgerToggle = hamburgerToggle;
+
+const searchDiv = document.querySelector("#searchDiv");
+
+function searchAndListResults()
+{
+  const searchingStatus = document.querySelector("#searchingStatus");
+  const matchFoundText = document.querySelector("matchFoundText");
+  const searchResultsList = document.querySelector("#searchResultsList");
+
+  // vis searchDiv og begynn
+
+  searchDiv.classList.add("showDisplay");
+  searchDiv.classList.remove("hiddenDisplay");
+
+  let matchFound = false;
+  const otherBooksList = bookDatabase.books[currentBookArrayNumber].otherBooksInSeries;
+  const delay = 0;
+  const delayInc = 300;
+
+  for(let i = 0; i < otherBooksList.length; ++i)
+  {
+     listOfBooks.forEach(item =>
+     {
+        if(otherBooksList[i] === item.textContent)  
+        {
+            const newListItem = document.createElement("li");
+            newListItem.textContent = item.textContent;
+            searchResultsList.appendChild(newListItem);
+            matchFound = true;
+        }
+     });
+  }
+  if(matchFound)
+  { 
+    
+    setTimeout(matchFoundText, () => 
+    {  
+        matchFoundText.textContent = "Entries found - adding to list";
+    }, delay);
+  }
+}
+
+const otherBooksButton = document.querySelector("#otherBooksButton");
+otherBooksButton.addEventListener("click", searchAndListResults);
+

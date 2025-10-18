@@ -379,7 +379,7 @@ li:hover{
   font-size: 20px;
 }
 
-.point1Anim, .point2Anim, .point3Anim {
+.pointAnim {
   animation-name: fadeInOut;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
@@ -387,15 +387,15 @@ li:hover{
   animation-iteration-count: infinite;
 }
 
-.point1Anim {
+.point1 {
   animation-delay: 1.8s;
 }
 
-.point2Anim {
+.point2 {
   animation-delay: 1s;
 }
 
-.point3Anim {
+.point3 {
   animation-delay: 0.2s;
 }
 

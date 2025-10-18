@@ -621,12 +621,13 @@ function searchAndListResults()
 
       item.addEventListener("animationstart", () =>
       {
+      
         item.classList.remove("hidden");
         const entryString = `Entries found - adding entry ${index +1} to list`
         matchFoundText.textContent = entryString;
 
-
       });
+      item.addEventListener("animationend", () => { soundEffects.enterListItems.play(); })
       searchResultsList.appendChild(item); 
       delay += delayInc;
     } );

@@ -72,15 +72,18 @@
          </div>
        </div>
        <div id="searchDiv" class="flex searchDiv">
-        <img class="searchingIcon" src="Icons/searching1.png" alt="icon not found">
-          <p class="searchingText">Searching</p> 
+        <div class="flex searchingAnimDiv">
+          <img class="searchingIcon" src="Icons/searching1.png" alt="icon not found">
+          <p id="searchingStatus" class="searchingText">Searching</p> 
           <p id="searchPoint1" class="searchPoint point1Anim">.</p>
           <p id="searchPoint2" class="searchPoint point2Anim">.</p>
           <p id="searchPoint3" class="searchPoint point3Anim">.</p>
-          <div class="statusSearchDiv">
-          <p id="matchFoundText" class="matchFoundText">Entries found in database</p>
-          </div>>
-
+         </div>
+          <p id="matchFoundText" class="matchFoundText">Entries found in database...</p>
+         <ul id="searchResultsList" class="searchResultsList">
+          <li>Beyond the Shadows</li>
+          <li>Shadows End</li>
+         </ul>
 
        </div>
        <div class="flex authorPublisherWrapper">

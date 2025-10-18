@@ -39,7 +39,8 @@ header {
   position: sticky;
   top: 0;
   padding: 0 30px;
-  border : 1px solid white;
+  border : 2px solid white;
+  border-radius: 4px;
   height: 106px;
   z-index: 10;
   background-color: black;
@@ -116,7 +117,7 @@ main {
 
 .hero {
   display: grid;
-  grid-template-columns: 200px 562px 468px;
+  grid-template-columns: 210px 562px 468px;
   justify-self:center;
 
   /* display: flex;
@@ -133,8 +134,9 @@ main {
 .listOfBooks
 {
   flex-direction: column;
-  width:200px;
+  /* width:250px; */
   gap: 20px;
+  font-size: 14px;
 }
 
 li {
@@ -412,7 +414,7 @@ li:hover{
 {
   flex-direction: column;
   position: fixed;
-  bottom:110px;
+  bottom:115px;
   background-color: black;
   padding: 25px;
   width:fit-content;
@@ -451,7 +453,8 @@ footer {
   align-items: center;
   text-align: center;
   height: 106px;
-  border: 1px solid white;
+  border: 2px solid white;
+  border-radius: 4px;
   padding : 0 20px;
 }
 

@@ -8,7 +8,7 @@ const bookDatabase =
                             "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
               language : "English",
               published : new Date(2008, 10, 1),
-              publisher : "Orbit"
+              publisher : "Orbit2"
             }, 
             { name : "Beyond The Shadows",
               author : "Brent Weeks",
@@ -287,7 +287,7 @@ const displayPublisherItems =
    founded : document.querySelector("#publisherFounded"),
    country : document.querySelector("#publisherCountry"),
    founders : document.querySelector("#publisherFounders"),
-   webpage : document.querySelector("publisherWebPage"),
+   webpage : document.querySelector("#publisherWebPage"),
 
    retreivePublisher : function (publisherString)
    {
@@ -388,8 +388,17 @@ function showPublisher()
    else
    {
       console.log("error publisher routine");
+      console.log(displayPublisherItems);
+     
+      showPublisherStats.classList.remove("grid");
+      showPublisherStats.classList.add("hiddenDisplay");
 
-   }
+      const errorPublisher = document.querySelector("#errorPublisher");
+      errorPublisher.classList.remove("hiddenDisplay");
+    
+
+      isPublisherShowing = true;
+    }
    
 }
 

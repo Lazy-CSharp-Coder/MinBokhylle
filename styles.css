@@ -423,6 +423,7 @@ li:hover{
   border: var(--primaryBorder);
   border-radius: 4px;
   gap: 10px;
+ 
 }
 
 .creditAnchor {

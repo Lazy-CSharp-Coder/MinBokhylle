@@ -531,12 +531,13 @@ creditButton.addEventListener("click", function ()
       creditIconDiv.add("hiddenDisplay");
       creditIconDiv.remove("slideOutBottomAnim");
     } , {once: true});
+    isCreditsDisplaying = false;
 
   }
   else
   {
-   creditIconDiv.classList.add("showDisplay");
    creditIconDiv.classList.add("slideInBottomAnim");
+   creditIconDiv.classList.add("showDisplay");
    creditIconDiv.classList.remove("hiddenDisplay");
    isCreditsDisplaying = true;
   }

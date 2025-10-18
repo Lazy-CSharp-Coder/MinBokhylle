@@ -357,7 +357,7 @@ const publisherErrorCountText = document.querySelector("#publisherErrorCountText
 const authorcloseWindowText = document.querySelector("#authorErrorCountText")
 let errorWindowToDisplay = windowPublisher;
 const publisherErrorWin = document.querySelector("#publisherError");
-
+const timerInterval = setInterVal(errorCountDown, 1000);
 
 function errorCountDown()
 {
@@ -367,9 +367,8 @@ function errorCountDown()
      if(timeleft <= 0) 
      {
       publisherErrorWin.classList.remove("flex");
-      publisherErrorWin.classList.remove("scaleBookInAnim");
       publisherErrorWin.classList.add("hiddenDisplay");
-      clearInterval(setInterval(errorCountDown,1000));
+      clearInterval(timerInterval);
      }
      else --timeleft;
    }   
@@ -419,12 +418,13 @@ function showPublisher()
       showPublisherStats.classList.add("hiddenDisplay");
 
 
-      publisherError.classList.add("flex");
-      publisherError.classList.remove("hiddenDisplay");
-      publisherError.classList.add("scaleBookInAnim");
-      publisherError.addEventListener("animationend", function()
+      publisherErrorWin.classList.add("flex");
+      publisherErrorWin.classList.remove("hiddenDisplay");
+      publisherErrorWin.classList.add("scaleBookInAnim");
+      publisherErrorWin.addEventListener("animationend", function()
       {
-          setInterval(errorCountDown, 1000);
+          errorCountDown();
+          publisherErrorWin.classList.remove("scaleBookInAnim");
       }, {once:true});
     }
    

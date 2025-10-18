@@ -350,28 +350,26 @@ function removePublisher()
    }
 }
 
-const windowPublisher = 1;
-const windowAuthor = 2;
-let timeleft = 5;
-const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
-const authorcloseWindowText = document.querySelector("#authorErrorCountText")
-let errorWindowToDisplay = windowPublisher;
-const publisherErrorWin = document.querySelector("#publisherErrorWin");
-const timerInterval = setInterVal(errorCountDown, 1000);
 
-function errorCountDown()
+function closeWindowAutomatically(divNode, countDisplay, duration)
 {
-   if(errorWindowToDisplay == windowPublisher)
-   {
-     publisherErrorCountText.textContent = timeleft;
-     if(timeleft <= 0) 
-     {
-      publisherErrorWin.classList.remove("flex");
-      publisherErrorWin.classList.add("hiddenDisplay");
-      clearInterval(timerInterval);
-     }
-     else --timeleft;
-   }   
+  let remainingTime = duration;
+
+  countDisplay.textContent = remainingTime;
+
+  const countDownInterval = setInterval(() =>
+  {
+    remainingTime--;
+    countDisplay.textContent = remainingTime;
+
+    if(remainingTime <= 0)
+    {
+      clearInterval(countDownInterval);
+      divNode.classList.remove("flex");
+      divNode.classList.add("hiddenDisplay");
+    }
+  }, 1000);
+
 }
 
 function showPublisher()
@@ -423,8 +421,10 @@ function showPublisher()
       publisherErrorWin.classList.add("scaleBookInAnim");
       publisherErrorWin.addEventListener("animationend", function()
       {
-          errorCountDown();
-          publisherErrorWin.classList.remove("scaleBookInAnim");
+        const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
+        const publisherErrorWin = document.querySelector("#publisherErrorWin");
+        closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5);
+
       }, {once:true});
     }
    

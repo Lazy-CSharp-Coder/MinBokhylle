@@ -705,12 +705,14 @@ function closeSearchWindow()
 {
    if(inSearchMode)
    {
-    searchAndListResults.classList.add("slideOutBottom");
-    searchAndListResults.addEventListener("animationend", () =>
+    
+    searchDiv.classList.remove("slideInTopAnim");
+    searchDiv.classList.add("slideOutBottomAnim");
+    searchDiv.addEventListener("animationend", () =>
     {
-      searchAndListResults.classList.remove("showDisplay");
-      searchAndListResults.classList.remove("slideOutBottom");
-      searchAndListResults.classList.add("hideDisplay");
+      searchDiv.classList.remove("showDisplay");
+      searchDiv.classList.remove("slideOutBottomAnim");
+      searchDiv.classList.add("hiddenDisplay");
       inSearchMode = false;
     });
    }

@@ -202,6 +202,12 @@ function removeAuthorInfo()
 
 function showAuthor(event)
 {
+    if(inSearchMode)
+    {
+      actionNotPermitted();
+      return;
+    }
+
     let numInList = -1;
   
     if(Array.isArray(bookDatabase.books[currentBookArrayNumber].author))
@@ -332,6 +338,12 @@ function removePublisher()
 
 function showPublisher()
 {
+   if(inSearchMode)
+   {
+     actionNotPermitted();
+     return;
+   }
+
    const publisherString = bookDatabase.books[currentBookArrayNumber].publisher;
    console.log(publisherString);
    if(displayPublisherItems.retreivePublisher(publisherString)) // publisher found
@@ -571,6 +583,13 @@ const searchDiv = document.querySelector("#searchDiv");
 const searchingStatus = document.querySelector("#searchingStatus");
 const matchFoundText = document.querySelector("#matchFoundText");
 const searchResultsList = document.querySelector("#searchResultsList");
+let inSearchMode = false;
+
+function actionNotPermitted()
+{
+  // legg inn audion her
+
+}
 
 function removeAllAndDisplaySearch()
 {
@@ -592,7 +611,10 @@ function removeAllAndDisplaySearch()
      searchAndListResults();
 
    }, {once:true});
+
    else searchAndListResults();
+   
+   inSearchMode = true;
 }
 
 

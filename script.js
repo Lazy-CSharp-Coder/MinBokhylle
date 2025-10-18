@@ -268,13 +268,22 @@ function showAuthor(event)
       }
       else
       {
-        console.log("in error");
-         showAuthorItems.setErrorMsg();
-         showAuthorInfo();
-         isAuthorShowing = true;
-        // vis feilmelding om at forfatteren var ikke i databasen
-      }
-  
+
+        showAuthorInfoStats.classList.remove("grid");
+        showAuthorInfoStats.classList.add("hiddenDisplay");
+
+        authtorErrorWin.classList.add("flex");
+        publisherErrorWin.classList.remove("hiddenDisplay");
+        publisherErrorWin.classList.add("scaleBookInAnim");
+        publisherErrorWin.addEventListener("animationend", function()
+        {
+          const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
+          const publisherErrorWin = document.querySelector("#publisherErrorWin");
+          closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5);
+
+        }, {once:true});
+        }
+    
    }
 
 }
@@ -350,6 +359,8 @@ function removePublisher()
    }
 }
 
+const publisherErrorWin = document.querySelector("#publisherErrorWin");
+const authorErrorWin = document.querySelector("#authorErrorWin");
 
 function closeWindowAutomatically(divNode, countDisplay, duration)
 {
@@ -415,15 +426,13 @@ function showPublisher()
       showPublisherStats.classList.remove("grid");
       showPublisherStats.classList.add("hiddenDisplay");
 
-
       publisherErrorWin.classList.add("flex");
       publisherErrorWin.classList.remove("hiddenDisplay");
       publisherErrorWin.classList.add("scaleBookInAnim");
       publisherErrorWin.addEventListener("animationend", function()
       {
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
-        const publisherErrorWin = document.querySelector("#publisherErrorWin");
-        closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5);
+            closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5);
 
       }, {once:true});
     }

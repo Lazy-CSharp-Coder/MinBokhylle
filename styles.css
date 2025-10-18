@@ -248,10 +248,14 @@ li:hover{
   justify-content: center;
   align-items: center;
   padding: 20px 20px;
+  font-family: var(--primaryFontFamily);
 
 }
 
-
+.closeWindowText {
+  font-family: var(--primaryFontFamily);
+  font-size: 20px;
+}
 .authorImage {
   width: 100px;
 

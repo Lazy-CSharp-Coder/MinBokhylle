@@ -707,11 +707,11 @@ function closeSearchWindow()
    {
     
     searchDiv.classList.remove("slideInTopAnim");
-    searchDiv.classList.add("slideOutBottomAnim");
+    searchDiv.classList.add("slideOutRightAnim");
     searchDiv.addEventListener("animationend", () =>
     {
       searchDiv.classList.remove("showDisplay");
-      searchDiv.classList.remove("slideOutBottomAnim");
+      searchDiv.classList.remove("slideOutRightAnim");
       searchDiv.classList.add("hiddenDisplay");
       inSearchMode = false;
     });

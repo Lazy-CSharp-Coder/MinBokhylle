@@ -174,7 +174,7 @@ function closeWindowAutomatically(divNode, countDisplay, duration, nodeReapperin
 }
 
 // lager ett objekt som inneholder alle feltene til boken som skal manipuleres
-const showAuthorItems =
+const displayAuthorItems =
 {
   authorName : document.querySelector("#authorName"),
   authorGenderImage : document.querySelector("#authorGenderImage"),
@@ -289,8 +289,8 @@ function showAuthor(event)
           soundEffects.accessing.play();
           authorDiv.classList.add("scaleBookInAnim");
           authorDiv.classList.remove("scaleBookOutAnim");
-          if(numInList != -1) showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
-          else showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
+          if(numInList != -1) displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+          else displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
           isAuthorShowing = true;
           authorNumberShowing = numInList;
         }
@@ -312,10 +312,10 @@ function showAuthor(event)
       
       if(numInList != -1)
       {
-        completed = showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+        completed = displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
       
       }
-      else completed = showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
+      else completed = displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
       if(completed)
       {
         soundEffects.accessing.play(); 
@@ -346,7 +346,7 @@ function showAuthor(event)
 
 }
 
-
+// objekt for publisher items - henter alle id'ene der
 
 const displayPublisherItems = 
 {

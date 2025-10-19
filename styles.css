@@ -384,10 +384,10 @@ li:hover{
   flex-direction: column;
   /* display: none; */
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   
   width: 350px;
-  height: 500px;
+  height:fit-content;
   background-color:black;
   border: var(--primaryBorder);
   gap: 5px;
@@ -455,6 +455,7 @@ li:hover{
   border: var(--primaryBorder);
   font-family: var(--primaryFontFamily);
   align-self:center;
+  justify-self:flex-end;
 }
 
 .clickToAccessText {

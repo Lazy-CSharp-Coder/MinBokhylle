@@ -786,6 +786,9 @@ function searchAndListResults()
   }
   else
   {
+    setTimeout(()=>{
+
+    }, 1000); 
     // legg inn no matches found
   }
   

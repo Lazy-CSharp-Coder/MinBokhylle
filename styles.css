@@ -85,6 +85,9 @@ header {
     h1 {
       font-size: 15px;
     }
+    body {
+      overflow-y: auto;
+    }
 }
 
 .flex {
@@ -141,7 +144,8 @@ main {
 }
 
 .section {
-  margin-top: 40px;  
+  margin-top: 40px;
+  margin-bottom: 20px;  
   height: 100%;
 }
 
@@ -205,6 +209,7 @@ li:hover{
   padding: 20px 40px;
   column-gap: 40px;
   background-color: var(--windowBackgroundColor);
+  z-index: 10;
 
 }
 

@@ -235,6 +235,8 @@ function removeAuthorInfo()
   showAuthorInfoStats.addEventListener("animationend", function() 
     {
        showAuthorInfoStats.classList.add("hidden");
+       showAuthorInfoStats.classList.remove("scaleBookOutAnim");
+       showAuthorInfoStats.classList.remove("show");
 
     }, { once: true});
   // showAuthorInfoStats.classList.remove("hidden");

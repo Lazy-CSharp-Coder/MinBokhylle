@@ -11,7 +11,8 @@
   --primaryBackgroundColor : black;
   --primaryTextColor: #dcdcdc;
   --primaryFontFamily : "BBH Sans Bogle";
-  --secondaryFontFamily : "Roboto"
+  --secondaryFontFamily : "Roboto";
+  --windowBackgroundColor : black;
 }
 
 /* BODY */
@@ -27,6 +28,8 @@ body {
 
   font-family: "Roboto";
   background-color: var(--primaryBackgroundColor);
+  background-image: url("Images/books1.jpg");
+  background-size: cover;
   color: var(--primaryTextColor);
   cursor: pointer;
   overflow: hidden;
@@ -525,6 +528,8 @@ footer {
   border: 2px solid white;
   border-radius: 4px;
   padding : 0 20px;
+  background-color: black;
+
 }
 
 .creditButton {

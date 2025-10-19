@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html lang="no">
-  <!-- head = informasjon til nettleser -->
-  <head>
-    <title>Hjem</title>
-    <link href="code.png" rel="icon" type="image/png" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!-- External files -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <!-- body = informasjon til nettsiden -->
-  <body>
-    <header class="flex">
-      <img class="booksIcon" src="/Icons/books.png" alt="books icon missing" />
-      <h1> Books from my bookshelf</h1>
-      <img class="darklightIcon" src="/Icons/darklight.png" alt="darklight mode icon">
-      <!-- <nav class="headerNav">
+<!-- head = informasjon til nettleser -->
+
+<head>
+  <title>Hjem</title>
+  <link href="code.png" rel="icon" type="image/png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <!-- External files -->
+  <link rel="stylesheet" href="styles.css" />
+  <script type="module" src="script.js"></script>
+</head>
+<!-- body = informasjon til nettsiden -->
+
+<body>
+  <header class="flex">
+    <img class="booksIcon" src="/Icons/books.png" alt="books icon missing" />
+    <h1> Books from my bookshelf</h1>
+    <img class="darklightIcon" src="/Icons/darklight.png" alt="darklight mode icon">
+    <!-- <nav class="headerNav">
         <ul class="navList">
           <li>
             <a href="#home">Home</a>
@@ -35,120 +37,144 @@
           alt="Hamburger meny ikon"
         />
       </nav> -->
-    </header>
+  </header>
 
-    <main>
-      <section id="hero" class="section hero">
-       <div class="flex headerAndListDiv">
+  <main>
+    <section id="hero" class="section hero">
+      <div class="flex headerAndListDiv">
         <h2> Books from database</h2>
         <ul id="listOfBooks" class="flex listOfBooks">
-       </div>
-          <!-- <li>The Way of Shadows</li>
+      </div>
+      <!-- <li>The Way of Shadows</li>
           <li>Beyond The Shadows</li>
           <li>Ship Of Magic</li> -->
-       </ul>
+      </ul>
 
-       <div id ="showBookInfoDiv" class="showBookInfoDiv hidden">
-          <p class="keyTitleClass">Book name :</p> <p id="bookName" class="titleBookText"></p> 
-          <p class="keyTitleClass">Author</p>
-          <ul id="authorsList" class="authorsList">
-            <li></li>  
-    
-          </ul>
-          <!-- <div class="seriesInfo"> -->
-            <p class="keyTitleClass">Series name :</p> <p id="seriesName" class="seriesText"></p>
-            <p class="keyTitleClass">Number in series :</p> <p id="seriesNumber" class="dataText"></p>
-            <p class="keyTitleClass">Series completed :</p> <p id="seriesCompleted" class="dataText"></p>
-            <p class="keyTitleClass">Other books in series : </p> <p id="otherBooksInSeries" class="dataText">
-            <button id="otherBooksButton" class="otherBooksButton">Search for matches</button></p>
-            <!-- <button id="otherBooksButton" class="otherBooksButton">Search for matches</button> -->
-          <!-- </div> -->
-            <p class="keyTitleClass">Genre : </p> <p id="genre" class="dataText"></p>
-            <p class="keyTitleClass">Characters :</p> <p id="characters" class="dataText"></p>
-            <p class="keyTitleClass">Language :</p> <p id="language" class="dataText"></p>
-            <p class="keyTitleClass">Published</p> <p id="published" class="dataText"></p>
-            <p class="keyTitleClass">Publisher :</p> <p id="publisher" class="dataText">Origin <button id="publisherButton" class="publisherButton">Search Database </button></p>
-            <!-- <button id="publisherButton" class="publisherButton">Search Database </button> -->
-         </div>
-       </div>
-       <div id="searchDiv" class="searchDiv hiddenDisplay">
+      <div id="showBookInfoDiv" class="showBookInfoDiv hidden">
+        <p class="keyTitleClass">Book name :</p>
+        <p id="bookName" class="titleBookText"></p>
+        <p class="keyTitleClass">Author</p>
+        <ul id="authorsList" class="authorsList">
+          <li></li>
+
+        </ul>
+        <!-- <div class="seriesInfo"> -->
+        <p class="keyTitleClass">Series name :</p>
+        <p id="seriesName" class="seriesText"></p>
+        <p class="keyTitleClass">Number in series :</p>
+        <p id="seriesNumber" class="dataText"></p>
+        <p class="keyTitleClass">Series completed :</p>
+        <p id="seriesCompleted" class="dataText"></p>
+        <p class="keyTitleClass">Other books in series : </p>
+        <p id="otherBooksInSeries" class="dataText">
+          <button id="otherBooksButton" class="otherBooksButton">Search for matches</button>
+        </p>
+        <!-- <button id="otherBooksButton" class="otherBooksButton">Search for matches</button> -->
+        <!-- </div> -->
+        <p class="keyTitleClass">Genre : </p>
+        <p id="genre" class="dataText"></p>
+        <p class="keyTitleClass">Characters :</p>
+        <p id="characters" class="dataText"></p>
+        <p class="keyTitleClass">Language :</p>
+        <p id="language" class="dataText"></p>
+        <p class="keyTitleClass">Published</p>
+        <p id="published" class="dataText"></p>
+        <p class="keyTitleClass">Publisher :</p>
+        <p id="publisher" class="dataText">Origin <button id="publisherButton" class="publisherButton">Search Database
+          </button></p>
+        <!-- <button id="publisherButton" class="publisherButton">Search Database </button> -->
+      </div>
+      </div>
+      <div id="searchDiv" class="searchDiv hiddenDisplay">
         <div class="flex searchingAnimDiv">
           <img class="searchingIcon" src="Icons/searching1.png" alt="icon not found">
-          <p id="searchingStatus" class="searchingStatus">Searching</p> 
+          <p id="searchingStatus" class="searchingStatus">Searching</p>
           <p id="searchPoint1" class="searchPoint pointAnim point1">.</p>
           <p id="searchPoint2" class="searchPoint pointAnim point2">.</p>
           <p id="searchPoint3" class="searchPoint pointAnim point3">.</p>
-         </div>
-          <p id="matchFoundText" class="matchFoundText">Awaiting search</p>
-         <ul id="searchResultsList" class="searchResultsList">
-        
-         </ul>
+        </div>
+        <p id="matchFoundText" class="matchFoundText">Awaiting search</p>
+        <ul id="searchResultsList" class="searchResultsList">
 
-       </div>
-       <div class="flex authorPublisherWrapper">
+        </ul>
+
+      </div>
+      <div class="flex authorPublisherWrapper">
         <div id="showAuthorInfoStats" class="grid showAuthorInfoStats hidden">
           <p></p> <img id="authorImage" class="authorImage" src="Images/brentweeks.png">
-          <p class="keyTitleClass">Author name :</p> <p id="authorName" class="colorMain">Brent Weeks </p>
-          <p class="keyTitleClass">Born :</p> <p id="authorBorn" class="dataText">12. July 1988</p>
-          <p class="keyTitleClass">Location :</p> <p id="authorLocation" class="dataText">Independence, Missori U.S</p>
-          <P class="keyTitleClass">Pens as :</p> <p id="authorPensAs" class="dataText">Brent Weeks</p>
-         </div>
-         <div id="authorErrorWin" class="errorWin hiddenDisplay">
+          <p class="keyTitleClass">Author name :</p>
+          <p id="authorName" class="colorMain">Brent Weeks </p>
+          <p class="keyTitleClass">Born :</p>
+          <p id="authorBorn" class="dataText">12. July 1988</p>
+          <p class="keyTitleClass">Location :</p>
+          <p id="authorLocation" class="dataText">Independence, Missori U.S</p>
+          <P class="keyTitleClass">Pens as :</p>
+          <p id="authorPensAs" class="dataText">Brent Weeks</p>
+        </div>
+        <div id="authorErrorWin" class="errorWin hiddenDisplay">
           <img src="/Icons/error.png" id="errorImg" class="errorImg" alt="no error img">
           <p class="publisherErrorText">Entry not found</p>
           <p>This window will close in</p>
           <p id="authorErrorCountText" class="errorCountText"></p>
 
-         </div>
-         <div id="showPublisherStats" class="grid showPublisherStats hidden">
+        </div>
+        <div id="showPublisherStats" class="grid showPublisherStats hidden">
           <!-- <p></p> <img id="authorImage" class="authorImage" src="Images/brentweeks.png"> -->
-        
-          <p class="keyTitleClass">Publisher name :</p> <p id="publisherName" class="colorMain">Bantam Books </p>
-          <p class="keyTitleClass">Founded :</p> <p id="publisherFounded" class="dataText">12. July 1988</p>
-          <p class="keyTitleClass">Country of origin :</p> <p id="publisherCountry" class="dataText">United States</p>
-          <P class="keyTitleClass">Founders :</p> <p id="publisherFounders" class="dataText">Some guys</p>
-          <P class="keyTitleClass">Web page :</p> <a href="https://www.gmail.com" id="publisherWebPage" class="publisherWeb dataText">https://www.randomhousebooks.com/imprint/bantam-books/</a>
-         </div>
-         <div id="publisherErrorWin" class="errorWin hiddenDisplay">
+
+          <p class="keyTitleClass">Publisher name :</p>
+          <p id="publisherName" class="colorMain">Bantam Books </p>
+          <p class="keyTitleClass">Founded :</p>
+          <p id="publisherFounded" class="dataText">12. July 1988</p>
+          <p class="keyTitleClass">Country of origin :</p>
+          <p id="publisherCountry" class="dataText">United States</p>
+          <P class="keyTitleClass">Founders :</p>
+          <p id="publisherFounders" class="dataText">Some guys</p>
+          <P class="keyTitleClass">Web page :</p> <a href="https://www.gmail.com" id="publisherWebPage"
+            class="publisherWeb dataText">https://www.randomhousebooks.com/imprint/bantam-books/</a>
+        </div>
+        <div id="publisherErrorWin" class="errorWin hiddenDisplay">
           <img src="/Icons/error.png" id="errorImg" class="errorImg" alt="no error img">
           <p class="publisherErrorText">Entry not found</p>
           <p>This window will close in</p>
           <p id="publisherErrorCountText" class="errorCountText">-</p>
 
-         </div>
-       </div>
-     
-      </section>
-      <div id="creditIconDiv" class="creditIconDiv hiddenDisplay">
-        <a href="https://www.flaticon.com/free-icons/books" class="creditAnchor" title="books icons">Books icons created by Freepik - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/cloudy" class="creditAnchor" title="cloudy icons">Cloudy icons created by mnauliady - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/email" class="creditAnchor" title="email icons">Email icons created by rukanicon - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/github" class="creditAnchor" title="github icons">Github icons created by Freepik - Flaticon</a>
-        <a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons created by Picons - Flaticon</a>
-      </div>
-    </main>
-
-    <footer class="flex">
-  
-        <img class="kodeloftLogoImg" src="Icons/kodeloftalpha_hvit.png" alt="fant ikke logo">
-        <button id="creditButton" class="creditButton">Icons created by</button>
-
-      <div class="flex myInfoWrapper">
-        <div class="myInfoDiv">
-          <p class="footerText">Web-page created by :</p>
-          <p class="footerTextName">Harald N.</p>
-        </div>
-        
-        <div class="flex contactInfo">
-          <a href="mailto:haraldn.kodeloftet@gmail.com" target="_blank">
-            <img src="Icons/email.png" class="emailIcon" alt="fant ikke icon" />
-          </a>
-          <a href="https://github.com/Lazy-CSharp-Coder" target="_blank">
-            <img src="Icons/github.png" class="githubIcon" alt="fant ikke icon" />
-          </a>
         </div>
       </div>
-      <!-- Logo, navigasjon, kreditasjon, betingelser (TOS - Terms of Service), søkefelt, SoME-->
-    </footer>
-  </body>
+
+    </section>
+    <div id="creditIconDiv" class="creditIconDiv hiddenDisplay">
+      <a href="https://www.flaticon.com/free-icons/books" class="creditAnchor" title="books icons">Books icons created by Freepik - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/cloudy" class="creditAnchor" title="cloudy icons">Cloudy icons created by mnauliady - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/email" class="creditAnchor" title="email icons">Email icons created by rukanicon - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/github" class="creditAnchor" title="github icons">Github icons created by Freepik - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/error" title="error icons">Error icons created by Picons - Flaticon</a>
+
+
+    </div>
+  </main>
+
+  <footer class="flex">
+
+    <img class="kodeloftLogoImg" src="Icons/kodeloftalpha_hvit.png" alt="fant ikke logo">
+    <button id="creditButton" class="creditButton">Icons created by</button>
+
+    <div class="flex myInfoWrapper">
+      <div class="myInfoDiv">
+        <p class="footerText">Web-page created by :</p>
+        <p class="footerTextName">Harald N.</p>
+      </div>
+
+      <div class="flex contactInfo">
+        <a href="mailto:haraldn.kodeloftet@gmail.com" target="_blank">
+          <img src="Icons/email.png" class="emailIcon" alt="fant ikke icon" />
+        </a>
+        <a href="https://github.com/Lazy-CSharp-Coder" target="_blank">
+          <img src="Icons/github.png" class="githubIcon" alt="fant ikke icon" />
+        </a>
+      </div>
+    </div>
+    <!-- Logo, navigasjon, kreditasjon, betingelser (TOS - Terms of Service), søkefelt, SoME-->
+  </footer>
+</body>
+
 </html>

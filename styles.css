@@ -14,6 +14,7 @@
   --secondaryFontFamily : "Roboto";
   --windowBackgroundColor : black;
   --bookListTextColor : white;
+  --itemTextColor: azure;
 }
 
 /* BODY */
@@ -86,12 +87,24 @@ header {
 
 .flex {
   display: flex;
+  
 }
 
 .grid {
   display:grid;
 }
 /* MAIN */
+
+.lightMode {
+  background-image: url("/Images/books3.jpg");
+  --bookListTextColor : black;
+  --windowBackgroundColor :white;
+  --primaryTextColor : rgb(20, 20, 20);
+  --itemTextColor:darkslategrey;
+  
+
+}
+
 ul li::marker {
   content: "💠";  /* Use an emoji or a character */
 }
@@ -193,7 +206,7 @@ li:hover{
 
 
 .dataText {
-  color:azure;
+  color:var(--itemTextColor);
 
 }
 
@@ -202,7 +215,7 @@ li:hover{
 }
 
 .keyTitleClass {
-  color: #dcdcdc;
+  color:--primaryTextColor;
   font-family: "BBH Sans Bogle";
 }
 
@@ -385,14 +398,17 @@ li:hover{
   /* display: none; */
   align-items: center;
   justify-content: flex-start;
-  
+  color:var(--primaryTextColor);
+
   width: 350px;
   height:fit-content;
-  background-color:black;
+  background-color:var(--windowBackgroundColor);
   border: var(--primaryBorder);
   gap: 5px;
   border-radius: 4px;
   font-size: 14px;
+  padding-top: 10px;
+  padding-bottom: 20px;
 
 }
 
@@ -408,6 +424,7 @@ li:hover{
 
 .searchingStatus {
   font-family: var(--primaryFontFamily);
+  color:var(--primaryTextColor);
   font-size: 20px;
   margin-left: 10px;
 
@@ -416,6 +433,7 @@ li:hover{
 .searchPoint {
   font-family: var(--primaryFontFamily);
   font-size: 20px;
+  color: var(--primaryTextColor);
 }
 
 .pointAnim {

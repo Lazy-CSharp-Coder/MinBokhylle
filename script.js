@@ -439,7 +439,7 @@ function showPublisher()
       {
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
         publisherErrorWin.classList.remove("scaleBookInAnim");
-        closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5);
+        closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5, showPublisherStats);
 
       }, {once:true});
     }

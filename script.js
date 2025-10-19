@@ -414,6 +414,15 @@ function showPublisher()
    console.log(publisherString);
    if(displayPublisherItems.retreivePublisher(publisherString)) // publisher found
    {
+      if(window.innerWidth < 426)
+      {     
+        if(!isAuthorShowing) 
+        {
+          console.log("in mobile mode");
+          const authorPublisherWrapper = document.querySelector("#authorPublisherWrapper");
+          authorPublisherWrapper.style.flexDirection = "column-reverse";
+        }
+      }
       console.log("Publisher found");
       if(isPublisherShowing)
       {

@@ -243,6 +243,15 @@ function removeAuthorInfo()
        showAuthorInfoStats.classList.remove("scaleBookOutAnim");
        showAuthorInfoStats.classList.remove("show");
 
+      // hvis publisher vises, sett column-revers for å evt. flytte den opp
+
+       if(window.innerWidth < 426 && isPublisherShowing)
+       {     
+          console.log("in mobile mode");
+          const authorPublisherWrapper = document.querySelector("#authorPublisherWrapper");
+          authorPublisherWrapper.style.flexDirection = "column-reverse";
+       }
+
     }, { once: true});
   // showAuthorInfoStats.classList.remove("hidden");
   isAuthorShowing = false;
@@ -391,6 +400,15 @@ function removePublisher()
        showPublisherStats.classList.remove("show");
        showPublisherStats.classList.remove("scaleBookOutAnim");
        publisherButton.textContent = "Search database";
+
+       if(window.innerWidth < 426)
+       {     
+          console.log("in mobile mode");
+          const authorPublisherWrapper = document.querySelector("#authorPublisherWrapper");
+          authorPublisherWrapper.style.flexDirection = "column";
+       }
+
+       
 
      }, {once:true});
      isPublisherShowing = false;

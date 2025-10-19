@@ -103,6 +103,8 @@ header {
   --itemTextColor:darkslategrey;
   .colorMain, .titleBookText { color: darkred; }
   .seriesText { color: darkblue; }
+  li:hover{color:darkblue; }
+  
 
 
 }

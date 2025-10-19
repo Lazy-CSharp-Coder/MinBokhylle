@@ -460,7 +460,8 @@ li:hover{
   background-color: black;
   padding: 25px;
   width:fit-content;
-  left: 50%;
+  /* left: 50%; */
+  left: 10px;
   border: var(--primaryBorder);
   border-radius: 4px;
   gap: 10px;

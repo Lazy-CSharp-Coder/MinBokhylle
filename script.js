@@ -787,8 +787,11 @@ function searchAndListResults()
   else
   {
     setTimeout(()=>{
-
-    }, 1000); 
+      searchingStatus.textContent = "Awaiting user input";
+      matchFoundText.textContent = "No entries found";
+      clickToAccessText.textContent = "Click close to exit search"
+    
+    }, 2000); 
     // legg inn no matches found
   }
   
@@ -811,7 +814,7 @@ function closeSearchWindow()
       showAuthorInfoStats.classList.remove("hiddenDisplay");
       showPublisherStats.classList.add("grid");
       showPublisherStats.classList.remove("hiddenDisplay"); 
-
+      searchingStatus.textContent = "Searching";
 
       inSearchMode = false;
     }, {once: true});

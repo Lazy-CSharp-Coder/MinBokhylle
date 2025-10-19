@@ -1,14 +1,14 @@
 // books array med litt info
 const bookDatabase = 
 {  books : [  { name : "The Way Of Shadows", 
-              author :  "Brent Weeks2",
+              author :  "Brent Weeks",
               series :  { name :"The Night Angel Trioligy",  number: 1, completed : true, otherBooksInSeries : ["Beyond The Shadows", "Shadows Edge"] } ,
               genre :  [ "Fantasy", "Fiction" ],
               characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
                             "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
               language : "English",
               published : new Date(2008, 10, 1),
-              publisher : "Orbit2"
+              publisher : "Orbit"
             }, 
             { name : "Beyond The Shadows",
               author : "Brent Weeks",
@@ -58,7 +58,16 @@ const bookDatabase =
               characters : ["Haplo", "Alfred", "Devon", "Grundle", "Alake", "Sang-Drax"],
               published: new Date(1992, 1, 1),
               publisher : "Bantam"
-            }
+            },
+            { name : "Menneskefluene",
+              author : "Hans Olav Lahlum",
+              series : { name : "K2 og Patricia", number : 1, completed: false, otherBooksInSeries : ["Satelittmenneskene", "Svanemordet"] } ,
+              genre : [ "Crime", "Fiction"],
+              language : "Norwegina",
+              characters : ["Kolbjørn Kristiansen (K2)", "Paticia"],
+              published: new Date(2014, 6, 1),
+              publisher : "Cappelen"
+          }
          ],
   authors : [ { name: "Margaret Weis", 
                 image: "/Images/margaretweis.png", 

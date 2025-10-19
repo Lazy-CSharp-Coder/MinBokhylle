@@ -445,7 +445,17 @@ li:hover{
   padding-left: 25px;
 }
 
+.fadeInAnim {
+  animation-name: fadeIn;
+  animation-duration: 0.8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
 
+@keyframes fadeIn {
+  0% { opacity :0; }
+  100% { opacity: 1; }
+}
 
 @keyframes fadeInOut {
   0% { opacity:1}

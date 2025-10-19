@@ -694,6 +694,8 @@ function removeAllAndDisplaySearch()
    inSearchMode = true;
 }
 
+const closeSearchButton = document.querySelector("#closeSearchButton");
+closeSearchButton.addEventListener("click", closeSearchWindow);
 
 function searchAndListResults()
 {
@@ -716,6 +718,9 @@ function searchAndListResults()
 
   const list = Array.from(listOfBooks.children);
   const newListArray = [];
+  const clickToAccessText = document.querySelector("#clickToAccesText");
+  const errorMessageText = document.querySelector("#errorMessageText");
+
 
   while(searchResultsList.lastChild) searchResultsList.lastChild.remove();
 
@@ -738,10 +743,7 @@ function searchAndListResults()
   if(matchFound)
   { 
     console.log(newListArray);
-    let delay = 2;
-    const delayInc = 1;     
-
-   
+           
     newListArray.forEach(function(item, index, array)  
     {
                  
@@ -769,12 +771,17 @@ function searchAndListResults()
         { 
           searchingStatus.textContent = "Awaiting user input";
           matchFoundText.textContent = "Entries added";
+          
         }
       });
       searchResultsList.appendChild(item); 
-      delay += delayInc;
+      
     } );
       
+  }
+  else
+  {
+    // legg inn no matches found
   }
   
 }

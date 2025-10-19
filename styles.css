@@ -468,6 +468,10 @@ li:hover{
 
 }
 
+.searchResultsList {
+  padding:0;
+}
+
 .matchFoundText {
   
 }

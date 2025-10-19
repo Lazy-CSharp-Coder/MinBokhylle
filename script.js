@@ -214,34 +214,34 @@ const showAuthorItems =
 let isAuthorShowing = false;
 let authorNumberShowing = 0;
 
-const showAuthorInfoStats = document.querySelector("#showAuthorInfoStats");
+const authorDiv = document.querySelector("#authorDiv");
 
 
 function showAuthorInfo()
 {
-  showAuthorInfoStats.classList.add("scaleBookInAnim");
-  showAuthorInfoStats.classList.remove("scaleBookOutAnim");
-  showAuthorInfoStats.classList.remove("hidden");
+  authorDiv.classList.add("scaleBookInAnim");
+  authorDiv.classList.remove("scaleBookOutAnim");
+  authorDiv.classList.remove("hidden");
 
-  // showAuthorInfoStats.classList.remove("scaleBookOutAnim");
-  showAuthorInfoStats.addEventListener("animationend", function() 
+  // authorDiv.classList.remove("scaleBookOutAnim");
+  authorDiv.addEventListener("animationend", function() 
   { 
-    showAuthorInfoStats.classList.add("show");
-    showAuthorInfoStats.classList.remove("scaleBookInAnim");
+    authorDiv.classList.add("show");
+    authorDiv.classList.remove("scaleBookInAnim");
   }, {once:true});
 
 }
 
 function removeAuthorInfo() 
 {
-  // showAuthorInfoStats.classList.add("show");
+  // authorDiv.classList.add("show");
 
-  showAuthorInfoStats.classList.add("scaleBookOutAnim");
-  showAuthorInfoStats.addEventListener("animationend", function() 
+  authorDiv.classList.add("scaleBookOutAnim");
+  authorDiv.addEventListener("animationend", function() 
     {
-       showAuthorInfoStats.classList.add("hidden");
-       showAuthorInfoStats.classList.remove("scaleBookOutAnim");
-       showAuthorInfoStats.classList.remove("show");
+       authorDiv.classList.add("hidden");
+       authorDiv.classList.remove("scaleBookOutAnim");
+       authorDiv.classList.remove("show");
 
       // hvis publisher vises, sett column-revers for å evt. flytte den opp
       console.log("er i remove. ispubishershowing:" + isPublisherShowing);
@@ -253,7 +253,7 @@ function removeAuthorInfo()
        }
 
     }, { once: true});
-  // showAuthorInfoStats.classList.remove("hidden");
+  // authorDiv.classList.remove("hidden");
   isAuthorShowing = false;
   
 }
@@ -281,14 +281,14 @@ function showAuthor(event)
     if(isAuthorShowing)
     {
       
-      showAuthorInfoStats.classList.add("scaleBookOutAnim");
-      showAuthorInfoStats.addEventListener("animationend", function() 
+      authorDiv.classList.add("scaleBookOutAnim");
+      authorDiv.addEventListener("animationend", function() 
       {
         if(authorNumberShowing != numInList)
         {
           soundEffects.accessing.play();
-          showAuthorInfoStats.classList.add("scaleBookInAnim");
-          showAuthorInfoStats.classList.remove("scaleBookOutAnim");
+          authorDiv.classList.add("scaleBookInAnim");
+          authorDiv.classList.remove("scaleBookOutAnim");
           if(numInList != -1) showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
           else showAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
           isAuthorShowing = true;
@@ -326,8 +326,8 @@ function showAuthor(event)
       else
       {
 
-        showAuthorInfoStats.classList.remove("grid");
-        showAuthorInfoStats.classList.add("hiddenDisplay");
+        authorDiv.classList.remove("grid");
+        authorDiv.classList.add("hiddenDisplay");
 
         authorErrorWin.classList.add("flex");
         authorErrorWin.classList.remove("hiddenDisplay");
@@ -337,7 +337,7 @@ function showAuthor(event)
           const authorErrorCountText = document.querySelector("#authorErrorCountText");
           authorErrorWin.classList.remove("scaleBookInAnim");
           soundEffects.requestNotFound.play();
-          closeWindowAutomatically(authorErrorWin, authorErrorCountText, 5, showAuthorInfoStats);
+          closeWindowAutomatically(authorErrorWin, authorErrorCountText, 5, authorDiv);
        
         }, {once:true});
         }
@@ -745,7 +745,7 @@ function removeAllAndDisplaySearch()
 
    if(isAuthorShowing)
    {
-     windowOpenNode = showAuthorInfoStats;
+     windowOpenNode = authorDiv;
      removeAuthorInfo();
   }
    if(isPublisherShowing)
@@ -774,8 +774,8 @@ function searchAndListResults()
 {
   // set display: none på author og publisher
 
-  showAuthorInfoStats.classList.remove("grid");
-  showAuthorInfoStats.classList.add("hiddenDisplay");
+  authorDiv.classList.remove("grid");
+  authorDiv.classList.add("hiddenDisplay");
   showPublisherStats.classList.remove("grid");
   showPublisherStats.classList.add("hiddenDisplay");
 
@@ -901,8 +901,8 @@ function closeSearchWindow()
       searchDiv.classList.remove("slideOutTopAnim");
       searchDiv.classList.add("hiddenDisplay");
 
-      showAuthorInfoStats.classList.add("grid");
-      showAuthorInfoStats.classList.remove("hiddenDisplay");
+      authorDiv.classList.add("grid");
+      authorDiv.classList.remove("hiddenDisplay");
       showPublisherStats.classList.add("grid");
       showPublisherStats.classList.remove("hiddenDisplay"); 
       searchingStatus.textContent = "Searching";

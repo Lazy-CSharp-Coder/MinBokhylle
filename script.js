@@ -670,9 +670,12 @@ let inSearchMode = false;
 
 function actionNotPermitted()
 {
-  // legg inn audion her
+  // legg inn audio her
 
 }
+
+
+// fjern vinduer som er i veien og vis search
 
 function removeAllAndDisplaySearch()
 {
@@ -707,7 +710,7 @@ let matchingBooksInSearch = [];
 
 function searchAndListResults()
 {
-  // lukk author og publisher hvis de er åpne
+  // set display: none på author og publisher
 
   showAuthorInfoStats.classList.remove("grid");
   showAuthorInfoStats.classList.add("hiddenDisplay");
@@ -729,11 +732,13 @@ function searchAndListResults()
 
   const clickToAccessText = document.querySelector("#clickToAccessText");
   const errorMessageText = document.querySelector("#errorMessageText");
-  matchFoundText.textContent = "Awaiting search";
+
   let delay = 2;
   const delayInc = 1;
   
   if(inSearchMode) return;
+  
+  matchFoundText.textContent = "Awaiting search";
 
   while(searchResultsList.lastChild) searchResultsList.lastChild.remove();
 

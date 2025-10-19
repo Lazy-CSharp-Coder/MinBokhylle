@@ -97,6 +97,7 @@ header {
 
 .lightMode {
   background-image: url("/Images/books3.jpg");
+  --primaryBorder : 2px solid darkblue;
   --bookListTextColor : black;
   --windowBackgroundColor :white;
   --primaryTextColor : rgb(20, 20, 20);

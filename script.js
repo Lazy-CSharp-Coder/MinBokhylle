@@ -682,6 +682,8 @@ function removeAllAndDisplaySearch()
 {
    let windowOpenNode = undefined;
 
+   if(inSearchMode) return;
+   
    if(isAuthorShowing)
    {
      windowOpenNode = showAuthorInfoStats;
@@ -737,9 +739,9 @@ function searchAndListResults()
   let delay = 2;
   const delayInc = 1;
   
-  if(inSearchMode) return;
   
   soundEffects.enterSearchMode.play();
+  console.log("should have played sound");
   matchFoundText.textContent = "Awaiting search";
 
   while(searchResultsList.lastChild) searchResultsList.lastChild.remove();

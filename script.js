@@ -167,7 +167,7 @@ function closeWindowAutomatically(divNode, countDisplay, duration, nodeReapperin
 const showAuthorItems =
 {
   authorName : document.querySelector("#authorName"),
-  authorGenderImage : document.querySelector("authorGenderImage"),
+  authorGenderImage : document.querySelector("#authorGenderImage"),
   authorImage : document.querySelector("#authorImage"),
   authorBorn : document.querySelector("#authorBorn"),
   authorLocation : document.querySelector("#authorLocation"),

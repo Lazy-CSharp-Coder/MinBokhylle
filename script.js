@@ -435,7 +435,8 @@ function showPublisher()
       publisherErrorWin.addEventListener("animationend", function()
       {
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
-            closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5);
+        publisherErrorWin.classList.remove("scaleBookInAnim");
+        closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5);
 
       }, {once:true});
     }

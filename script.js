@@ -885,8 +885,8 @@ function searchAndListResults()
       soundEffects.noEntriesFound.play();
       clickToAccessText.textContent = "Click close to exit search"
     
-    }, 2000); 
-    // legg inn no matches found
+    }, 2200); 
+
   }
   
 }

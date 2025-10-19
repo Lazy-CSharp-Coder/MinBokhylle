@@ -821,7 +821,7 @@ function searchAndListResults()
         { 
           searchingStatus.textContent = "Awaiting user input";
           matchFoundText.textContent = "Entries added";
-          clickToAccessText.textContent = "Click list entry to access book"
+          clickToAccessText.textContent = "Click list item to access book";
         
         }
       });

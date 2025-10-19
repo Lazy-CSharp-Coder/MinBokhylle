@@ -127,8 +127,10 @@ const soundEffects =
    accessingBooks : new Audio("/Sounds/accessing.mp3"),
    accessing : new Audio("/Sounds/accessing.mp3"),
    enterSearchMode : new Audio("/Sounds/searchmode.mp3"),
-   bookIntro : new Audio("/Sound/bookintro.mp3"),
-   featureNotAvailable : new Audio("/Sound/notavailable.mp3")
+   bookIntro : new Audio("/Sounds/bookintro.mp3"),
+   featureNotAvailable : new Audio("/Sounds/notavailable.mp3"),
+   alreadyInSearchMode : new Audio("/Sounds/alreadysearching.mp3"),
+   requestNotFound : new Audio("/Sounds/requestnotfound.mp3")
 }
 
 
@@ -309,6 +311,7 @@ function showAuthor(event)
         {
           const authorErrorCountText = document.querySelector("#authorErrorCountText");
           authorErrorWin.classList.remove("scaleBookInAnim");
+          soundEffects.requestNotFound.play();
           closeWindowAutomatically(authorErrorWin, authorErrorCountText, 5, showAuthorInfoStats);
        
         }, {once:true});
@@ -442,6 +445,7 @@ function showPublisher()
       {
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
         publisherErrorWin.classList.remove("scaleBookInAnim");
+        soundEffects.requestNotFound.play();
         closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5, showPublisherStats);
 
       }, {once:true});
@@ -596,8 +600,6 @@ console.log(listOfBooks);
 let delay = 0;
 const delayInc = 300;
 
-let mySound = new Audio(soundEffects.enterListItems);
-
 bookDatabase.books.forEach(function(item) 
 {
   const newListItem = document.createElement("li");
@@ -606,7 +608,7 @@ bookDatabase.books.forEach(function(item)
 
   setTimeout(() => 
   { newListItem.classList.add("slideInTopAnim");
-    newListItem.addEventListener("animationend", ()=> { mySound.play(); }) ;
+    newListItem.addEventListener("animationend", ()=> { /* play sound here */ }) ;
     listOfBooks.appendChild(newListItem); 
   }, delay);
   
@@ -680,6 +682,7 @@ let inSearchMode = false;
 function actionNotPermitted()
 {
   // legg inn audio her
+  soundEffects.featureNotAvailable.play();
 
 }
 
@@ -690,7 +693,11 @@ function removeAllAndDisplaySearch()
 {
    let windowOpenNode = undefined;
 
-   if(inSearchMode) return;
+   if(inSearchMode)
+   {
+     soundEffects.alreadyInSearchMode.play();
+     return;
+   }
 
    if(isAuthorShowing)
    {

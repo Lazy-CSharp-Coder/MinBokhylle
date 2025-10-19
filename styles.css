@@ -13,7 +13,7 @@
   --primaryFontFamily : "BBH Sans Bogle";
   --secondaryFontFamily : "Roboto";
   --windowBackgroundColor : black;
-  --bookListTextColor : black;
+  --bookListTextColor : white;
 }
 
 /* BODY */
@@ -29,7 +29,7 @@ body {
 
   font-family: "Roboto";
   background-color: var(--primaryBackgroundColor);
-  background-image: url("Images/books1.jpg");
+  background-image: url("Images/books2.jpg");
   background-size: cover;
   color: var(--primaryTextColor);
   cursor: pointer;

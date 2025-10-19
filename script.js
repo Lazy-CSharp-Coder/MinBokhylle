@@ -244,10 +244,10 @@ function removeAuthorInfo()
        showAuthorInfoStats.classList.remove("show");
 
       // hvis publisher vises, sett column-revers for å evt. flytte den opp
-
+      console.log("er i remove. ispubishershowing:" + isPublisherShowing);
        if(window.innerWidth < 426 && isPublisherShowing)
        {     
-          console.log("in mobile mode");
+          console.log("in mobile mode authour removing");
           const authorPublisherWrapper = document.querySelector("#authorPublisherWrapper");
           authorPublisherWrapper.style.flexDirection = "column-reverse";
        }
@@ -294,7 +294,16 @@ function showAuthor(event)
           isAuthorShowing = true;
           authorNumberShowing = numInList;
         }
-        else isAuthorShowing = false;
+        else
+        {
+          if(window.innerWidth < 426 && isPublisherShowing)
+          {     
+             console.log("in mobile mode authour removing");
+             const authorPublisherWrapper = document.querySelector("#authorPublisherWrapper");
+             authorPublisherWrapper.style.flexDirection = "column-reverse";
+          }
+          isAuthorShowing = false;
+        }
       }, { once: true});
    }
    else

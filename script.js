@@ -718,9 +718,12 @@ function searchAndListResults()
 
   const list = Array.from(listOfBooks.children);
   const newListArray = [];
-  const clickToAccessText = document.querySelector("#clickToAccesText");
+  const clickToAccessText = document.querySelector("#clickToAccessText");
   const errorMessageText = document.querySelector("#errorMessageText");
 
+  let delay = 2;
+  const delayInc = 1;
+  
 
   while(searchResultsList.lastChild) searchResultsList.lastChild.remove();
 
@@ -776,6 +779,7 @@ function searchAndListResults()
         }
       });
       searchResultsList.appendChild(item); 
+      delay += delayInc;
       
     } );
       

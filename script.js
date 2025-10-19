@@ -729,7 +729,7 @@ function searchAndListResults()
 
   const clickToAccessText = document.querySelector("#clickToAccessText");
   const errorMessageText = document.querySelector("#errorMessageText");
-
+  matchFoundText.textContent = "Awaiting search";
   let delay = 2;
   const delayInc = 1;
   

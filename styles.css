@@ -348,6 +348,18 @@ li:hover{
   100% { transform : translateY(0); }
 }
 
+.slideOutTopAnim {
+  animation-name: slideOutTop;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideOutTop {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-600px);}
+}
+
 @media (max-width: 426px) {
   .hero {
      display: flex;
@@ -556,17 +568,6 @@ li:hover{
   animation-fill-mode: forwards;
 }
 
-.slideOutTopAnim {
-  animation-name: slideOutTop;
-  animation-duration: 1.2s;
-  animation-timing-function: ease-in-out;
-  animation-fill-mode: forwards;
-}
-
-@keyframes slideOutTop {
-  0% { transform: translateY(0);}
-  100% { transform: translateY(-600px);}
-}
 
 
 @keyframes slideInBottom {

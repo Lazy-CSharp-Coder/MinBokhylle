@@ -890,11 +890,13 @@ function darkLightModeToggle()
     if(darkMode) 
     {
         main.classList.add("lightMode");
+        soundEffects.lightMode.play();
         darkMode = false;
     }
     else
     {
         main.classList.remove("lightMode");
+        soundEffects.darkMode.play();
         darkMode = true;
     }
 }

@@ -91,6 +91,7 @@ header {
       background-size:auto;
       
     }
+    
 }
 
 .flex {
@@ -423,6 +424,11 @@ li:hover{
     /* opacity: 0; */
     grid-template-columns: auto 250px;
     grid-template-rows: repeat(4, auto);
+  
+  }
+
+  .publisherButton, .otherBooksButton {
+    font-size: 10px;;
   
   }
 }

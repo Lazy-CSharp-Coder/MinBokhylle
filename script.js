@@ -145,7 +145,7 @@ function closeWindowAutomatically(divNode, countDisplay, duration, nodeReapperin
     {
       clearInterval(countDownInterval);
       divNode.classList.remove("flex");
-      divNode.classL ist.add("hiddenDisplay");
+      divNode.classList.add("hiddenDisplay");
       nodeReappering.classList.remove("hiddenDisplay");
       nodeReappering.classList.add("grid");
     

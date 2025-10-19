@@ -242,7 +242,14 @@ li:hover{
   border-radius : 2px;
   padding : 3px 6px;
   margin : 3px 3px;
+  transition-property: scale ;
+  transition-duration: 0.2s;
 
+}
+
+.publisherButton:hover, .otherBooksButton:hover {
+  scale: 1.04;
+  /* color:darkblue; */
 }
 
 .publisherButton {

@@ -125,7 +125,8 @@ const soundEffects =
 {
    enterListItems : new Audio("/Sounds/enterlistitems.mp3"),
    accessingBooks : new Audio("/Sounds/accessing.mp3"),
-   accessing : new Audio("/Sounds/accessing.mp3")
+   accessing : new Audio("/Sounds/accessing.mp3"),
+   enterSearchMode : new Audio("/Sounds/searchmode.mp3")
 }
 
 
@@ -738,6 +739,7 @@ function searchAndListResults()
   
   if(inSearchMode) return;
   
+  soundEffects.enterSearchMode.play();
   matchFoundText.textContent = "Awaiting search";
 
   while(searchResultsList.lastChild) searchResultsList.lastChild.remove();

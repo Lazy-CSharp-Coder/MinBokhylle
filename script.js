@@ -824,6 +824,7 @@ function searchAndListResults()
           searchingStatus.textContent = "Awaiting user input";
           matchFoundText.textContent = "Entries added";
           clickToAccessText.textContent = "Click list item to access book";
+          soundEffects.clickListItem.play();
         
         }
       });
@@ -838,6 +839,7 @@ function searchAndListResults()
     setTimeout(()=>{
       searchingStatus.textContent = "Awaiting user input";
       matchFoundText.textContent = "No entries found";
+      soundEffects.noEntriesFound.play();
       clickToAccessText.textContent = "Click close to exit search"
     
     }, 2000); 

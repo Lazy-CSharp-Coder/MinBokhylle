@@ -130,7 +130,7 @@ function getDateString(date)
 
 // funskjon for å lukke ett vindu med timer
 
-function closeWindowAutomatically(divNode, countDisplay, duration)
+function closeWindowAutomatically(divNode, countDisplay, duration, nodeReappering)
 {
   let remainingTime = duration;
 
@@ -145,7 +145,10 @@ function closeWindowAutomatically(divNode, countDisplay, duration)
     {
       clearInterval(countDownInterval);
       divNode.classList.remove("flex");
-      divNode.classList.add("hiddenDisplay");
+      divNode.classL ist.add("hiddenDisplay");
+      nodeReappering.classList.remove("hiddenDisplay");
+      nodeReappering.classList.add("grid");
+    
     }
   }, 1000);
 
@@ -159,15 +162,6 @@ const showAuthorItems =
   authorBorn : document.querySelector("#authorBorn"),
   authorLocation : document.querySelector("#authorLocation"),
   authorPensAs : document.querySelector("#authorPensAs"),
-
-  setErrorMsg: function() 
-  {
-    this.authorImage.src = "/Icons/error.png";
-    this.authorName.textContent = "Entry not found ";
-    this.authorBorn.textContent = "";
-    this.authorLocation.textContent = "";
-    this.authorPensAs.textContent = "";
-  },
 
   retrieveAuthor: function(authorString)
   {
@@ -301,8 +295,8 @@ function showAuthor(event)
         {
           const authorErrorCountText = document.querySelector("#authorErrorCountText");
           authorErrorWin.classList.remove("scaleBookInAnim");
-          closeWindowAutomatically(authorErrorWin, authorErrorCountText, 5);
-
+          closeWindowAutomatically(authorErrorWin, authorErrorCountText, 5, showAuthorInfoStats);
+       
         }, {once:true});
         }
     
@@ -383,8 +377,6 @@ function removePublisher()
 
 const publisherErrorWin = document.querySelector("#publisherErrorWin");
 const authorErrorWin = document.querySelector("#authorErrorWin");
-
-
 
 function showPublisher()
 {
@@ -537,10 +529,13 @@ function displayBook(event)
   if(isBookShowing) 
   {
     const delay = 0;
-    if(isPublisherShowing) setTimeout(() => {
+    if(isPublisherShowing) setTimeout(() => 
+    {
       removePublisher();
       isPublisherShowing = false;
-      console.log("er her i set timeout"); }, delay);
+      console.log("er her i set timeout"); 
+    }, delay);
+    
     if(isAuthorShowing)
     {
        removeAuthorInfo();

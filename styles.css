@@ -115,8 +115,6 @@ header {
   .seriesText { color: darkblue; }
   li:hover{color:darkblue; }
   
-
-
 }
 
 ul li::marker {
@@ -203,7 +201,7 @@ li:hover{
   padding-left : 17px;
 }
 
-.showBookInfoDiv
+.bookDiv
 {
   display: grid;
   grid-template-columns: auto 300px;
@@ -398,7 +396,7 @@ li:hover{
     width: 200px;
   }
 
-  .showBookInfoDiv
+  .bookDiv
   {
     display: grid;
     font-size: 10px;

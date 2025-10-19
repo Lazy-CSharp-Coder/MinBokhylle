@@ -297,6 +297,8 @@ function showAuthor(event)
         else
         {
           authorDiv.classList.add("hidden");
+          authorDiv.classList.remove("show");
+          console.log("skal nå lukke author totalt");
           if(window.innerWidth < 426 && isPublisherShowing)
           {     
              console.log("in mobile mode authour removing");
@@ -326,7 +328,6 @@ function showAuthor(event)
       }
       else
       {
-
         authorDiv.classList.remove("grid");
         authorDiv.classList.add("hiddenDisplay");
 
@@ -497,7 +498,7 @@ function showPublisher()
    
 }
 
-const showBookInfoItems =
+const displayBookItems =
 {
   bookname: document.querySelector("#bookName"),
   authorsList : document.querySelector("#authorsList"),
@@ -589,9 +590,9 @@ function displayBook(event)
   
   // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)
 
-  showBookInfoItems.retrieveBook(currentBookArrayNumber);
+  displayBookItems.retrieveBook(currentBookArrayNumber);
 
-  const showBookInfoDiv = document.querySelector("#showBookInfoDiv");
+  const bookDiv = document.querySelector("#bookDiv");
 
   if(isBookShowing) 
   {
@@ -609,15 +610,15 @@ function displayBook(event)
        isAuthorShowing = false;
             
     }
-    showBookInfoDiv.classList.add("show");
-    showBookInfoDiv.classList.add("scaleBookOutAnim");
-    showBookInfoDiv.classList.remove("hidden");
-    showBookInfoDiv.addEventListener("animationend", function() 
+    bookDiv.classList.add("show");
+    bookDiv.classList.add("scaleBookOutAnim");
+    bookDiv.classList.remove("hidden");
+    bookDiv.addEventListener("animationend", function() 
     { 
       soundEffects.accessingBooks.play();
-      showBookInfoDiv.classList.add("scaleBookInAnim");
-      showBookInfoDiv.classList.remove("scaleBookOutAnim");
-      showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim"); }, 
+      bookDiv.classList.add("scaleBookInAnim");
+      bookDiv.classList.remove("scaleBookOutAnim");
+      bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleBookInAnim"); }, 
       {once:true}); 
     }, {once:true});
   }
@@ -630,10 +631,10 @@ function displayBook(event)
       hasBookIntroBeenPlayed = true;
     }
     else soundEffects.accessingBooks.play();
-    showBookInfoDiv.classList.add("scaleBookInAnim");
-    showBookInfoDiv.classList.add("show");
-    showBookInfoDiv.classList.remove("hidden");
-    showBookInfoDiv.addEventListener("animationend", function() { showBookInfoDiv.classList.remove("scaleBookInAnim");}, { once:true}) ;
+    bookDiv.classList.add("scaleBookInAnim");
+    bookDiv.classList.add("show");
+    bookDiv.classList.remove("hidden");
+    bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleBookInAnim");}, { once:true}) ;
     isBookShowing = true;
   }
 

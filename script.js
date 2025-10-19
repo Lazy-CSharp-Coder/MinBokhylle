@@ -220,10 +220,10 @@ const authorDiv = document.querySelector("#authorDiv");
 function showAuthorInfo()
 {
   authorDiv.classList.add("scaleInAnim");
-  authorDiv.classList.remove("scaleBookOutAnim");
+  authorDiv.classList.remove("scaleOutAnim");
   authorDiv.classList.remove("hidden");
 
-  // authorDiv.classList.remove("scaleBookOutAnim");
+  // authorDiv.classList.remove("scaleOutAnim");
   authorDiv.addEventListener("animationend", function() 
   { 
     authorDiv.classList.add("show");
@@ -236,11 +236,11 @@ function removeAuthorInfo()
 {
   // authorDiv.classList.add("show");
 
-  authorDiv.classList.add("scaleBookOutAnim");
+  authorDiv.classList.add("scaleOutAnim");
   authorDiv.addEventListener("animationend", function() 
     {
        authorDiv.classList.add("hidden");
-       authorDiv.classList.remove("scaleBookOutAnim");
+       authorDiv.classList.remove("scaleOutAnim");
        authorDiv.classList.remove("show");
 
       // hvis publisher vises, sett column-revers for å evt. flytte den opp
@@ -280,10 +280,10 @@ function showAuthor(event)
 
     if(isAuthorShowing)
     {
-      authorDiv.classList.add("scaleBookOutAnim");
+      authorDiv.classList.add("scaleOutAnim");
       authorDiv.addEventListener("animationend", function() 
       {
-        authorDiv.classList.remove("scaleBookOutAnim");
+        authorDiv.classList.remove("scaleOutAnim");
         if(authorNumberShowing != numInList)
         {          
           soundEffects.accessing.play();
@@ -404,12 +404,12 @@ function removePublisher()
 {
    if(isPublisherShowing)
    {
-     publisherDiv.classList.add("scaleBookOutAnim");
+     publisherDiv.classList.add("scaleOutAnim");
      publisherDiv.addEventListener("animationend", function() 
      {
        publisherDiv.classList.add("hidden");
        publisherDiv.classList.remove("show");
-       publisherDiv.classList.remove("scaleBookOutAnim");
+       publisherDiv.classList.remove("scaleOutAnim");
        publisherButton.textContent = "Search database";
 
        if(window.innerWidth < 426)
@@ -611,13 +611,13 @@ function displayBook(event)
             
     }
     bookDiv.classList.add("show");
-    bookDiv.classList.add("scaleBookOutAnim");
+    bookDiv.classList.add("scaleOutAnim");
     bookDiv.classList.remove("hidden");
     bookDiv.addEventListener("animationend", function() 
     { 
       soundEffects.accessingBooks.play();
       bookDiv.classList.add("scaleInAnim");
-      bookDiv.classList.remove("scaleBookOutAnim");
+      bookDiv.classList.remove("scaleOutAnim");
       bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim"); }, 
       {once:true}); 
     }, {once:true});
@@ -673,12 +673,12 @@ creditButton.addEventListener("click", function ()
   if(isCreditsDisplaying)
   {
     creditIconDiv.classList.remove("scaleInAnim");
-    creditIconDiv.classList.add("scaleBookOutAnim");
+    creditIconDiv.classList.add("scaleOutAnim");
     creditIconDiv.addEventListener("animationend", function() 
     {
       creditIconDiv.classList.remove("showDisplay");
       creditIconDiv.classList.add("hiddenDisplay");
-      creditIconDiv.classList.remove("scaleBookOutAnim");
+      creditIconDiv.classList.remove("scaleOutAnim");
     } , {once: true});
     isCreditsDisplaying = false;
 

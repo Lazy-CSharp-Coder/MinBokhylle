@@ -280,15 +280,15 @@ function showAuthor(event)
 
     if(isAuthorShowing)
     {
-      
       authorDiv.classList.add("scaleBookOutAnim");
       authorDiv.addEventListener("animationend", function() 
       {
+        authorDiv.classList.remove("scaleBookOutAnim");
         if(authorNumberShowing != numInList)
-        {
+        {          
           soundEffects.accessing.play();
           authorDiv.classList.add("scaleBookInAnim");
-          authorDiv.classList.remove("scaleBookOutAnim");
+      
           if(numInList != -1) displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
           else displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
           isAuthorShowing = true;
@@ -296,6 +296,7 @@ function showAuthor(event)
         }
         else
         {
+          authorDiv.classList.add("hidden");
           if(window.innerWidth < 426 && isPublisherShowing)
           {     
              console.log("in mobile mode authour removing");

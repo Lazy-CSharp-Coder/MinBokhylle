@@ -130,7 +130,9 @@ const soundEffects =
    bookIntro : new Audio("/Sounds/bookintro.mp3"),
    featureNotAvailable : new Audio("/Sounds/notavailable.mp3"),
    alreadyInSearchMode : new Audio("/Sounds/alreadysearching.mp3"),
-   requestNotFound : new Audio("/Sounds/requestnotfound.mp3")
+   requestNotFound : new Audio("/Sounds/requestnotfound.mp3"),
+   noEntriesFound : new Audio("/Sounds/noentriesfound.mp3"),
+   clickListItem : new Audio("/Sounds/clicklistitem.mp3")
 }
 
 

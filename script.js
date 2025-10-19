@@ -190,7 +190,7 @@ const showAuthorItems =
     
     // legg inn data 
     this.authorImage.src = authorObject.image;
-    if(authorObject.gender == "female") this.authorGenderImage.src = "/Icons/woman2.png",
+    if(authorObject.gender == "female") this.authorGenderImage.src = "/Icons/womanb.png",
     this.authorName.textContent = authorObject.name;
     this.authorBorn.textContent = getDateString(authorObject.born);
     this.authorLocation.textContent = authorObject.location;

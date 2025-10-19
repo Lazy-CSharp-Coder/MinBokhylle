@@ -321,7 +321,7 @@ li:hover{
   gap: 35px;
 }
 
-.scaleBookInAnim {
+.scaleInAnim {
   animation-name: scaleIn;
   animation-duration: 1.5s;
   animation-timing-function: ease-in-out;

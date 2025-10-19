@@ -219,7 +219,7 @@ const authorDiv = document.querySelector("#authorDiv");
 
 function showAuthorInfo()
 {
-  authorDiv.classList.add("scaleBookInAnim");
+  authorDiv.classList.add("scaleInAnim");
   authorDiv.classList.remove("scaleBookOutAnim");
   authorDiv.classList.remove("hidden");
 
@@ -227,7 +227,7 @@ function showAuthorInfo()
   authorDiv.addEventListener("animationend", function() 
   { 
     authorDiv.classList.add("show");
-    authorDiv.classList.remove("scaleBookInAnim");
+    authorDiv.classList.remove("scaleInAnim");
   }, {once:true});
 
 }
@@ -287,7 +287,7 @@ function showAuthor(event)
         if(authorNumberShowing != numInList)
         {          
           soundEffects.accessing.play();
-          authorDiv.classList.add("scaleBookInAnim");
+          authorDiv.classList.add("scaleInAnim");
       
           if(numInList != -1) displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
           else displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
@@ -333,11 +333,11 @@ function showAuthor(event)
 
         authorErrorWin.classList.add("flex");
         authorErrorWin.classList.remove("hiddenDisplay");
-        authorErrorWin.classList.add("scaleBookInAnim");
+        authorErrorWin.classList.add("scaleInAnim");
         authorErrorWin.addEventListener("animationend", function()
         {
           const authorErrorCountText = document.querySelector("#authorErrorCountText");
-          authorErrorWin.classList.remove("scaleBookInAnim");
+          authorErrorWin.classList.remove("scaleInAnim");
           soundEffects.requestNotFound.play();
           closeWindowAutomatically(authorErrorWin, authorErrorCountText, 5, authorDiv);
        
@@ -462,12 +462,12 @@ function showPublisher()
       {
         console.log("er i animation for å vise publisher");
         soundEffects.accessing.play();
-        publisherDiv.classList.add("scaleBookInAnim");
+        publisherDiv.classList.add("scaleInAnim");
         publisherDiv.classList.remove("hidden");
         publisherDiv.classList.add("show");
         publisherDiv.addEventListener("animationend", function() 
         {
-            publisherDiv.classList.remove("scaleBookInAnim");
+            publisherDiv.classList.remove("scaleInAnim");
             isPublisherShowing = true;
             publisherButton.textContent = "Close database";
 
@@ -485,11 +485,11 @@ function showPublisher()
 
       publisherErrorWin.classList.add("flex");
       publisherErrorWin.classList.remove("hiddenDisplay");
-      publisherErrorWin.classList.add("scaleBookInAnim");
+      publisherErrorWin.classList.add("scaleInAnim");
       publisherErrorWin.addEventListener("animationend", function()
       {
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
-        publisherErrorWin.classList.remove("scaleBookInAnim");
+        publisherErrorWin.classList.remove("scaleInAnim");
         soundEffects.requestNotFound.play();
         closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5, publisherDiv);
 
@@ -616,9 +616,9 @@ function displayBook(event)
     bookDiv.addEventListener("animationend", function() 
     { 
       soundEffects.accessingBooks.play();
-      bookDiv.classList.add("scaleBookInAnim");
+      bookDiv.classList.add("scaleInAnim");
       bookDiv.classList.remove("scaleBookOutAnim");
-      bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleBookInAnim"); }, 
+      bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim"); }, 
       {once:true}); 
     }, {once:true});
   }
@@ -631,10 +631,10 @@ function displayBook(event)
       hasBookIntroBeenPlayed = true;
     }
     else soundEffects.accessingBooks.play();
-    bookDiv.classList.add("scaleBookInAnim");
+    bookDiv.classList.add("scaleInAnim");
     bookDiv.classList.add("show");
     bookDiv.classList.remove("hidden");
-    bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleBookInAnim");}, { once:true}) ;
+    bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim");}, { once:true}) ;
     isBookShowing = true;
   }
 
@@ -672,7 +672,7 @@ creditButton.addEventListener("click", function ()
   const creditIconDiv = document.querySelector("#creditIconDiv");
   if(isCreditsDisplaying)
   {
-    creditIconDiv.classList.remove("scaleBookInAnim");
+    creditIconDiv.classList.remove("scaleInAnim");
     creditIconDiv.classList.add("scaleBookOutAnim");
     creditIconDiv.addEventListener("animationend", function() 
     {
@@ -687,7 +687,7 @@ creditButton.addEventListener("click", function ()
   {
   //  creditIconDiv.classList.add("slideInBottomAnim");
    soundEffects.iconsCreatedBy.play();
-   creditIconDiv.classList.add("scaleBookInAnim");
+   creditIconDiv.classList.add("scaleInAnim");
    creditIconDiv.classList.add("showDisplay");
    creditIconDiv.classList.remove("hiddenDisplay");
    isCreditsDisplaying = true;

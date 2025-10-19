@@ -126,7 +126,9 @@ const soundEffects =
    enterListItems : new Audio("/Sounds/enterlistitems.mp3"),
    accessingBooks : new Audio("/Sounds/accessing.mp3"),
    accessing : new Audio("/Sounds/accessing.mp3"),
-   enterSearchMode : new Audio("/Sounds/searchmode.mp3")
+   enterSearchMode : new Audio("/Sounds/searchmode.mp3"),
+   bookIntro : new Audio("/Sound/bookintro.mp3"),
+   featureNotAvailable : new Audio("/Sound/notavailable.mp3")
 }
 
 
@@ -521,6 +523,7 @@ const listOfBooks = document.querySelector("#listOfBooks");
 let isBookShowing = false;
 let currentBookArrayNumber = 0;
 let fromSearch = false;
+let hasBookIntroBeenPlayed = false;
 
 function displayBook(event)
 {
@@ -535,14 +538,13 @@ function displayBook(event)
     console.log(currentBookArrayNumber);
 
   } else fromSearch = false;
-
   
   // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)
 
   showBookInfoItems.retrieveBook(currentBookArrayNumber);
 
   const showBookInfoDiv = document.querySelector("#showBookInfoDiv");
-  const accessSound = new Audio(soundEffects.accessingBooks);
+
   if(isBookShowing) 
   {
     const delay = 0;
@@ -573,7 +575,13 @@ function displayBook(event)
   }
   else
   {  
-    soundEffects.accessingBooks.play();
+      // spille av førstegangsbeskjed
+    if(hasBookIntroBeenPlayed == false) 
+    {
+      soundEffects.bookIntro.play();
+      hasBookIntroBeenPlayed = true;
+    }
+    else soundEffects.accessingBooks.play();
     showBookInfoDiv.classList.add("scaleBookInAnim");
     showBookInfoDiv.classList.add("show");
     showBookInfoDiv.classList.remove("hidden");
@@ -683,7 +691,7 @@ function removeAllAndDisplaySearch()
    let windowOpenNode = undefined;
 
    if(inSearchMode) return;
-   
+
    if(isAuthorShowing)
    {
      windowOpenNode = showAuthorInfoStats;

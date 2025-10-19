@@ -63,7 +63,7 @@ const bookDatabase =
               author : "Hans Olav Lahlum",
               series : { name : "K2 og Patricia", number : 1, completed: false, otherBooksInSeries : ["Satelittmenneskene", "Svanemordet"] } ,
               genre : [ "Crime", "Fiction"],
-              language : "Norwegina",
+              language : "Norwegian",
               characters : ["Kolbjørn Kristiansen (K2)", "Paticia"],
               published: new Date(2014, 6, 1),
               publisher : "Cappelen"
@@ -806,3 +806,23 @@ function closeSearchWindow()
 const otherBooksButton = document.querySelector("#otherBooksButton");
 otherBooksButton.addEventListener("click", removeAllAndDisplaySearch);
 
+let darkMode = true;
+const darkLightIcon = document.querySelector("#darkLightIcon");
+
+function darkLightModeToggle()
+{
+    const main = document.querySelector("body");
+    if(darkMode) 
+    {
+        main.classList.add("lightMode");
+        darkMode = false;
+    }
+    else
+    {
+        main.classList.remove("lightMode");
+        darkMode = true;
+    }
+}
+
+
+darkLightIcon.addEventListener("click", darkLightModeToggle);

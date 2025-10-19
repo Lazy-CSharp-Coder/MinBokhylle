@@ -609,20 +609,21 @@ creditButton.addEventListener("click", function ()
   const creditIconDiv = document.querySelector("#creditIconDiv");
   if(isCreditsDisplaying)
   {
-    creditIconDiv.classList.remove("slideInBottomAnim");
-    creditIconDiv.classList.add("slideOutBottomAnim");
+    creditIconDiv.classList.remove("scaleBookInAnim");
+    creditIconDiv.classList.add("scaleBookOutAnim");
     creditIconDiv.addEventListener("animationend", function() 
     {
       creditIconDiv.classList.remove("showDisplay");
       creditIconDiv.classList.add("hiddenDisplay");
-      creditIconDiv.classList.remove("slideOutBottomAnim");
+      creditIconDiv.classList.remove("scaleBookOutAnim");
     } , {once: true});
     isCreditsDisplaying = false;
 
   }
   else
   {
-   creditIconDiv.classList.add("slideInBottomAnim");
+  //  creditIconDiv.classList.add("slideInBottomAnim");
+   creditIconDiv.classList.add("scaleBookInAnim");
    creditIconDiv.classList.add("showDisplay");
    creditIconDiv.classList.remove("hiddenDisplay");
    isCreditsDisplaying = true;

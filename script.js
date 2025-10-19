@@ -133,7 +133,9 @@ const soundEffects =
    requestNotFound : new Audio("/Sounds/requestnotfound.mp3"),
    noEntriesFound : new Audio("/Sounds/noentriesfound.mp3"),
    clickListItem : new Audio("/Sounds/clicklistitem.mp3"),
-   iconsCreatedBy : new Audio("/Sounds/iconscreatedby.mp3")
+   iconsCreatedBy : new Audio("/Sounds/iconscreatedby.mp3"),
+   lightMode : new Audio("/Sounds/lightmode.mp3"),
+   darkMode : new Audio("/Sounds/darkmode.mp3")
 }
 
 

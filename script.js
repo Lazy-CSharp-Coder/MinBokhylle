@@ -497,6 +497,7 @@ function showPublisher()
     }
    
 }
+// objekt for å vise book items på skjermen -inneholder alle queryselectors
 
 const displayBookItems =
 {
@@ -784,7 +785,7 @@ function searchAndListResults()
   // vis searchDiv og begynn
   searchDiv.classList.remove("hiddenDisplay");
   searchDiv.classList.add("showDisplay");
-  searchDiv.classList.add("slideInTopAnim");
+  searchDiv.classList.add("scaleInAnim");
 
 
   let matchFound = false;
@@ -895,12 +896,12 @@ function closeSearchWindow()
    if(inSearchMode)
    {
     
-    searchDiv.classList.remove("slideInTopAnim");
-    searchDiv.classList.add("slideOutTopAnim");
+    searchDiv.classList.remove("scaleInAnim");
+    searchDiv.classList.add("scaleOutAnim");
     searchDiv.addEventListener("animationend", () =>
     {
       searchDiv.classList.remove("showDisplay");
-      searchDiv.classList.remove("slideOutTopAnim");
+      searchDiv.classList.remove("scaleOutAnim");
       searchDiv.classList.add("hiddenDisplay");
 
       authorDiv.classList.add("grid");

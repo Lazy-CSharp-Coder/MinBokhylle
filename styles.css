@@ -271,7 +271,7 @@ li:hover{
   margin-left : 30px;
   padding: 3px 6px;
 }
-.showPublisherStats
+.publisherDiv
 {
   /* display: grid; */
   /* opacity: 0; */
@@ -407,7 +407,7 @@ li:hover{
     
   }
 
-  .showPublisherStats
+  .publisherDiv
   {
     /* display: grid; */
     font-size: 10px;

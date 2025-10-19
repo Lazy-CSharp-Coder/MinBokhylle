@@ -394,20 +394,20 @@ const displayPublisherItems =
 
 const publisherButton = document.querySelector("#publisherButton");
 publisherButton.addEventListener("click", showPublisher);
-const showPublisherStats = document.querySelector("#showPublisherStats");
-console.log(showPublisherStats);
+const publisherDiv = document.querySelector("#publisherDiv");
+console.log(publisherDiv);
 let isPublisherShowing = false;
 
 function removePublisher() 
 {
    if(isPublisherShowing)
    {
-     showPublisherStats.classList.add("scaleBookOutAnim");
-     showPublisherStats.addEventListener("animationend", function() 
+     publisherDiv.classList.add("scaleBookOutAnim");
+     publisherDiv.addEventListener("animationend", function() 
      {
-       showPublisherStats.classList.add("hidden");
-       showPublisherStats.classList.remove("show");
-       showPublisherStats.classList.remove("scaleBookOutAnim");
+       publisherDiv.classList.add("hidden");
+       publisherDiv.classList.remove("show");
+       publisherDiv.classList.remove("scaleBookOutAnim");
        publisherButton.textContent = "Search database";
 
        if(window.innerWidth < 426)
@@ -460,12 +460,12 @@ function showPublisher()
       {
         console.log("er i animation for å vise publisher");
         soundEffects.accessing.play();
-        showPublisherStats.classList.add("scaleBookInAnim");
-        showPublisherStats.classList.remove("hidden");
-        showPublisherStats.classList.add("show");
-        showPublisherStats.addEventListener("animationend", function() 
+        publisherDiv.classList.add("scaleBookInAnim");
+        publisherDiv.classList.remove("hidden");
+        publisherDiv.classList.add("show");
+        publisherDiv.addEventListener("animationend", function() 
         {
-            showPublisherStats.classList.remove("scaleBookInAnim");
+            publisherDiv.classList.remove("scaleBookInAnim");
             isPublisherShowing = true;
             publisherButton.textContent = "Close database";
 
@@ -478,8 +478,8 @@ function showPublisher()
       console.log("error publisher routine");
       console.log(displayPublisherItems);
      
-      showPublisherStats.classList.remove("grid");
-      showPublisherStats.classList.add("hiddenDisplay");
+      publisherDiv.classList.remove("grid");
+      publisherDiv.classList.add("hiddenDisplay");
 
       publisherErrorWin.classList.add("flex");
       publisherErrorWin.classList.remove("hiddenDisplay");
@@ -489,7 +489,7 @@ function showPublisher()
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
         publisherErrorWin.classList.remove("scaleBookInAnim");
         soundEffects.requestNotFound.play();
-        closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5, showPublisherStats);
+        closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5, publisherDiv);
 
       }, {once:true});
     }
@@ -750,7 +750,7 @@ function removeAllAndDisplaySearch()
   }
    if(isPublisherShowing)
    {
-     if(windowOpenNode == undefined) windowOpenNode = showPublisherStats;
+     if(windowOpenNode == undefined) windowOpenNode = publisherDiv;
      removePublisher();
    }
    
@@ -776,8 +776,8 @@ function searchAndListResults()
 
   authorDiv.classList.remove("grid");
   authorDiv.classList.add("hiddenDisplay");
-  showPublisherStats.classList.remove("grid");
-  showPublisherStats.classList.add("hiddenDisplay");
+  publisherDiv.classList.remove("grid");
+  publisherDiv.classList.add("hiddenDisplay");
 
   // vis searchDiv og begynn
   searchDiv.classList.remove("hiddenDisplay");
@@ -903,8 +903,8 @@ function closeSearchWindow()
 
       authorDiv.classList.add("grid");
       authorDiv.classList.remove("hiddenDisplay");
-      showPublisherStats.classList.add("grid");
-      showPublisherStats.classList.remove("hiddenDisplay"); 
+      publisherDiv.classList.add("grid");
+      publisherDiv.classList.remove("hiddenDisplay"); 
       searchingStatus.textContent = "Searching";
 
       inSearchMode = false;

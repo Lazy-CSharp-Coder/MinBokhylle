@@ -132,7 +132,8 @@ const soundEffects =
    alreadyInSearchMode : new Audio("/Sounds/alreadysearching.mp3"),
    requestNotFound : new Audio("/Sounds/requestnotfound.mp3"),
    noEntriesFound : new Audio("/Sounds/noentriesfound.mp3"),
-   clickListItem : new Audio("/Sounds/clicklistitem.mp3")
+   clickListItem : new Audio("/Sounds/clicklistitem.mp3"),
+   iconsCreatedBy : new Audio("/Sounds/iconscreatedby.mp3")
 }
 
 
@@ -645,6 +646,7 @@ creditButton.addEventListener("click", function ()
   else
   {
   //  creditIconDiv.classList.add("slideInBottomAnim");
+   soundEffects.iconsCreatedBy.play();
    creditIconDiv.classList.add("scaleBookInAnim");
    creditIconDiv.classList.add("showDisplay");
    creditIconDiv.classList.remove("hiddenDisplay");

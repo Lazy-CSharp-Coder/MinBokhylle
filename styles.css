@@ -273,6 +273,10 @@ li:hover{
 
 }
 
+.genderImage {
+  width: 32px;
+}
+
 .authorPublisherWrapper {
   flex-direction: column;
   gap: 35px;

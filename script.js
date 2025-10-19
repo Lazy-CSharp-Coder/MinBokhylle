@@ -92,7 +92,7 @@ const bookDatabase =
                 image: "/Images/robinhobb.png", 
                 born: new Date(1952, 3, 5), 
                 location : "Berkley, California U.S", 
-                gender : "male",
+                gender : "female",
                 penAs : ["Robin Hobb", "Megan Lindholm" ]
               } 
             ],
@@ -167,6 +167,7 @@ function closeWindowAutomatically(divNode, countDisplay, duration, nodeReapperin
 const showAuthorItems =
 {
   authorName : document.querySelector("#authorName"),
+  authorGenderImage : document.querySelector("authorGenderImage"),
   authorImage : document.querySelector("#authorImage"),
   authorBorn : document.querySelector("#authorBorn"),
   authorLocation : document.querySelector("#authorLocation"),
@@ -189,6 +190,7 @@ const showAuthorItems =
     
     // legg inn data 
     this.authorImage.src = authorObject.image;
+    if(authorObject.gender == "female") this.authorGenderImage.src = "/Icons/woman2.png",
     this.authorName.textContent = authorObject.name;
     this.authorBorn.textContent = getDateString(authorObject.born);
     this.authorLocation.textContent = authorObject.location;

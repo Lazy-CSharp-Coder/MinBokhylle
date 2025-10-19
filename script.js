@@ -724,6 +724,7 @@ function searchAndListResults()
   let delay = 2;
   const delayInc = 1;
   
+  if(inSearchMode) return;
 
   while(searchResultsList.lastChild) searchResultsList.lastChild.remove();
 

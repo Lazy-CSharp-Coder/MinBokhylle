@@ -519,6 +519,7 @@ const showBookInfoItems =
 const listOfBooks = document.querySelector("#listOfBooks");
 let isBookShowing = false;
 let currentBookArrayNumber = 0;
+let fromSearch = false;
 
 function displayBook(event)
 {
@@ -526,9 +527,13 @@ function displayBook(event)
   // finne child nummer for å vite hvilket objekt i arrayen jeg skal bruke
   closeSearchWindow();
   console.log("inne i display book");  
-  const childElements = Array.from(listOfBooks.children);
-  currentBookArrayNumber = childElements.indexOf(event.target);
-  console.log(currentBookArrayNumber);
+  if(!fromSearch)
+  {
+    const childElements = Array.from(listOfBooks.children);
+    currentBookArrayNumber = childElements.indexOf(event.target);
+    console.log(currentBookArrayNumber);
+
+  } else fromSearch = false;
 
   
   // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)
@@ -636,6 +641,8 @@ creditButton.addEventListener("click", function ()
 
 // searching med tilhørende animasjon
 
+// denne brukes ikke men blir
+
 function setSearchingPointsChildren(parent)
 {
    const pointChild = [];
@@ -696,6 +703,7 @@ function removeAllAndDisplaySearch()
 
 const closeSearchButton = document.querySelector("#closeSearchButton");
 closeSearchButton.addEventListener("click", closeSearchWindow);
+let matchingBooksInSearch = [];
 
 function searchAndListResults()
 {
@@ -718,6 +726,7 @@ function searchAndListResults()
 
   const list = Array.from(listOfBooks.children);
   const newListArray = [];
+
   const clickToAccessText = document.querySelector("#clickToAccessText");
   const errorMessageText = document.querySelector("#errorMessageText");
 
@@ -739,6 +748,7 @@ function searchAndListResults()
             // newListItem.classList.add("hiddenDisplay");
 
             newListArray.push(newListItem);
+            matchingBooksInSearch.push(i);
           
             matchFound = true;
         }
@@ -754,6 +764,16 @@ function searchAndListResults()
       item.classList.add("slideInTopAnim");
       item.classList.add("hidden");
       item.style.animationDelay = delay + "s";
+      // sette opp eventlistener for trykk
+      item.addEventListener("click", () => 
+      { 
+        const childrenArray = Array.from(item.parentNode.children);
+        currentBookArrayNumber = matchingBooksInSearch[childrenArray.indexOf(item)];
+        closeSearchWindow();
+        fromSearch = true;
+        displayBook();
+      
+      });
 
 
 
@@ -821,6 +841,8 @@ function closeSearchWindow()
     }, {once: true});
    }
 }
+
+
 
 const otherBooksButton = document.querySelector("#otherBooksButton");
 otherBooksButton.addEventListener("click", removeAllAndDisplaySearch);

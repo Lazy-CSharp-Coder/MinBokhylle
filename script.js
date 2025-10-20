@@ -145,6 +145,7 @@ const femaleCheck = document.querySelector("#femaleCheck");
 const maleCheck = document.querySelector("#maleCheck");
 const enterBookshelfButton = document.querySelector("#enterBookshelfButton");
 const aiVoiceDiv = document.querySelector("#aiVoiceDiv");  
+console.log(aiVoiceDiv);
 const accessingDiv = document.querySelector("#accessingDiv");
 
 femaleCheck.checked = true;
@@ -154,17 +155,34 @@ maleCheck.addEventListener("change", () => { maleCheck.checked = true; femaleChe
 
 enterBookshelfButton.addEventListener("click", enterDatabase);
 
+function introducingBookshelf()
+{
+   
+
+}
+
+
+
 function enterDatabase() 
 {
   console.log("entering database function");
   
-  // animate out ai voice div
+  // animate out ai voice div and inn loading div
 
-  aiVoiceDiv.classList.add("fadeOuAnim");
+  aiVoiceDiv.classList.add("fadeOutAnim");
   aiVoiceDiv.addEventListener("animationend", function () 
   {
     aiVoiceDiv.classList.remove("Flex");
     aiVoiceDiv.classList.add("hiddenDisplay");
+    accessingDiv.classList.add("fadeInAnim");
+    accessingDiv.classList.remove("hiddenDisplay");
+    accessingDiv.classList.add("flex");
+    accessingDiv.addEventListener("animationend", () => 
+    {
+       accessingDiv.classList.remove("fadeInAnim"); 
+       
+      
+    }, {once:true});
 
   }, {once:true});
 

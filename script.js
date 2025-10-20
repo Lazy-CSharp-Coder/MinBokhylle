@@ -142,7 +142,8 @@ const maleEffects =
    afternoon : new Audio("/Sounds/iconscreatedby.mp3"),
    evening : new Audio("/Sounds/noentriesfound.mp3"),
    night : new Audio("/Sounds/searchmode.mp3"),
-   introduction : new Audio("/Sounds/searchmode.mp3")
+   introduction : new Audio("/Sounds/searchmode.mp3"),
+   maintenance : new Audio("/Sounds/maintenace.mp3")
 
 }
 
@@ -166,7 +167,8 @@ const femaleEffects =
    afternoon : new Audio("/Sounds/iconscreatedby.mp3"),
    evening : new Audio("/Sounds/noentriesfound.mp3"),
    night : new Audio("/Sounds/searchmode.mp3"),
-   introduction : new Audio("/Sounds/searchmode.mp3")
+   introduction : new Audio("/Sounds/searchmode.mp3"),
+   maintenance : new Audio("/Sounds/maintenace.mp3")
 
 }
 
@@ -245,7 +247,12 @@ function playIntroductionAndEnterDatabase()
   const hour = timeNow.getHours();
   let timeGreeting;
   console.log("Timen er : " + hour);
-  if(hour < 6) timeGreeting = soundEffects.night;
+  if(hour > 5 && hour < 6) 
+  {
+     soundEffects.maintenance.play();
+     return 0;
+  }
+  if(hour < 5) timeGreeting = soundEffects.night;
   else if(hour < 12) timeGreeting = soundEffects.morning;
        else if(hour < 19) timeGreeting = soundEffects.afternoon;
             else timeGreeting = soundEffects.evening;
@@ -291,7 +298,7 @@ function playIntroductionAndEnterDatabase()
     }, {once:true});
     
   }, {once: true});
-       
+  return 1;     
 }
 
 // denne funksjonen henter boktittlene fra databasen og legger i listen + anim
@@ -352,8 +359,7 @@ function loadAiHelper(duration, statusUpdateNode)
                         {
                             clearInterval(countDownInterval);
                             statusUpdateNode.textContent = "Playing : Introduction";
-                            playIntroductionAndEnterDatabase();
-                            isOnStartPage = false;
+                            if(playIntroductionAndEnterDatabase() == 1) isOnStartPage = false;
                             // ferding med loading
                         }
   }, 1000);

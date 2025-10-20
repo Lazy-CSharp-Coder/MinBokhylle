@@ -156,7 +156,7 @@ const femaleEffects =
    accessing : new Audio("/Sounds/accessinga.mp3"),
    enterSearchMode : new Audio("/Sounds/searchmodea.mp3"),
    switching : new Audio("/Sounds/switchinga.mp3"),
-   bookIntro : new Audio("/Sounds/bookintroaa.mp3"),
+   bookIntro : new Audio("/Sounds/bookintroa.mp3"),
    featureNotAvailable : new Audio("/Sounds/notavailablea.mp3"),
    alreadyInSearchMode : new Audio("/Sounds/alreadysearchinga.mp3"),
    requestNotFound : new Audio("/Sounds/requestnotfounda.mp3"),

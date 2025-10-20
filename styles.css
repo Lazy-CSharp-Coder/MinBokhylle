@@ -576,6 +576,8 @@ li:hover{
   flex-direction: column;
   /* display: none; */
  
+  font-family: "Oswald";
+
   align-items: center;
   justify-content: flex-start;
   color:var(--primaryTextColor);
@@ -650,10 +652,11 @@ li:hover{
 }
 
 .searchResultsList {
-  padding:0;
+  /* margin-left: 5px; */
 }
 
 .matchFoundText {
+  align-self: center;
   
 }
 

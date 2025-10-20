@@ -144,17 +144,30 @@ const soundEffects =
 const femaleCheck = document.querySelector("#femaleCheck");
 const maleCheck = document.querySelector("#maleCheck");
 const enterBookshelfButton = document.querySelector("#enterBookshelfButton");
+const aiVoiceDiv = document.querySelector("#aiVoiceDiv");  
+const accessingDiv = document.querySelector("#accessingDiv");
 
 femaleCheck.checked = true;
 
 femaleCheck.addEventListener("change", () => { femaleCheck.checked = true; maleCheck.checked = false; });
 maleCheck.addEventListener("change", () => { maleCheck.checked = true; femaleCheck.checked = false; });
 
-enterBookshelfButton.addEventListener("clicked", enterDatabase);
+enterBookshelfButton.addEventListener("click", enterDatabase);
 
 function enterDatabase() 
 {
   console.log("entering database function");
+  
+  // animate out ai voice div
+
+  aiVoiceDiv.classList.add("fadeOut");
+  aiVoiceDiv.addEventListener("animationend", function () 
+  {
+    aiVoiceDiv.classList.remove("Flex");
+    aiVoiceDiv.classList.add("hiddenDisplay");
+
+  }, {once:true});
+
 }
 
 

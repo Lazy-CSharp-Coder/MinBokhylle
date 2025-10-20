@@ -160,10 +160,17 @@ function introducingBookshelf()
 {
    if(femaleCheck.checked) aiSelected = "Adeline";
    else aiSelected = "John";
+   console.log("AI selected :" + aiSelected);
 
    const accessingStatusText = document.querySelector("#accessingStatusText");
+   console.log(accessingStatusText);
    loadAiHelper(5, accessingStatusText);
 
+}
+
+function createIntroduction()
+{
+   return new Audio("/Sounds/booksintro.mp3");
 }
 
 function loadAiHelper(duration, statusUpdateNode)
@@ -175,16 +182,31 @@ function loadAiHelper(duration, statusUpdateNode)
     remainingTime--;
     // countDisplay.textContent = remainingTime;
 
-    if(remaningTime == 4) 
+    if(remainingTime == 4) 
     {
        statusUpdateNode.textContent = "Loading ai voice " + aiSelected;
        console.log("er her i 5 sekunder");
-    }
-    if(remainingTime <= 0)
-    {
-      clearInterval(countDownInterval);
-      // ferding med loading
-    }
+    } 
+    else if(remainingTime == 3)
+         {
+            statusUpdateNode.textContent = "Loading dependencies"
+         }
+         else if(remainingTime == 2)
+              {
+                statusUpdateNode.textContent = "Installing dependencies";
+              }
+              else if(remainingTime == 1)
+                   {
+                       statusUpdateNode.textContent = "Loading database";
+                   }
+                   else if(remainingTime <= 0)                   
+                        {
+                            clearInterval(countDownInterval);
+                            statusUpdateNode.textContent = "Hi, my name is " + aiSelected;
+                            let intro = createIntroduction();
+                            intro.play();
+                            // ferding med loading
+                        }
   }, 1000);
 
 }

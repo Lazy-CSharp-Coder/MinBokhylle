@@ -143,8 +143,20 @@ const soundEffects =
 
 const femaleCheck = document.querySelector("#femaleCheck");
 const maleCheck = document.querySelector("#maleCheck");
+const enterBookshelfButton = document.querySelector("#enterBookshelfButton");
 
-femaleCheck.addEventListener("change", () => { this.checked = true; maleCheck.checked = false; });
+femaleCheck.checked = true;
+
+femaleCheck.addEventListener("change", () => { femaleCheck.checked = true; maleCheck.checked = false; });
+maleCheck.addEventListener("change", () => { maleCheck.checked = true; femaleCheck.checked = false; });
+
+enterBookshelfButton.addEventListener("clicked", enterDatabase);
+
+function enterDatabase() 
+{
+  console.log("entering database function");
+}
+
 
 
 

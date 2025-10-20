@@ -139,25 +139,24 @@ h2 {
 
 }
 
-.subHeading {
-  padding: 2px;
-}
+.headingStart {
 
-
-h3 {
   font-family: "BBH Sans Bogle";
   font-size:30px;
   font-weight: 100;
-  animation-name: slideInTop;
-  animation-duration: 3s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
   color:var(--bookListTextColor);
 
 }
-
-
+.subHeadingStart {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  margin: 0;
+}
 
 main {
   /* display: flex; */

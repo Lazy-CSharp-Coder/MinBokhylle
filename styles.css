@@ -266,7 +266,7 @@ label {
 
 .hero {
   /* display: grid; */
-  grid-template-columns: 210px 562px 468px;
+  grid-template-columns: 210px auto auto;
   justify-self:center;
 
   /* display: flex;

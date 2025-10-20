@@ -163,11 +163,15 @@ function closeWindowAutomatically(divNode, countDisplay, duration, nodeReapperin
     if(remainingTime <= 0)
     {
       clearInterval(countDownInterval);
-      divNode.classList.remove("flex");
-      divNode.classList.add("hiddenDisplay");
-      nodeReappering.classList.remove("hiddenDisplay");
-      nodeReappering.classList.add("grid");
-    
+      divNode.classList.add("fadeOutErrorWin");
+      divNode.addEventListener("animationend", function() 
+      {
+  
+        divNode.classList.remove("flex");
+        divNode.classList.add("hiddenDisplay");
+        nodeReappering.classList.remove("hiddenDisplay");
+        nodeReappering.classList.add("grid");
+      }, {once:true});
     }
   }, 1000);
 

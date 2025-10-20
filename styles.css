@@ -297,8 +297,13 @@ li:hover{
   font-family: var(--primaryFontFamily);
   border-radius: 2px;
   background-color: var(--windowBackgroundColor);
+}
 
-
+.fadeOutErrorWin {
+  animation-name: fadeOut;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
 }
 
 .errorCountText {
@@ -480,7 +485,7 @@ li:hover{
 }
 
 .pointAnim {
-  animation-name: fadeInOut;
+  animation-name: fadeOut;
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
@@ -540,7 +545,7 @@ li:hover{
   100% { opacity: 1; }
 }
 
-@keyframes fadeInOut {
+@keyframes fadeOut {
   0% { opacity:1}
   100% { opacity: 0}
 }

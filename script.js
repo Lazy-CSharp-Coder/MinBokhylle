@@ -180,7 +180,8 @@ function updateClock()
    clockDiv.textContent = timeString;
 }
 
-
+updateClock();
+setInterval(updateClock, 1000);
 
 
 function introducingBookshelf()

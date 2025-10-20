@@ -258,7 +258,7 @@ function playIntroductionAndEnterDatabase()
     introduction.addEventListener("ended", function()
     {
       const startPage = document.querySelector("#startPage");
-      const databasePage = document.querySelector("#hero");
+      const databasePage = document.querySelector("#databasePage");
 
       startPage.classList.add("fadeOutAnim");
       startPage.addEventListener("animationend", function()

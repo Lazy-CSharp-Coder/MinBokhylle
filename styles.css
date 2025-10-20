@@ -270,7 +270,7 @@ label {
 
 /* her kommer selve hovedsiden som viser database info */
 
-.hero {
+.databasePage {
   /* display: grid; */
   grid-template-columns: 210px 562px 468px;
   justify-self:center;
@@ -500,14 +500,14 @@ li:hover{
 }
 
 @media (max-width: 426px) {
-  .hero {
+  .databasePage {
      display: flex;
      flex-direction: column;
      align-items: center;
   }
 
-  .heroText,
-  .heroImg {
+  .databasePageText,
+  .databasePageImg {
     width: 100%;
   }
 

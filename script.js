@@ -140,7 +140,7 @@ const maleEffects =
    darkMode : new Audio("/Sounds/darkmodej.mp3"),
 
    morning : new Audio("/Sounds/morningj.mp3"),
-   afternoon : new Audio("/Sounds/afternoonej.mp3"),
+   afternoon : new Audio("/Sounds/afternoonj.mp3"),
    evening : new Audio("/Sounds/eveningj.mp3"),
    night : new Audio("/Sounds/nightj.mp3"),
    introduction : new Audio("/Sounds/introj.mp3"),

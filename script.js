@@ -170,7 +170,7 @@ function introducingBookshelf()
 
    const accessingStatusText = document.querySelector("#accessingStatusText");
    console.log(accessingStatusText);
-   loadAiHelper(5, accessingStatusText);
+   loadAiHelper(6, accessingStatusText);
 
 }
 
@@ -211,7 +211,7 @@ function playIntroductionAndEnterDatabase()
           {
              databasePage.classList.remove("fadeInAnim");
              setListAndAnimate();
-          }, {once:true});
+        }, {once:true});
 
          
 
@@ -262,22 +262,22 @@ function loadAiHelper(duration, statusUpdateNode)
     remainingTime--;
     // countDisplay.textContent = remainingTime;
 
-    if(remainingTime == 4) 
+    if(remainingTime == 5) 
     {
-       statusUpdateNode.textContent = "Loading ai voice " + aiSelected;
+       statusUpdateNode.textContent = "Loading dependencies";
        console.log("er her i 5 sekunder");
     } 
-    else if(remainingTime == 3)
+    else if(remainingTime == 4)
          {
-            statusUpdateNode.textContent = "Loading dependencies"
+            statusUpdateNode.textContent = "Installing dependencies"
          }
-         else if(remainingTime == 2)
+         else if(remainingTime == 3)
               {
-                statusUpdateNode.textContent = "Installing dependencies";
+                statusUpdateNode.textContent = "Loading database";
               }
-              else if(remainingTime == 1)
+              else if(remainingTime == 2)
                    {
-                       statusUpdateNode.textContent = "Loading database";
+                       statusUpdateNode.textContent =  "Loading ai voice " + aiSelected;
                    }
                    else if(remainingTime <= 0)                   
                         {

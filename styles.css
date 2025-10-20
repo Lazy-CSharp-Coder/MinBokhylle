@@ -143,6 +143,8 @@ h2 {
 
 main {
   /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
   flex-grow: 1;
   background-color: black;
 
@@ -162,6 +164,7 @@ main {
   align-items: center;
   /* background-color: black; */
   height: 100%;
+  margin-top: 10%;
 }
 
 .headingStart {
@@ -175,7 +178,8 @@ main {
   animation-timing-function: ease-in-out;
   animation-delay: 0.5s;
   animation-fill-mode: backwards;
-  margin-bottom: 0;
+  margin: 0;
+
 
 }
 
@@ -204,6 +208,30 @@ main {
   border-radius: 4px;
 }
 
+.accessingIcon {
+  animation-name: rotateRight;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.accessingStatusText {
+  padding-left: 20px;
+  /* padding-right: 5px; */
+  font-size: 25px;
+  font-family:var(--primaryFontFamily);
+}
+
+.accessingDiv {
+  gap: 3px;
+  align-items: center;
+}
+
+.accessingPoints {
+  font-size: 25px;
+  margin-bottom: 10px;
+
+}
 
 /* her kommer selve hovedsiden som viser database info */
 

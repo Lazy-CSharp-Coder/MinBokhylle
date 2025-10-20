@@ -231,14 +231,21 @@ label {
 
 .enterBookshelfButton {
   
-  padding: 20px 60px;
+  align-items: center;
+  gap: 20px;
+
+  padding: 10px 20px;
   font-size: 20px;
   /* font-family: var(--secondaryFontFamily); */
   font-family: "Oswald";
-  
+  background-color: #dcdcdc;
   font-weight: bold;
   border: 3px solid lightskyblue;
   border-radius: 4px;
+}
+
+.buttonImg {
+  width: 32px;
 }
 
 .accessingIcon {

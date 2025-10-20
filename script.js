@@ -328,12 +328,14 @@ function showAuthor(event)
       }
       else
       {
+        const height = authorDiv.offsetHeight;
         authorDiv.classList.remove("grid");
         authorDiv.classList.add("hiddenDisplay");
 
         authorErrorWin.classList.add("flex");
         authorErrorWin.classList.remove("hiddenDisplay");
         authorErrorWin.classList.add("scaleInAnim");
+        authorErrorWin.style.height = height + "px";
         authorErrorWin.addEventListener("animationend", function()
         {
           const authorErrorCountText = document.querySelector("#authorErrorCountText");
@@ -479,13 +481,15 @@ function showPublisher()
    {
       console.log("error publisher routine");
       console.log(displayPublisherItems);
-     
+      const height = publisherDiv.offsetHeight;
+      console.log("height : " + height);
       publisherDiv.classList.remove("grid");
       publisherDiv.classList.add("hiddenDisplay");
 
       publisherErrorWin.classList.add("flex");
       publisherErrorWin.classList.remove("hiddenDisplay");
       publisherErrorWin.classList.add("scaleInAnim");
+      publisherErrorWin.style.height = height + "px";
       publisherErrorWin.addEventListener("animationend", function()
       {
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");

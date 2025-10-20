@@ -627,6 +627,7 @@ li:hover{
 .searchingAnimDiv {
   /* grid-template-columns: 40px 200px 40px; */
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   gap: 5px;
 

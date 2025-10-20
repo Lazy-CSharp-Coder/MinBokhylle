@@ -144,7 +144,7 @@ const maleEffects =
    evening : new Audio("/Sounds/eveningj.mp3"),
    night : new Audio("/Sounds/nightj.mp3"),
    introduction : new Audio("/Sounds/introj.mp3"),
-   maintenance : new Audio("/Sounds/maintenacej.mp3"),
+   maintenance : new Audio("/Sounds/maintenancej.mp3"),
    website : new Audio("/Sounds/websitej.mp3")
 
 }
@@ -171,7 +171,7 @@ const femaleEffects =
    evening : new Audio("/Sounds/eveninga.mp3"),
    night : new Audio("/Sounds/nighta.mp3"),
    introduction : new Audio("/Sounds/introa.mp3"),
-   maintenance : new Audio("/Sounds/maintenacea.mp3"),
+   maintenance : new Audio("/Sounds/maintenancea.mp3"),
    website : new Audio("/Sounds/websitea.mp3")
 
 }

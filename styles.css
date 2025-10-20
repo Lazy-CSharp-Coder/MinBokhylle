@@ -262,6 +262,11 @@ label {
   /* margin-bottom: 15px; */
 }
 
+.clockDiv {
+  font-family: var(--primaryFontFamily);
+  font-size: 18px;
+}
+
 /* her kommer selve hovedsiden som viser database info */
 
 .hero {

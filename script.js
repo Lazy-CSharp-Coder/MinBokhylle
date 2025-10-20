@@ -142,7 +142,7 @@ const maleEffects =
    afternoon : new Audio("/Sounds/iconscreatedby.mp3"),
    evening : new Audio("/Sounds/noentriesfound.mp3"),
    night : new Audio("/Sounds/searchmode.mp3"),
-   introduction : new Audio("/Sounds/bookintro.mp3")
+   introduction : new Audio("/Sounds/searchmode.mp3")
 
 }
 
@@ -166,7 +166,7 @@ const femaleEffects =
    afternoon : new Audio("/Sounds/iconscreatedby.mp3"),
    evening : new Audio("/Sounds/noentriesfound.mp3"),
    night : new Audio("/Sounds/searchmode.mp3"),
-   introduction : new Audio("/Sounds/bookintro.mp3")
+   introduction : new Audio("/Sounds/searchmode.mp3")
 
 }
 

@@ -124,6 +124,7 @@ const bookDatabase =
 
 const maleEffects = 
 {
+   aiName : "John",
    enterListItems : new Audio("/Sounds/enterlistitemsj.mp3"),
    accessingBooks : new Audio("/Sounds/accessingj.mp3"),
    accessing : new Audio("/Sounds/accessingj.mp3"),
@@ -151,6 +152,7 @@ const maleEffects =
 
 const femaleEffects = 
 {
+   aiName : "Adeline",
    enterListItems : new Audio("/Sounds/enterlistitemsa.mp3"),
    accessingBooks : new Audio("/Sounds/accessinga.mp3"),
    accessing : new Audio("/Sounds/accessinga.mp3"),
@@ -189,21 +191,21 @@ const accessingDiv = document.querySelector("#accessingDiv");
 
 let soundEffects = femaleEffects;
 femaleCheck.checked = true;
-let aiSelected = "Adeline";
+
 
 femaleCheck.addEventListener("change", () => 
   { 
     femaleCheck.checked = true; 
     maleCheck.checked = false; 
     soundEffects = femaleEffects; 
-    aiSelected = "Adeline";
+
   });
 maleCheck.addEventListener("change", () => 
 { 
    maleCheck.checked = true; 
    femaleCheck.checked = false; 
    soundEffects = maleEffects;
-   aiSelected = "John";
+
 });
 
 enterBookshelfButton.addEventListener("click", enterDatabase);
@@ -334,6 +336,8 @@ function setListAndAnimate()
 
 }
 
+// laste inn data - bruker intervall
+
 function loadAiHelper(duration, statusUpdateNode)
 {
   let remainingTime = duration;
@@ -358,7 +362,7 @@ function loadAiHelper(duration, statusUpdateNode)
               }
               else if(remainingTime == 2)
                    {
-                       statusUpdateNode.textContent =  "Loading ai voice : " + aiSelected;
+                       statusUpdateNode.textContent =  "Loading ai voice : " + soundEffects.aiName;
                    }
                    else if(remainingTime <= 0)                   
                         {

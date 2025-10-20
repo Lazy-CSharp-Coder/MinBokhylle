@@ -329,6 +329,8 @@ function showAuthor(event)
       else
       {
         const height = authorDiv.offsetHeight;
+        if(height == 0) return;  // error message vises allerede
+        
         authorDiv.classList.remove("grid");
         authorDiv.classList.add("hiddenDisplay");
 
@@ -483,6 +485,9 @@ function showPublisher()
       console.log(displayPublisherItems);
       const height = publisherDiv.offsetHeight;
       console.log("height : " + height);
+
+      if(height == 0) return;   // error win vises allerede
+      
       publisherDiv.classList.remove("grid");
       publisherDiv.classList.add("hiddenDisplay");
 

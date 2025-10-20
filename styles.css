@@ -139,44 +139,12 @@ h2 {
 
 }
 
-.headingStart {
 
-  font-family: "BBH Sans Bogle";
-  font-size:40px;
-  color:lightskyblue;
-  font-weight: 100;
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
-  animation-delay: 0.5s;
-  animation-fill-mode: backwards;
-  margin-bottom: 0;
-
-}
-
-.aiVoiceDiv {
-  margin : 20px;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.enterBookshelfButton {
-  
-  padding: 20px 60px;
-  font-family: var(--primaryFontFamily);
-  border: var(--primaryBorder);
-  border-radius: 4px;
-}
-
-.subHeadingStart {
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  margin-top: 0;
-}
 
 main {
   /* display: flex; */
   flex-grow: 1;
+  background-color: black;
 
 }
 
@@ -192,9 +160,49 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* background-color: black; */
+  height: 100%;
 }
 
+.headingStart {
 
+  font-family: "BBH Sans Bogle";
+  font-size:40px;
+  color:lightskyblue;
+  font-weight: 100;
+  animation-name: none;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  margin-bottom: 0;
+
+}
+
+.subHeadingStart {
+  animation-name: none;
+  animation-duration: 0.2s;
+  margin-top: 0;
+}
+
+.aiVoiceDiv {
+  margin : 20px;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.aiVoiceForm {
+  flex-direction: column;
+}
+
+.enterBookshelfButton {
+  
+  padding: 20px 60px;
+
+  border: var(--primaryBorder);
+  border-radius: 4px;
+}
 
 
 /* her kommer selve hovedsiden som viser database info */

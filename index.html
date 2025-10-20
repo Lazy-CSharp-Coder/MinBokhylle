@@ -18,34 +18,15 @@
     <img class="booksIcon" src="/Icons/books.png" alt="books icon missing" />
     <h1> Books from my bookshelf</h1>
     <img id="darkLightIcon" class="darklightIcon" src="/Icons/darklight.png" alt="darklight mode icon">
-    <!-- <nav class="headerNav">
-        <ul class="navList">
-          <li>
-            <a href="#home">Home</a>
-          </li>
-          <li>
-            <a href="#transition">Overganger</a>
-          </li>
-          <li>
-            <a href="#animation">Animasjoner</a>
-          </li>
-        </ul>
-        <img
-          onclick="hamburgerToggle()"
-          class="hamburgerIcon"
-          src="hamburger.png"
-          alt="Hamburger meny ikon"
-        />
-      </nav> -->
   </header>
 
   <main>
     <section id="startPage" class="startPage flex">
       <h1 class="headingStart">BOOKS FROM MY BOOKSHELF</h3>
       <h2 class="subHeadingStart">DATABASE</h2>
-      <div class="aiVoiceDiv flex">
-        <p>Please select AI Voice for helper</p>
-         <form>
+      <div id="aiVoiceDiv" class="aiVoiceDiv flex">
+        <p>Please select AI Voice helper</p>
+         <form class="flex aiVoiceForm">
           <label for="femaleCheck">
             <input type="checkbox" id="femaleCheck" name="femaleCheck" class="aiCheck"> 
             Adeline (female)
@@ -55,8 +36,12 @@
             John (male)
           </label>
         </form>
-        <button id="enterBookshelfButton" class="enterBookshelfButton">Enter MyBookshelf</button>
-      </div>>
+        <button id="enterBookshelfButton" class="enterBookshelfButton">Enter MyBookshelf Database</button>
+      </div>
+      <div id="accessingDiv" class="flex accessingDiv">
+        <img class="accessingIcon" class="accessingIcon" src="/Icons/searching2.png">
+        <p id="accessingStatusText" class="accessingStatusText">Loading depenencies</p>
+      </div>
        
     </section>
 

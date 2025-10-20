@@ -185,8 +185,20 @@ let soundEffects = femaleEffects;
 femaleCheck.checked = true;
 let aiSelected = "Adeline";
 
-femaleCheck.addEventListener("change", () => { femaleCheck.checked = true; maleCheck.checked = false; });
-maleCheck.addEventListener("change", () => { maleCheck.checked = true; femaleCheck.checked = false; });
+femaleCheck.addEventListener("change", () => 
+  { 
+    femaleCheck.checked = true; 
+    maleCheck.checked = false; 
+    soundEffects = femaleEffects; 
+    aiSelected = "Adeline";
+  });
+maleCheck.addEventListener("change", () => 
+{ 
+   maleCheck.checked = true; 
+   femaleCheck.checked = false; 
+   soundEffects = maleEffects;
+   aiSelected = "John";
+});
 
 enterBookshelfButton.addEventListener("click", enterDatabase);
 
@@ -216,17 +228,6 @@ setInterval(updateClock, 1000);
 
 function introducingBookshelf()
 {
-   if(femaleCheck.checked)
-   {
-     aiSelected = "Adeline";
-     soundEffects = femaleEffects;
-   }
-   else
-   { 
-    aiSelected = "John";
-    soundEffects = maleEffects;
-   }
-
    console.log(soundEffects);
    console.log("AI selected :" + aiSelected);
 

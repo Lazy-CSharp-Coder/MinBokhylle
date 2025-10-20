@@ -128,7 +128,7 @@ const maleEffects =
    accessingBooks : new Audio("/Sounds/accessing.mp3"),
    accessing : new Audio("/Sounds/accessing.mp3"),
    enterSearchMode : new Audio("/Sounds/searchmode.mp3"),
-   switching : new Audio("/Sounds/accesssing.mp3"),
+   switching : new Audio("/Sounds/accessing.mp3"),
    bookIntro : new Audio("/Sounds/bookintro.mp3"),
    featureNotAvailable : new Audio("/Sounds/notavailable.mp3"),
    alreadyInSearchMode : new Audio("/Sounds/alreadysearching.mp3"),

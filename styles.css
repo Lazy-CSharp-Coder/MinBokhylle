@@ -581,6 +581,9 @@ li:hover{
 }
 
 .searchingIcon {
+  position: fixed;
+  top : 20px;
+  left : 20px;
   width : 32px;
 
   animation-name: rotateRight;
@@ -594,7 +597,7 @@ li:hover{
   font-family: var(--primaryFontFamily);
   color:var(--primaryTextColor);
   font-size: 20px;
-  margin-left: 20px;
+  margin-left: 22px;
 
 }
 

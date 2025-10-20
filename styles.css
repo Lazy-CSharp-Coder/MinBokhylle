@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bogle&family=BBH+Sans+Hegarty&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Oswald:wght@200..700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -232,7 +233,10 @@ label {
   
   padding: 20px 60px;
   font-size: 20px;
-  font-family: var(--secondaryFontFamily);
+  /* font-family: var(--secondaryFontFamily); */
+  font-family: "Oswald";
+  
+  font-weight: bold;
   border: 3px solid lightskyblue;
   border-radius: 4px;
 }

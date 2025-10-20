@@ -179,7 +179,9 @@ const aiVoiceDiv = document.querySelector("#aiVoiceDiv");
 console.log(aiVoiceDiv);
 const accessingDiv = document.querySelector("#accessingDiv");
 
-let soundEffects;
+// sette Adeline som default her
+
+let soundEffects = femaleEffects;
 femaleCheck.checked = true;
 let aiSelected = "Adeline";
 
@@ -206,6 +208,7 @@ function updateClock()
    const timeString = `${hours}:${minutes}:${seconds}`;
    clockDiv.textContent = timeString;
 }
+
 
 updateClock();
 setInterval(updateClock, 1000);

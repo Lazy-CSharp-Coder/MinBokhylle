@@ -252,6 +252,7 @@ label {
 }
 
 .accessingDiv {
+  margin-top: 20px;
   gap: 3px;
   align-items: center;
 }

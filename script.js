@@ -1211,7 +1211,7 @@ function darkLightModeToggle()
 
 darkLightIcon.addEventListener("click", darkLightModeToggle);
 
-if(window.innerWidth < 426 && !databasePage.classList.contains("hiddenDisplay"))
+if(window.innerWidth < 426)
 {
    databasePage.classList.remove("grid");
    databasePage.classList.add("flex");

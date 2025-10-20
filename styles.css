@@ -29,7 +29,7 @@ body {
 
   min-height: 100vh;
 
-  font-family: "Roboto";
+  font-family:var(--secondaryFontFamily);
   font-size: 14px;
 
   background-color: var(--primaryBackgroundColor);
@@ -301,6 +301,7 @@ label {
 .listOfBooks
 {
   flex-direction: column;
+  font-family: "Roboto";
   /* width:250px; */
   gap: 20px;
   font-size: 14px;
@@ -596,8 +597,8 @@ li:hover{
 
 .searchingIcon {
   position: fixed;
-  top : 20px;
-  left : 20px;
+  top : 22px;
+  left : 30px;
   width : 32px;
 
   animation-name: rotateRight;

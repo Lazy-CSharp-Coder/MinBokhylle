@@ -236,9 +236,6 @@ setInterval(updateClock, 1000);
 
 function introducingBookshelf()
 {
-   console.log(soundEffects);
-   console.log("AI selected :" + aiSelected);
-
    const accessingStatusText = document.querySelector("#accessingStatusText");
    console.log(accessingStatusText);
    loadAiHelper(6, accessingStatusText);

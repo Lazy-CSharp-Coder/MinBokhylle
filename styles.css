@@ -221,6 +221,13 @@ label {
   accent-color: lightskyblue;
 }
 
+.fadeOutAnim {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
 .enterBookshelfButton {
   
   padding: 20px 60px;

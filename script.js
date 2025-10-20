@@ -160,7 +160,7 @@ function enterDatabase()
   
   // animate out ai voice div
 
-  aiVoiceDiv.classList.add("fadeOut");
+  aiVoiceDiv.classList.add("fadeOuAnim");
   aiVoiceDiv.addEventListener("animationend", function () 
   {
     aiVoiceDiv.classList.remove("Flex");

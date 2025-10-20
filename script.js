@@ -135,7 +135,13 @@ const soundEffects =
    clickListItem : new Audio("/Sounds/clicklistitem.mp3"),
    iconsCreatedBy : new Audio("/Sounds/iconscreatedby.mp3"),
    lightMode : new Audio("/Sounds/lightmode.mp3"),
-   darkMode : new Audio("/Sounds/darkmode.mp3")
+   darkMode : new Audio("/Sounds/darkmode.mp3"),
+   morning : new Audio("/Sounds/accessing.mp3"),
+   afternoon : new Audio("/Sounds/iconscreatedby.mp3"),
+   evening : new Audio("/Sounds/noentriesfound.mp3"),
+   night : new Audio("/Sounds/searchmode.mp3"),
+   introduction : new Audio("/Sounds/bookintro.mp3")
+
 }
 
 
@@ -170,7 +176,19 @@ function introducingBookshelf()
 
 function createIntroduction()
 {
-   return new Audio("/Sounds/bookintro.mp3");
+  const timeNow = new Date();
+  const hour = timeNow.getHours();
+  let timeGreeting;
+  console.log("Timen er : " + hour);
+  if(hour < 6) timeGreeting = soundEffects.night;
+  else if(hour < 12) timeGreeting = soundEffects.morning;
+       else if(hour < 19) timeGreeting = soundEffects.afternoon;
+            else timeGreeting = soundEffects.evening;
+  // sette opp hele introduksjon her
+  
+  let introduction = timeGreeting + soundEffects.introduction;
+       
+  return introduction;
 }
 
 function loadAiHelper(duration, statusUpdateNode)
@@ -202,7 +220,7 @@ function loadAiHelper(duration, statusUpdateNode)
                    else if(remainingTime <= 0)                   
                         {
                             clearInterval(countDownInterval);
-                            statusUpdateNode.textContent = "Playing : Hi, my name is " + aiSelected;
+                            statusUpdateNode.textContent = "Playing : Introduction";
                             let intro = createIntroduction();
                             intro.play();
                             // ferding med loading

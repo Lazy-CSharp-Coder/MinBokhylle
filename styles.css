@@ -139,6 +139,26 @@ h2 {
 
 }
 
+.subHeading {
+  padding: 2px;
+}
+
+
+h3 {
+  font-family: "BBH Sans Bogle";
+  font-size:30px;
+  font-weight: 100;
+  animation-name: slideInTop;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+  color:var(--bookListTextColor);
+
+}
+
+
+
 main {
   /* display: flex; */
   flex-grow: 1;
@@ -151,8 +171,21 @@ main {
   height: 100%;
 }
 
+/* her kommer startsiden */
+
+.startPage {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+/* her kommer selve hovedsiden som viser database info */
+
 .hero {
-  display: grid;
+  /* display: grid; */
   grid-template-columns: 210px 562px 468px;
   justify-self:center;
 

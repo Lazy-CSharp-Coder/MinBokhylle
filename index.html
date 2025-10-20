@@ -40,7 +40,25 @@
   </header>
 
   <main>
-    <section id="hero" class="section hero">
+    <section id="startPage" class="startPage flex">
+      <h3>BOOKS ON MY BOOKSHELF</h3>
+      <h2 class="subHeading">DATABASE</h2>
+      <form>
+        <label for="femaleCheck">
+          <input type="checkbox" id="femaleCheck" name="femaleCheck" class="aiCheck"> 
+          Adeline (female)
+        </label>
+        <label for="maleCheck">
+          <input type="checkbox" id="maleCheck" name="maleCheck" class="aiCheck"> 
+          John (male)
+        </label>
+      </form>
+      <button id="enterBookshelfButton" class="enterBookshelfButton">Enter MyBookshelf</button>
+      
+    </section>
+
+
+    <section id="hero" class="section hero hiddenDisplay">
       <div class="flex headerAndListDiv">
         <h2> Books from database</h2>
         <ul id="listOfBooks" class="flex listOfBooks">

@@ -172,7 +172,7 @@ function enterDatabase()
   aiVoiceDiv.classList.add("fadeOutAnim");
   aiVoiceDiv.addEventListener("animationend", function () 
   {
-    aiVoiceDiv.classList.remove("Flex");
+    aiVoiceDiv.classList.remove("flex");
     aiVoiceDiv.classList.add("hiddenDisplay");
     accessingDiv.classList.add("fadeInAnim");
     accessingDiv.classList.remove("hiddenDisplay");
@@ -180,7 +180,7 @@ function enterDatabase()
     accessingDiv.addEventListener("animationend", () => 
     {
        accessingDiv.classList.remove("fadeInAnim"); 
-       
+       introducingBookshelf();
       
     }, {once:true});
 

@@ -733,6 +733,7 @@ function showPublisher()
         publisherDiv.classList.add("scaleInAnim");
         publisherDiv.classList.remove("hidden");
         publisherDiv.classList.add("show");
+        soundEffects.website.play();
         publisherDiv.addEventListener("animationend", function() 
         {
             publisherDiv.classList.remove("scaleInAnim");

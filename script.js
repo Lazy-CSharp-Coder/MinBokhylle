@@ -144,7 +144,6 @@ const soundEffects =
 
 }
 
-
 // startpage funsjoner og eventlisteners 
 
 const femaleCheck = document.querySelector("#femaleCheck");
@@ -173,6 +172,8 @@ function introducingBookshelf()
    loadAiHelper(6, accessingStatusText);
 
 }
+
+// spill intro med greeting og fade in hovedsiden
 
 function playIntroductionAndEnterDatabase()
 {
@@ -284,6 +285,7 @@ function loadAiHelper(duration, statusUpdateNode)
                             clearInterval(countDownInterval);
                             statusUpdateNode.textContent = "Playing : Introduction";
                             playIntroductionAndEnterDatabase();
+                            isOnStartPage = false;
                             // ferding med loading
                         }
   }, 1000);
@@ -1096,8 +1098,11 @@ otherBooksButton.addEventListener("click", removeAllAndDisplaySearch);
 let darkMode = true;
 const darkLightIcon = document.querySelector("#darkLightIcon");
 
+let isOnStartPage = true;
+
 function darkLightModeToggle()
 {
+    if(isOnStartPage) return;
     const main = document.querySelector("body");
     if(darkMode) 
     {

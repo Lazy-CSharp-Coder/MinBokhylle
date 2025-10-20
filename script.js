@@ -170,7 +170,7 @@ function introducingBookshelf()
 
 function createIntroduction()
 {
-   return new Audio("/Sounds/booksintro.mp3");
+   return new Audio("/Sounds/bookintro.mp3");
 }
 
 function loadAiHelper(duration, statusUpdateNode)
@@ -202,7 +202,7 @@ function loadAiHelper(duration, statusUpdateNode)
                    else if(remainingTime <= 0)                   
                         {
                             clearInterval(countDownInterval);
-                            statusUpdateNode.textContent = "Hi, my name is " + aiSelected;
+                            statusUpdateNode.textContent = "Playing : Hi, my name is " + aiSelected;
                             let intro = createIntroduction();
                             intro.play();
                             // ferding med loading

@@ -207,11 +207,14 @@ function playIntroductionAndEnterDatabase()
           databasePage.classList.add("flex");
           const main = document.querySelector("main");
           main.style.backgroundColor = "transparent";
+          const body = document.querySelector("body");
+          body.classList.add("fadeInAnim");
 
           databasePage.addEventListener("animationend", function()
           {
              databasePage.classList.remove("fadeInAnim");
              databasePage.classList.add("grid");
+             body.classList.remove("fadeInAnim");
              setListAndAnimate();
         }, {once:true});
 

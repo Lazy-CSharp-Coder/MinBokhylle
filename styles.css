@@ -265,6 +265,7 @@ label {
 .clockDiv {
   font-family: var(--primaryFontFamily);
   font-size: 18px;
+  margin: 4px 0px;
 }
 
 /* her kommer selve hovedsiden som viser database info */

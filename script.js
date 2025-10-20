@@ -211,6 +211,7 @@ function playIntroductionAndEnterDatabase()
           databasePage.addEventListener("animationend", function()
           {
              databasePage.classList.remove("fadeInAnim");
+             databasePage.classList.add("grid");
              setListAndAnimate();
         }, {once:true});
 

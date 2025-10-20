@@ -166,7 +166,7 @@ function closeWindowAutomatically(divNode, countDisplay, duration, nodeReapperin
       divNode.classList.add("fadeOutErrorWin");
       divNode.addEventListener("animationend", function() 
       {
-  
+        divNode.classList.remove("fadeOutErrorWin");
         divNode.classList.remove("flex");
         divNode.classList.add("hiddenDisplay");
         nodeReappering.classList.remove("hiddenDisplay");

@@ -205,6 +205,31 @@ function playIntroductionAndEnterDatabase()
           databasePage.classList.add("flex");
           const main = document.querySelector("main");
           main.style.backgroundColor = "transparent";
+
+          // animer og legg inn alle i listOfBooks
+
+          let delay = 0;
+          const delayInc = 300;
+
+          bookDatabase.books.forEach(function(item) 
+          {
+            const newListItem = document.createElement("li");
+            console.log(newListItem);
+            newListItem.textContent = item.name;
+
+            setTimeout(() => 
+            { newListItem.classList.add("slideInTopAnim");
+              newListItem.addEventListener("animationend", ()=> { /* play sound here */ }) ;
+              listOfBooks.appendChild(newListItem); 
+            }, delay);
+            
+          
+            delay += delayInc;
+
+            newListItem.addEventListener("click", displayBook);
+          });
+
+
       }, {once:true});
 
       // sett backgroundcolor: none for å få frem bilde
@@ -798,26 +823,6 @@ function displayBook(event)
 
 console.log(listOfBooks);
 
-let delay = 0;
-const delayInc = 300;
-
-bookDatabase.books.forEach(function(item) 
-{
-  const newListItem = document.createElement("li");
-  console.log(newListItem);
-  newListItem.textContent = item.name;
-
-  setTimeout(() => 
-  { newListItem.classList.add("slideInTopAnim");
-    newListItem.addEventListener("animationend", ()=> { /* play sound here */ }) ;
-    listOfBooks.appendChild(newListItem); 
-  }, delay);
-  
- 
-  delay += delayInc;
-
-  newListItem.addEventListener("click", displayBook);
-});
 
 // sette opp credit button med eventlistnere og animasjon
 

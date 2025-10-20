@@ -179,7 +179,7 @@ const aiVoiceDiv = document.querySelector("#aiVoiceDiv");
 console.log(aiVoiceDiv);
 const accessingDiv = document.querySelector("#accessingDiv");
 
-var soundEffects = femaleEffects;
+let soundEffects;
 femaleCheck.checked = true;
 let aiSelected = "Adeline";
 

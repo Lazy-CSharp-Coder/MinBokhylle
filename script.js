@@ -849,7 +849,7 @@ function displayBook(event)
     currentBookArrayNumber = childElements.indexOf(event.target);
     console.log(currentBookArrayNumber);
 
-  } else fromSearch = false;
+  } 
   
   // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)
 
@@ -878,7 +878,7 @@ function displayBook(event)
     bookDiv.classList.remove("hidden");
     bookDiv.addEventListener("animationend", function() 
     { 
-      soundEffects.accessingBooks.play();
+      if(!fromSearch) soundEffects.accessingBooks.play();
       bookDiv.classList.add("scaleInAnim");
       bookDiv.classList.remove("scaleOutAnim");
       bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim"); }, 
@@ -892,15 +892,18 @@ function displayBook(event)
     {
       soundEffects.bookIntro.play();
       hasBookIntroBeenPlayed = true;
-    }
-    else soundEffects.accessingBooks.play();
-    bookDiv.classList.add("scaleInAnim");
-    bookDiv.classList.add("show");
-    bookDiv.classList.remove("hidden");
-    bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim");}, { once:true}) ;
-    isBookShowing = true;
-  }
+    } else  if(!fromSearch) soundEffects.accessingBooks.play();
+    console.log("From search er " + fromSearch);
 
+      bookDiv.classList.add("scaleInAnim");
+      bookDiv.classList.add("show");
+      bookDiv.classList.remove("hidden");
+      bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim");}, { once:true}) ;
+      isBookShowing = true;
+
+  }
+  fromSearch = false;
+    
 }
 
 console.log(listOfBooks);

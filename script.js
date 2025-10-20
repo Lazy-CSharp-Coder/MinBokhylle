@@ -288,7 +288,8 @@ function playIntroductionAndEnterDatabase()
           databasePage.addEventListener("animationend", function()
           {
              databasePage.classList.remove("fadeInAnim");
-             databasePage.classList.add("grid");
+             if(window.innerWidth < 426) databasePage.classList.add("flex");
+             else databasePage.classList.add("grid");
              body.classList.remove("fadeInAnim");
              setListAndAnimate();
         }, {once:true});
@@ -1211,8 +1212,3 @@ function darkLightModeToggle()
 
 darkLightIcon.addEventListener("click", darkLightModeToggle);
 
-if(window.innerWidth < 426)
-{
-   databasePage.classList.remove("grid");
-   databasePage.classList.add("flex");
-}

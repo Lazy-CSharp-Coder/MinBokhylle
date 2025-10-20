@@ -523,7 +523,7 @@ li:hover{
 
   .bookDiv
   {
-    display: grid;
+    /* display: grid; */
     font-size: 10px;
     grid-template-columns: auto 200px;
     grid-template-rows: repeat(11, auto);

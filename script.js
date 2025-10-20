@@ -139,6 +139,15 @@ const soundEffects =
 }
 
 
+// startpage funsjoner og eventlisteners 
+
+const femaleCheck = document.querySelector("#femaleCheck");
+const maleCheck = document.querySelector("#maleCheck");
+
+femaleCheck.addEventListener("change", () => { this.checked = true; maleCheck.checked = false; });
+
+
+
 // funksjon som returnerer en string med en dato som passer
 
 function getDateString(date)

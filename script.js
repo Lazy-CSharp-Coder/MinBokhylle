@@ -121,12 +121,38 @@ const bookDatabase =
               ]
 };
 
-const soundEffects = 
+
+const maleEffects = 
 {
    enterListItems : new Audio("/Sounds/enterlistitems.mp3"),
    accessingBooks : new Audio("/Sounds/accessing.mp3"),
    accessing : new Audio("/Sounds/accessing.mp3"),
    enterSearchMode : new Audio("/Sounds/searchmode.mp3"),
+   switching : new Audio("/Sounds/accesssing.mp3"),
+   bookIntro : new Audio("/Sounds/bookintro.mp3"),
+   featureNotAvailable : new Audio("/Sounds/notavailable.mp3"),
+   alreadyInSearchMode : new Audio("/Sounds/alreadysearching.mp3"),
+   requestNotFound : new Audio("/Sounds/requestnotfound.mp3"),
+   noEntriesFound : new Audio("/Sounds/noentriesfound.mp3"),
+   clickListItem : new Audio("/Sounds/clicklistitem.mp3"),
+   iconsCreatedBy : new Audio("/Sounds/iconscreatedby.mp3"),
+   lightMode : new Audio("/Sounds/lightmode.mp3"),
+   darkMode : new Audio("/Sounds/darkmode.mp3"),
+   morning : new Audio("/Sounds/accessing.mp3"),
+   afternoon : new Audio("/Sounds/iconscreatedby.mp3"),
+   evening : new Audio("/Sounds/noentriesfound.mp3"),
+   night : new Audio("/Sounds/searchmode.mp3"),
+   introduction : new Audio("/Sounds/bookintro.mp3")
+
+}
+
+const femaleEffects = 
+{
+   enterListItems : new Audio("/Sounds/enterlistitems.mp3"),
+   accessingBooks : new Audio("/Sounds/accessing.mp3"),
+   accessing : new Audio("/Sounds/accessing.mp3"),
+   enterSearchMode : new Audio("/Sounds/searchmode.mp3"),
+   switching : new Audio("/Sounds/notavailable.mp3"),
    bookIntro : new Audio("/Sounds/bookintro.mp3"),
    featureNotAvailable : new Audio("/Sounds/notavailable.mp3"),
    alreadyInSearchMode : new Audio("/Sounds/alreadysearching.mp3"),
@@ -153,6 +179,7 @@ const aiVoiceDiv = document.querySelector("#aiVoiceDiv");
 console.log(aiVoiceDiv);
 const accessingDiv = document.querySelector("#accessingDiv");
 
+var soundEffects = femaleEffects;
 femaleCheck.checked = true;
 let aiSelected = "Adeline";
 
@@ -186,8 +213,18 @@ setInterval(updateClock, 1000);
 
 function introducingBookshelf()
 {
-   if(femaleCheck.checked) aiSelected = "Adeline";
-   else aiSelected = "John";
+   if(femaleCheck.checked)
+   {
+     aiSelected = "Adeline";
+     soundEffects = femaleEffects;
+   }
+   else
+   { 
+    aiSelected = "John";
+    soundEffects = maleEffects;
+   }
+
+   console.log(soundEffects);
    console.log("AI selected :" + aiSelected);
 
    const accessingStatusText = document.querySelector("#accessingStatusText");
@@ -305,7 +342,7 @@ function loadAiHelper(duration, statusUpdateNode)
               }
               else if(remainingTime == 2)
                    {
-                       statusUpdateNode.textContent =  "Loading ai voice " + aiSelected;
+                       statusUpdateNode.textContent =  "Loading ai voice : " + aiSelected;
                    }
                    else if(remainingTime <= 0)                   
                         {
@@ -1042,6 +1079,7 @@ function searchAndListResults()
       { 
         const childrenArray = Array.from(item.parentNode.children);
         currentBookArrayNumber = matchingBooksInSearch[childrenArray.indexOf(item)];
+        soundEffects.switching.play();
         closeSearchWindow();
         fromSearch = true;
         displayBook();

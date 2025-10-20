@@ -733,9 +733,10 @@ function showPublisher()
         publisherDiv.classList.add("scaleInAnim");
         publisherDiv.classList.remove("hidden");
         publisherDiv.classList.add("show");
-        soundEffects.website.play();
+
         publisherDiv.addEventListener("animationend", function() 
         {
+            soundEffects.website.play();
             publisherDiv.classList.remove("scaleInAnim");
             isPublisherShowing = true;
             publisherButton.textContent = "Close database";
@@ -890,7 +891,9 @@ function displayBook(event)
     bookDiv.classList.remove("hidden");
     bookDiv.addEventListener("animationend", function() 
     { 
+      console.log("eri i lukk og fromsearch er : " + fromSearch);
       if(!fromSearch) soundEffects.accessingBooks.play();
+      fromSearch = false;
       bookDiv.classList.add("scaleInAnim");
       bookDiv.classList.remove("scaleOutAnim");
       bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim"); }, 
@@ -900,21 +903,22 @@ function displayBook(event)
   else
   {  
       // spille av førstegangsbeskjed
+    
     if(hasBookIntroBeenPlayed == false) 
     {
       soundEffects.bookIntro.play();
       hasBookIntroBeenPlayed = true;
     } else  if(!fromSearch) soundEffects.accessingBooks.play();
     console.log("From search er " + fromSearch);
-
-      bookDiv.classList.add("scaleInAnim");
-      bookDiv.classList.add("show");
-      bookDiv.classList.remove("hidden");
-      bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim");}, { once:true}) ;
-      isBookShowing = true;
+    fromSearch = false;
+    bookDiv.classList.add("scaleInAnim");
+    bookDiv.classList.add("show");
+    bookDiv.classList.remove("hidden");
+    bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim");}, { once:true}) ;
+    isBookShowing = true;
 
   }
-  fromSearch = false;
+
     
 }
 
@@ -1062,6 +1066,8 @@ function searchAndListResults()
   soundEffects.enterSearchMode.play();
   console.log("should have played sound");
   matchFoundText.textContent = "Awaiting search";
+  clickToAccessText.textContent = "...";
+  clickToAccessText.style.opacity = "0";
 
   while(searchResultsList.lastChild) searchResultsList.lastChild.remove();
 
@@ -1124,6 +1130,7 @@ function searchAndListResults()
         { 
           searchingStatus.textContent = "Awaiting user input";
           matchFoundText.textContent = "Entries added";
+          clickToAccessText.style.opacity = "1";
           clickToAccessText.textContent = "Click list item to access book";
           soundEffects.clickListItem.play();
         

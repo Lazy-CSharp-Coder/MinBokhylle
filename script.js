@@ -149,6 +149,7 @@ console.log(aiVoiceDiv);
 const accessingDiv = document.querySelector("#accessingDiv");
 
 femaleCheck.checked = true;
+let aiSelected = "Adeline";
 
 femaleCheck.addEventListener("change", () => { femaleCheck.checked = true; maleCheck.checked = false; });
 maleCheck.addEventListener("change", () => { maleCheck.checked = true; femaleCheck.checked = false; });
@@ -157,10 +158,36 @@ enterBookshelfButton.addEventListener("click", enterDatabase);
 
 function introducingBookshelf()
 {
-   
+   if(femaleCheck.checked) aiSelected = "Adeline";
+   else aiSelected = "John";
+
+   const accessingStatusText = document.querySelector("#accessingStatusText");
+   loadAiHelper(5, accessingStatusText);
 
 }
 
+function loadAiHelper(duration, statusUpdateNode)
+{
+  let remainingTime = duration;
+
+  const countDownInterval = setInterval(() =>
+  {
+    remainingTime--;
+    // countDisplay.textContent = remainingTime;
+
+    if(remaningTime == 4) 
+    {
+       statusUpdateNode.textContent = "Loading ai voice " + aiSelected;
+       console.log("er her i 5 sekunder");
+    }
+    if(remainingTime <= 0)
+    {
+      clearInterval(countDownInterval);
+      // ferding med loading
+    }
+  }, 1000);
+
+}
 
 
 function enterDatabase() 

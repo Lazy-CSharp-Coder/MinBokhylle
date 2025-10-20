@@ -201,34 +201,19 @@ function playIntroductionAndEnterDatabase()
       {
           startPage.classList.remove("flex");
           startPage.classList.add("hiddenDisplay");
-          // databasePage.classList.add("fadeInAnim");
+          startPage.classList.remove("fadeOutAnim");
+           databasePage.classList.add("fadeInAnim");
           databasePage.classList.add("flex");
           const main = document.querySelector("main");
           main.style.backgroundColor = "transparent";
 
-          // animer og legg inn alle i listOfBooks
-
-          let delay = 0;
-          const delayInc = 300;
-
-          bookDatabase.books.forEach(function(item) 
+          databasePage.addEventListener("animationend", function()
           {
-            const newListItem = document.createElement("li");
-            console.log(newListItem);
-            newListItem.textContent = item.name;
+             databasePage.classList.remove("fadeInAnim");
+             setListAndAnimate();
+          }, {once:true});
 
-            setTimeout(() => 
-            { newListItem.classList.add("slideInTopAnim");
-              newListItem.addEventListener("animationend", ()=> { /* play sound here */ }) ;
-              listOfBooks.appendChild(newListItem); 
-            }, delay);
-            
-          
-            delay += delayInc;
-
-            newListItem.addEventListener("click", displayBook);
-          });
-
+         
 
       }, {once:true});
 
@@ -238,6 +223,34 @@ function playIntroductionAndEnterDatabase()
     
   }, {once: true});
        
+}
+
+// denne funksjonen henter boktittlene fra databasen og legger i listen + anim
+
+function setListAndAnimate()
+{
+  let delay = 0;
+  const delayInc = 300;
+
+  bookDatabase.books.forEach(function(item) 
+  {
+    const newListItem = document.createElement("li");
+    console.log(newListItem);
+    newListItem.textContent = item.name;
+
+    setTimeout(() => 
+    { newListItem.classList.add("slideInTopAnim");
+      newListItem.addEventListener("animationend", ()=> { /* play sound here */ }) ;
+      listOfBooks.appendChild(newListItem); 
+    }, delay);
+    
+  
+    delay += delayInc;
+
+    newListItem.addEventListener("click", displayBook);
+  });
+
+
 }
 
 function loadAiHelper(duration, statusUpdateNode)

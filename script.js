@@ -174,7 +174,7 @@ function introducingBookshelf()
 
 }
 
-function createIntroduction()
+function playIntroductionAndEnterDatabase()
 {
   const timeNow = new Date();
   const hour = timeNow.getHours();
@@ -185,10 +185,34 @@ function createIntroduction()
        else if(hour < 19) timeGreeting = soundEffects.afternoon;
             else timeGreeting = soundEffects.evening;
   // sette opp hele introduksjon her
+  const introduction = soundEffects.introduction;
+
+  timeGreeting.play();
+  timeGreeting.addEventListener("ended", function()
+  {
+    introduction.play();
+    introduction.addEventListener("ended", function()
+    {
+      const startPage = document.querySelector("#startPage");
+      const databasePage = document.querySelector("#hero");
+
+      startPage.classList.add("fadeOutAnim");
+      startPage.addEventListener("animationend", function()
+      {
+          startPage.classList.remove("flex");
+          startPage.classList.add("hiddenDisplay");
+          databasePage.classList.add("fadeInAnim");
+          databasePage.classList.add("flex");
+          const main = document.querySelector("main");
+          main.style.backgroundColor = "none";
+      }, {once:true});
+
+      // sett backgroundcolor: none for å få frem bilde
   
-  let introduction = timeGreeting + soundEffects.introduction;
+    }, {once:true});
+    
+  }, {once: true});
        
-  return introduction;
 }
 
 function loadAiHelper(duration, statusUpdateNode)
@@ -221,8 +245,7 @@ function loadAiHelper(duration, statusUpdateNode)
                         {
                             clearInterval(countDownInterval);
                             statusUpdateNode.textContent = "Playing : Introduction";
-                            let intro = createIntroduction();
-                            intro.play();
+                            playIntroductionAndEnterDatabase();
                             // ferding med loading
                         }
   }, 1000);

@@ -201,10 +201,10 @@ function playIntroductionAndEnterDatabase()
       {
           startPage.classList.remove("flex");
           startPage.classList.add("hiddenDisplay");
-          databasePage.classList.add("fadeInAnim");
+          // databasePage.classList.add("fadeInAnim");
           databasePage.classList.add("flex");
           const main = document.querySelector("main");
-          main.style.backgroundColor = "none";
+          main.style.backgroundColor = "transparent";
       }, {once:true});
 
       // sett backgroundcolor: none for å få frem bilde

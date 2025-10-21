@@ -95,6 +95,10 @@ header {
     }
     
 }
+@media (min-width : 426px) {
+  .lightModeImg { display: none;}
+  .darkModeImg {display: inline;}
+}
 
 .flex {
   display: flex;
@@ -117,7 +121,7 @@ header {
   .seriesText { color: darkblue; }
   li:hover{color:darkblue; }
   .darkModeImg { display: none;}
-  .lightModeImg { display: block;}
+  .lightModeImg { display: inline;}
   
 }
 

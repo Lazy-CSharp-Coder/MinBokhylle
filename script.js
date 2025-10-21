@@ -646,7 +646,8 @@ const displayPublisherItems =
                 else this.founders.textContent = publisherArray[i].founders;
              }
              else this.founders.textContent = "not specified";
-             this.webpage  = publisherArray[i].webPage;
+             this.webpage = this.webpage.href = publisherArray[i].webPage;
+             
              publisherFound = true;
              i = publisherArray.length;
              

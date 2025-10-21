@@ -1217,6 +1217,24 @@ darkLightIcon.addEventListener("click", darkLightModeToggle);
 const skipButton = document.querySelector("#skipButton");
 skipButton.addEventListener("click", function() 
 {
-  enterDatabase();
+  startPage.classList.remove("flex");
+          startPage.classList.add("hiddenDisplay");
+          startPage.classList.remove("fadeOutAnim");
+           databasePage.classList.add("fadeInAnim");
+          databasePage.classList.add("flex");
+          const main = document.querySelector("main");
+          main.style.backgroundColor = "transparent";
+          const body = document.querySelector("body");
+          body.classList.add("fadeInAnim");
+
+          databasePage.addEventListener("animationend", function()
+          {
+             databasePage.classList.remove("fadeInAnim");
+             if(window.innerWidth < 426) databasePage.classList.add("flex");
+             else databasePage.classList.add("grid");
+             body.classList.remove("fadeInAnim");
+             setListAndAnimate();
+        }, {once:true});
+
 });
 

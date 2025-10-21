@@ -402,7 +402,7 @@ function enterDatabase()
 
 function getDateString(date)
 {
-  return `${date.getDate()}/${date.getMonth}/${date.getFullYear()}`;
+  return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
 
 }
 

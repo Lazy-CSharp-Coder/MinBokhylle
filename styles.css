@@ -116,7 +116,17 @@ header {
   .colorMain, .titleBookText { color: darkred; }
   .seriesText { color: darkblue; }
   li:hover{color:darkblue; }
+  .darkModeImg { display: none;}
+  .lightModeImg { display: block;}
   
+}
+
+.lightModeImg {
+  display: nonw;
+}
+
+.darkModeImg {
+  display: block;
 }
 
 ul li::marker {

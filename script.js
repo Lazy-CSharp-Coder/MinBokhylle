@@ -1211,3 +1211,12 @@ function darkLightModeToggle()
 
 darkLightIcon.addEventListener("click", darkLightModeToggle);
 
+
+// knapp for å skippe introen
+
+const skipButton = document.querySelector("#skipButton");
+skipButton.addEventListener("click", function() 
+{
+  enterDatabase();
+});
+

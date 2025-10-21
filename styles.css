@@ -382,6 +382,9 @@ li:hover{
   background-color: var(--windowBackgroundColor);
 }
 
+.authorImage {
+  border-radius: 50%;
+}
 .publisherButton, .otherBooksButton {
   font-family: var(--primaryFontFamily);
   border-radius : 2px;

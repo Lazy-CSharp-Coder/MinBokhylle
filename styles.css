@@ -607,6 +607,7 @@ li:hover{
   font-size: 14px;
   padding-top: 10px;
   padding-bottom: 20px;
+  box-shadow: var(--primaryBoxShadow);
 
 }
 

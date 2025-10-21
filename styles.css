@@ -37,7 +37,7 @@ body {
   background-image: url("Images/books2.jpg");
   background-size: cover;
   color: var(--primaryTextColor);
-  cursor: pointer;
+  /* cursor: pointer; */
   overflow: hidden;
 }
 

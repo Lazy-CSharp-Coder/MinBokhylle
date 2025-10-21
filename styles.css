@@ -432,7 +432,7 @@ li:hover{
 {
   /* display: grid; */
   /* opacity: 0; */
-  grid-template-columns: auto 250px;
+  grid-template-columns: auto auto 250px;
   grid-template-rows: repeat(5, auto);
   border:var(--primaryBorder);
   border-radius: 8px;

@@ -1229,11 +1229,15 @@ skipButton.addEventListener("click", function()
 
   databasePage.addEventListener("animationend", function()
   {
+
+    if(!isOnStartPage)
+    {
       databasePage.classList.remove("fadeInAnim");
       if(window.innerWidth < 426) databasePage.classList.add("flex");
       else databasePage.classList.add("grid");
       body.classList.remove("fadeInAnim");
       setListAndAnimate();
+    }
 }, {once:true});
   isOnStartPage = false;
 

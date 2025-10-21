@@ -126,7 +126,7 @@ header {
 }
 
 .lightModeImg {
-  display: nonw;
+  display: none;
 }
 
 .darkModeImg {

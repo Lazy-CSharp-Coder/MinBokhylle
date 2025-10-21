@@ -436,7 +436,7 @@ li:hover{
   grid-template-rows: repeat(5, auto);
   border:var(--primaryBorder);
   border-radius: 8px;
-  padding: 20px 40px;
+  padding: 15px 40px;
   column-gap: 20px;
   align-items: center;
   font-size: 15px;

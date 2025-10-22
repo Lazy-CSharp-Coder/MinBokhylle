@@ -126,7 +126,7 @@ header {
   .authorImage 
   { 
     box-shadow: var(--primaryBoxShadow);
-    border-radius: 1px;
+
   }
   
 }
@@ -460,9 +460,10 @@ li:hover{
 
 
 .authorImage {
-  border-radius: 50%;
+   border-radius:var(--primaryBorderRadius);
+  
   width: 100px;
-  margin-top: 10px;
+  margin-top: 12px;
   /* margin-bottom: 5px; */
 }
 

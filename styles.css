@@ -414,7 +414,7 @@ li:hover{
 .authorInfoDiv
 {
 
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   grid-template-rows: repeat(3, auto);
   /* border:var(--primaryBorder); */
   /* border-radius: 8px; */
@@ -456,7 +456,7 @@ li:hover{
 
 .authorImage {
   border-radius: 50%;
-  width: 30px;
+  width: 100px;
   margin-top: 10px;
   /* margin-bottom: 5px; */
 }
@@ -465,6 +465,21 @@ li:hover{
   margin : 5px 0px;
 }
 
+.authorImage {
+  /* width: 100px; */
+
+}
+
+.authorGenderImage {
+  width: 15px;
+
+  align-self: center;
+}
+
+.genderTextDiv
+{
+  gap: 20px;
+}
 
 /* publisher classes */
 
@@ -531,21 +546,7 @@ li:hover{
   font-size: 22px;
   color:lightskyblue;
 }
-.authorImage {
-  width: 100px;
 
-}
-
-.authorGenderImage {
-  width: 20px;
-
-  align-self: center;
-}
-
-.genderTextDiv
-{
-  gap: 20px;
-}
 
 .authorPublisherWrapper {
   flex-direction: column;

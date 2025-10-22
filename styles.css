@@ -346,7 +346,9 @@ li:hover{
 .authorsList li::marker {
   /* content: "🤵🏼"; */
   /* content : "📚";   */
-  content :"📖";
+  /* content :"📖"; */
+  content: "🔵";
+
 
 }
 

@@ -527,11 +527,16 @@ function showAuthorInfo()
   authorDiv.classList.remove("scaleOutAnim");
   authorDiv.classList.remove("hidden");
 
+  displayAuthorItems.authorImage.classList.remove("scaleInAnim");
+
   // authorDiv.classList.remove("scaleOutAnim");
   authorDiv.addEventListener("animationend", function() 
   { 
     authorDiv.classList.add("show");
     authorDiv.classList.remove("scaleInAnim");
+    displayAuthorItems.authorImage.classList.remove("hidden");
+    displayAuthorItems.authorImage.classList.add("scaleInAnim");
+
   }, {once:true});
 
 }

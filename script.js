@@ -551,6 +551,7 @@ function removeAuthorInfo()
        authorDiv.classList.add("hidden");
        authorDiv.classList.remove("scaleOutAnim");
        authorDiv.classList.remove("show");
+       displayAuthorItems.authorImage.classList.add("hidden");
 
       // hvis publisher vises, sett column-revers for å evt. flytte den opp
       console.log("er i remove. ispubishershowing:" + isPublisherShowing);
@@ -594,6 +595,8 @@ function showAuthor(event)
       authorDiv.addEventListener("animationend", function() 
       {
         authorDiv.classList.remove("scaleOutAnim");
+        displayAuthorItems.classList.remove("hidden");
+      
         if(authorNumberShowing != numInList)
         {          
           if(voiceEnabled) soundEffects.accessing.play();

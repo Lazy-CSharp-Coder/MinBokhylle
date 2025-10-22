@@ -914,8 +914,17 @@ function displayBook(event)
     bookDiv.classList.add("show");
     bookDiv.classList.add("scaleOutAnim");
     bookDiv.classList.remove("hidden");
+
+
+
     bookDiv.addEventListener("animationend", function() 
     { 
+      // ordne cover til neste anim
+
+      displayBookItems.cover.classList.remove("scaleInAmin");
+      displayBookItems.cover.classList.add("hidden");
+      
+
       console.log("eri i lukk og fromsearch er : " + fromSearch);
       if(!fromSearch && voiceEnabled) soundEffects.accessingBooks.play();
       fromSearch = false;
@@ -925,7 +934,9 @@ function displayBook(event)
       bookDiv.addEventListener("animationend", function() 
       { 
         bookDiv.classList.remove("scaleInAnim"); 
-        displayBookItems.cover.classList.add("fadeInAnim");
+        displayBookItems.cover.classList.add("scaleInAnim");
+        displayBookItems.cover.classList.remove("hidden");
+        
   
       
       }, 
@@ -955,7 +966,7 @@ function displayBook(event)
 
       // displayBookItems.otherBooksButton.classList.add("fadeInAnim");
 
-      displayBookItems.cover.addEventListener("animationend", () => { displayBookItems.cover.classList.remove("scaleInAnim");}, {once:true});
+      // displayBookItems.cover.addEventListener("animationend", () => { displayBookItems.cover.classList.remove("scaleInAnim");}, {once:true});
 
 
     }, { once:true}) ;

@@ -808,7 +808,8 @@ li:hover{
   /* left: 50%; */
   left: 10px;
   border: var(--primaryBorder);
-  border-radius: 4px;
+  border-radius: var(--primaryBorderRadius);
+  background-color: var(--primaryBackgroundColor);
   gap: 10px;
   z-index: 11;
  

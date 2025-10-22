@@ -372,6 +372,12 @@ li:hover{
 
 }
 
+.bookCoverImage {
+  position: absolute;
+  top :0;
+  right: 0;
+}
+
 .smallIconImg 
 {
      width: 15px;

@@ -375,9 +375,26 @@ li:hover{
 .bookCoverImg {
   position: absolute;
   top :25px;
-  right: 25px;
+  right: 35px;
   width: 100px;
 }
+
+
+.otherBooksButton {
+
+  position: absolute;
+  top: 200px;
+  right: 20px;
+
+  font-family: var(--primaryFontFamily);
+  border-radius : 2px;
+  padding : 3px 6px;
+  margin : 3px 3px;
+  transition-property: border;
+  transition-duration: 0.2s;
+
+}
+
 
 .smallIconImg 
 {
@@ -505,21 +522,6 @@ li:hover{
 }
 
 /* publisher classes */
-
-.otherBooksButton {
-
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-
-  font-family: var(--primaryFontFamily);
-  border-radius : 2px;
-  padding : 3px 6px;
-  margin : 3px 3px;
-  transition-property: border;
-  transition-duration: 0.2s;
-
-}
 
 .publisherButton:hover, .otherBooksButton:hover {
   border : 2px solid lightskyblue;

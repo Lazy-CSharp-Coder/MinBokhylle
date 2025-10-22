@@ -15,8 +15,7 @@
   --secondaryFontFamily : "Oswald";
   --windowBackgroundColor : rgb(0, 0, 0);
   --bookListTextColor : white;
-  /* --itemTextColor: rgb(107, 255, 255);   */
-  --itemTextColor : lightseagreen;
+  --itemTextColor: rgb(107, 255, 255);  
   --primaryBoxShadow :  13px 13px 11px 0px rgba(0,0,0,0.64);
   --primaryBorderRadius : 2px;
 }
@@ -124,13 +123,10 @@ header {
   li:hover{color:darkblue; }
   .darkModeImg { display: none;}
   .lightModeImg { display: inline;}
-  .authorImage 
-  { 
-    box-shadow: var(--primaryBoxShadow);
-
-  }
-
+  .authorImage {  box-shadow: var(--primaryBoxShadow); }
   .publisherText { color:black; }
+  .otherBooksButton { color: #dcdcdc; background-color: black;}
+  .otherBooksButton:hover { color:darkblue; background-color: white; border: 2px solid black; }
   
 }
 
@@ -564,6 +560,12 @@ li:hover{
 .publisherWeb {
   font-size: 10px;
 }
+
+.webPageLink {
+  color:lightskyblue;
+}
+
+/* error window classes */
 
 .errorWin {
   border:var(--primaryBorder);

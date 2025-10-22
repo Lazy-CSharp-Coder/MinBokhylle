@@ -112,7 +112,7 @@ header {
 /* MAIN */
 
 .lightMode {
-  background-image: url("/Images/books3.jpg");
+  background-image: url("/Images/books1.jpg");
   --primaryBorder : 2px solid darkblue;
   --bookListTextColor : black;
   --windowBackgroundColor :white;

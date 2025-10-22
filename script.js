@@ -798,7 +798,7 @@ function showPublisher()
 const displayBookItems =
 {
   bookname: document.querySelector("#bookName"),
-  cover : document.querySelector("bookCoverImg"),
+  cover : document.querySelector("#bookCoverImg"),
   authorsList : document.querySelector("#authorsList"),
   seriesName : document.querySelector("#seriesName"),
   seriesNumber : document.querySelector("#seriesNumber"),

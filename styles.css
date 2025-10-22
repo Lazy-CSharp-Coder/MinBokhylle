@@ -421,6 +421,15 @@ li:hover{
   box-shadow: var(--primaryBoxShadow);
 } 
 .authorDiv {
+
+  border:var(--primaryBorder);
+  border-radius: 8px;
+  /* padding: 20px 40px; */
+  column-gap: 20px;
+  align-items: center;
+  background-color: var(--windowBackgroundColor);
+  box-shadow: var(--primaryBoxShadow);
+
   flex-direction: column;
 }
 
@@ -428,6 +437,7 @@ li:hover{
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  
 }
 
 

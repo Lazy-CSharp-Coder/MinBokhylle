@@ -425,7 +425,7 @@ li:hover{
 }
 
 .publisherText {
-
+  color:white;
   transition-property: scale color;
   transition-duration: 0.2s;
 }

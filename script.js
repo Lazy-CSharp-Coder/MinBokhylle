@@ -527,15 +527,19 @@ function showAuthorInfo()
   authorDiv.classList.remove("scaleOutAnim");
   authorDiv.classList.remove("hidden");
 
-  displayAuthorItems.authorImage.classList.remove("scaleInAnim");
+  // anim authorImage
+
+  // displayAuthorItems.authorImage.classList.remove("scaleInAnim");
 
   // authorDiv.classList.remove("scaleOutAnim");
   authorDiv.addEventListener("animationend", function() 
   { 
     authorDiv.classList.add("show");
     authorDiv.classList.remove("scaleInAnim");
-    displayAuthorItems.authorImage.classList.remove("hidden");
-    displayAuthorItems.authorImage.classList.add("scaleInAnim");
+
+    // anim authorImage
+    // displayAuthorItems.authorImage.classList.remove("hidden");
+    // displayAuthorItems.authorImage.classList.add("scaleInAnim");
 
   }, {once:true});
 
@@ -551,7 +555,9 @@ function removeAuthorInfo()
        authorDiv.classList.add("hidden");
        authorDiv.classList.remove("scaleOutAnim");
        authorDiv.classList.remove("show");
-       displayAuthorItems.authorImage.classList.add("hidden");
+
+       // anim author image
+      //  displayAuthorItems.authorImage.classList.add("hidden");
 
       // hvis publisher vises, sett column-revers for å evt. flytte den opp
       console.log("er i remove. ispubishershowing:" + isPublisherShowing);
@@ -595,7 +601,9 @@ function showAuthor(event)
       authorDiv.addEventListener("animationend", function() 
       {
         authorDiv.classList.remove("scaleOutAnim");
-        displayAuthorItems.classList.remove("hidden");
+
+        // anim author image
+        // displayAuthorItems.authorImage.classList.remove("hidden");
       
         if(authorNumberShowing != numInList)
         {          
@@ -617,6 +625,13 @@ function showAuthor(event)
         {
           authorDiv.classList.add("hidden");
           authorDiv.classList.remove("show");
+          // animasjon author image 
+
+          // displayAuthorItems.authorImage.classList.add("hidden");
+
+          // **
+
+
           console.log("skal nå lukke author totalt");
           if(window.innerWidth < 426 && isPublisherShowing)
           {     

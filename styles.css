@@ -506,18 +506,23 @@ li:hover{
 
 /* publisher classes */
 
-.publisherButton, .otherBooksButton {
+.otherBooksButton {
+
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+
   font-family: var(--primaryFontFamily);
   border-radius : 2px;
   padding : 3px 6px;
   margin : 3px 3px;
-  transition-property: scale ;
+  transition-property: border;
   transition-duration: 0.2s;
 
 }
 
 .publisherButton:hover, .otherBooksButton:hover {
-  scale: 1.04;
+  border : 2px solid lightskyblue;
   /* color:darkblue; */
 }
 

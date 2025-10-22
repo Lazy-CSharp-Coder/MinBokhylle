@@ -140,7 +140,8 @@ header {
 }
 
 ul li::marker {
-  content: "💠";  /* Use an emoji or a character */
+  /* content: "💠";   */
+  content: "🔵";
 }
 
 h1 {

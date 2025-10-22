@@ -96,10 +96,10 @@ header {
     }
     
 }
-@media (min-width : 426px) {
+/* @media (min-width : 426px) {
   .lightModeImg { display: none;}
   .darkModeImg {display: inline;}
-}
+} */
 
 .flex {
   display: flex;
@@ -384,8 +384,6 @@ li:hover{
   
 }
 
-
-
 .otherBooksButton {
 
   position: absolute;
@@ -477,9 +475,8 @@ li:hover{
   align-items: center;
   background-color: var(--windowBackgroundColor);
   /* box-shadow: var(--primaryBoxShadow); */
+}
 
-
-} 
 .authorDiv {
 
   flex-direction: column;
@@ -511,7 +508,6 @@ li:hover{
   font-size: 18px;
 }
 
-
 .authorImage {
    border-radius:var(--primaryBorderRadius);
   
@@ -542,12 +538,11 @@ li:hover{
 
 /* publisher classes */
 
-
-
 .publisherButton {
   margin-left : 30px;
   padding: 3px 6px;
 }
+
 .publisherDiv
 {
   /* display: grid; */
@@ -661,7 +656,6 @@ li:hover{
 
 @media (max-width: 426px) {
 
-  main { flex-direction: column;}
   .databasePage {
      
      flex-direction: column;
@@ -689,8 +683,9 @@ li:hover{
     font-size: 10px;
     grid-template-columns: auto 200px;
     grid-template-rows: repeat(11, auto);
-  
   }
+
+  .bookCoverImg { width : 10px; }
 
   .publisherDiv
   {
@@ -716,6 +711,8 @@ li:hover{
     font-size: 10px;;
   
   }
+
+  
 }
 
 
@@ -987,7 +984,7 @@ footer {
 @media (max-width:426px)
 {
   .myInfoDiv {
-    /* display: none; */
+    display: none;
   }
 
  

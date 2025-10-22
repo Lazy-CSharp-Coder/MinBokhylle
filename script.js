@@ -301,11 +301,21 @@ function playIntroductionAndEnterDatabase()
       startPage.classList.add("fadeOutAnim");
       startPage.addEventListener("animationend", function()
       {
+          console.log("i animation end");
           startPage.classList.remove("flex");
           startPage.classList.add("hiddenDisplay");
           startPage.classList.remove("fadeOutAnim");
-           databasePage.classList.add("fadeInAnim");
-          databasePage.classList.add("flex");
+
+          if(window.innerWidth < 426) databasePage.classList.add("flex");
+          else databasePage.classList.add("grid");
+          
+          databasePage.classList.remove("hiddenDisplay");
+          databasePage.classList.add("fadeInAnim");
+          console.log("window inner width er nå : " + window.innerWidth);
+         
+          // databasePage.classList.add("flex");
+
+
           const main = document.querySelector("main");
           main.style.backgroundColor = "transparent";
           const body = document.querySelector("body");
@@ -314,8 +324,7 @@ function playIntroductionAndEnterDatabase()
           databasePage.addEventListener("animationend", function()
           {
              databasePage.classList.remove("fadeInAnim");
-             if(window.innerWidth < 426) databasePage.classList.add("flex");
-             else databasePage.classList.add("grid");
+             console.log(window.innerWidth);
              body.classList.remove("fadeInAnim");
              setListAndAnimate();
         }, {once:true});
@@ -1347,7 +1356,8 @@ skipButton.addEventListener("click", function()
     startPage.classList.add("hiddenDisplay");
     startPage.classList.remove("fadeOutAnim");
     databasePage.classList.add("fadeInAnim");
-    databasePage.classList.add("flex");
+    databasePage.classList.remove("hiddenDisplay");
+    console.log("window width : " + window.innerWidth);
     const main = document.querySelector("main");
     main.style.backgroundColor = "transparent";
     const body = document.querySelector("body");
@@ -1356,7 +1366,11 @@ skipButton.addEventListener("click", function()
     databasePage.addEventListener("animationend", function()
     {
         databasePage.classList.remove("fadeInAnim");
-        if(window.innerWidth < 426) databasePage.classList.add("flex");
+        if(window.innerWidth <= 426)
+        {          
+         databasePage.classList.add("flex");
+         console.log("legger til flex");
+        }
         else databasePage.classList.add("grid");
         body.classList.remove("fadeInAnim");
         setListAndAnimate();

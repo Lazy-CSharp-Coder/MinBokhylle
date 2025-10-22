@@ -1,6 +1,7 @@
 // books array med litt info
 const bookDatabase = 
 {  books : [  { name : "The Way Of Shadows", 
+              cover : "/Images/thewayofshadows.jpg",
               author :  "Brent Weeks",
               series :  { name :"The Night Angel Trioligy",  number: 1, completed : true, otherBooksInSeries : ["Beyond The Shadows", "Shadows Edge"] } ,
               genre :  [ "Fantasy", "Fiction" ],
@@ -11,6 +12,7 @@ const bookDatabase =
               publisher : "Orbit"
             }, 
             { name : "Beyond The Shadows",
+            cover : "/Images/beyondtheshadows.jpg",
               author : "Brent Weeks",
               series : { name :"The Night Angel Trioligy", number: 2, completed : true, otherBooksInSeries : ["The Way Of Shadows", "Shadows Edge"] } ,
               genre :  [ "Fantasy", "Fiction" ],
@@ -21,6 +23,7 @@ const bookDatabase =
               publisher : "Orbit"
             },
             { name : "Shadows Edge",
+            cover : "/Images/shadowsedge.jpg",
               author :  "Brent Weeks", 
               series :  { name :"The Night Angel Trioligy", number: 3, completed : true, otherBooksInSeries : ["The Way Of Shadows", "Beyond The Shadows"]  } ,
               genre :  [ "Fantasy", "Fiction" ],
@@ -31,6 +34,7 @@ const bookDatabase =
               publisher : "Orbit"
             },
             { name : "Ship Of Magic",
+            cover : "/Images/thewayofshadows.jpg",
               author : "Robin Hobb",
               series : { name : "The Live Ship Traders", number : 1, completed: true,  otherBooksInSeries : ["The Mad Ship", "Ship Of Destiny"] } ,
               genre : [ "Fantasy", "Fiction" ],
@@ -41,6 +45,7 @@ const bookDatabase =
               publisher : "Bantam"
             },
             { name : "Dragons Of Winter Night",
+            cover : "/Images/thewayofshadows.jpg",
               author : [ "Margaret Weis",  "Tracy Hickman" ],
               series : { name : "The DragonLance Saga", number : 2, completed: true,  otherBooksInSeries : ["Dragons Of Autumn Twilight", "Dragons Of Spring Dawning"] } ,
               genre : [ "Fantasy", "Fiction", "Epic Fantasy"],
@@ -51,6 +56,7 @@ const bookDatabase =
               publisher : "TSR"
             },
             { name : "The Serpent Mage ",
+            cover : "/Images/thewayofshadows.jpg",
               author : [ "Margaret Weis",  "Tracy Hickman" ],
               series : { name : "The Death Gate Cycle", number : 4, completed: true, otherBooksInSeries : ["Dragon Wing", "Elven Star", " Fire Sea", "The Hand Of Chaos", "Into The Labyrinth", "The Seventh Gate"] } ,
               genre : [ "Fantasy", "Fiction", "Epic Fantasy"],
@@ -60,6 +66,7 @@ const bookDatabase =
               publisher : "Bantam"
             },
             { name : "Menneskefluene",
+            cover : "/Images/thewayofshadows.jpg",
               author : "Hans Olav Lahlum",
               series : { name : "K2 og Patricia", number : 1, completed: false, otherBooksInSeries : ["Satelittmenneskene", "Svanemordet"] } ,
               genre : [ "Crime", "Fiction"],

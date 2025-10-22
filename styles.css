@@ -357,6 +357,7 @@ li:hover{
 .bookDiv
 {
   display: grid;
+  position: relative;
   grid-template-columns: auto auto 300px;
   grid-template-rows: repeat(11, auto);
   border: var(--primaryBorder);

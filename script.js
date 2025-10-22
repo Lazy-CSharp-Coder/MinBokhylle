@@ -88,26 +88,26 @@ const bookDatabase =
          ],
   authors : [ { name: "Margaret Weis", 
                 image: "/Images/margaretweis.png", 
-                born: new Date(1948, 3, 16), 
+                born: new Date(1948, 2, 16), 
                 location : "Independence, Missouri U.S",
                 gender : "female",
               }, 
               { name: "Tracy Hickman", 
                 image: "/Images/tracyhickman.png", 
-                born: new Date(1955, 11, 25), 
+                born: new Date(1955, 10, 25), 
                 location : "Salt Lake City, Utah U.S",
                 gender : "male"
               }, 
               { name : "Brent Weeks", 
                 image: "/Images/brentweeks.png", 
-                born : new Date(1977, 3, 7), 
+                born : new Date(1977, 2, 7), 
                 location : "Montana U.S" ,
                 gender : "male"
               },
 
               { name: "Robin Hobb", 
                 image: "/Images/robinhobb.png", 
-                born: new Date(1952, 3, 5), 
+                born: new Date(1952, 2, 5), 
                 location : "Berkley, California U.S", 
                 gender : "female",
                 penAs : ["Robin Hobb", "Megan Lindholm" ]
@@ -115,7 +115,7 @@ const bookDatabase =
               {
                 name : "Brandon Sanderson",
                 image : "/Images/brandonsanderson.png",
-                born : new Date(1975, 12, 19),
+                born : new Date(1975, 11, 19),
                 location : "Lincoln, Nebraska U.S",
                 gender : "male",
                 pensAs : null

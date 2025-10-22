@@ -804,7 +804,7 @@ const displayBookItems =
   seriesNumber : document.querySelector("#seriesNumber"),
   seriesCompleted : document.querySelector("#seriesCompleted"),
   otherBooksInSeries : document.querySelector("#otherBooksInSeries"),
-  otherBooksButton : document.querySelector("#otherBooksButton"),
+  otherBooksButton : document.createElement("button"),
   genre : document.querySelector("#genre"),
   characters : document.querySelector("#characters"),
   language : document.querySelector("#language"),
@@ -841,6 +841,7 @@ const displayBookItems =
     
     console.log(bookDatabase.books[numberInArray].series.otherBooksInSeries);
     this.otherBooksInSeries.textContent = bookDatabase.books[numberInArray].series.otherBooksInSeries.join(", ");
+    this.otherBooksButton.classList.add("otherBooksButton");
     this.cover.appendChild(this.otherBooksButton);
     this.genre.textContent = bookDatabase.books[numberInArray].genre.join(", ");
     this.characters.textContent = bookDatabase.books[numberInArray].characters.join(", ");

@@ -140,8 +140,8 @@ header {
 }
 
 ul li::marker {
-  /* content: "💠";   */
-  content: "🔵";
+  content: "💠";  
+  /* content: "🔵"; */
 }
 
 h1 {
@@ -790,6 +790,10 @@ li:hover{
 
 .searchResultsList {
   /* margin-left: 5px; */
+}
+.searchResultsList li::marker 
+{
+  content: "🔵";
 }
 
 .matchFoundText {

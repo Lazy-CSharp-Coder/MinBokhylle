@@ -123,6 +123,11 @@ header {
   li:hover{color:darkblue; }
   .darkModeImg { display: none;}
   .lightModeImg { display: inline;}
+  .authorImage 
+  { 
+    box-shadow: var(--primaryBoxShadow);
+    border-radius: 1px;
+  }
   
 }
 

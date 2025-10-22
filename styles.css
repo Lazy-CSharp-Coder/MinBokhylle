@@ -681,7 +681,8 @@ li:hover{
   {
     /* display: grid; */
     font-size: 10px;
-    grid-template-columns: auto 200px;
+    column-gap: 0px;
+    grid-template-columns: 20px 100px 200px;
     grid-template-rows: repeat(11, auto);
   }
 
@@ -692,8 +693,8 @@ li:hover{
     /* display: grid; */
     font-size: 10px;
     /* opacity: 0; */
-    grid-template-columns: auto 250px;
-    grid-template-rows: repeat(5, auto);
+    /* grid-template-columns: auto 250px; */
+    /* grid-template-rows: repeat(5, auto); */
   
   }
 
@@ -702,8 +703,8 @@ li:hover{
     /* display: grid; */
     font-size:10px;
     /* opacity: 0; */
-    grid-template-columns: auto 250px;
-    grid-template-rows: repeat(4, auto);
+    /* grid-template-columns: auto 250px; */
+    /* grid-template-rows: repeat(4, auto); */
   
   }
 

@@ -378,10 +378,6 @@ li:hover{
   right: 35px;
   width: 100px;
   
-  animation-name: fadeIn;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  animation-fill-mode: backwards;
 }
 
 

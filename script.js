@@ -922,7 +922,12 @@ function displayBook(event)
       displayBookItems.retrieveBook(currentBookArrayNumber);
       bookDiv.classList.add("scaleInAnim");
       bookDiv.classList.remove("scaleOutAnim");
-      bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim"); }, 
+      bookDiv.addEventListener("animationend", function() 
+      { 
+        bookDiv.classList.remove("scaleInAnim"); 
+        displayBookItems.cover.classList.add("fadeInAnim");
+      
+      }, 
       {once:true}); 
     }, {once:true});
   }

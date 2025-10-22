@@ -377,7 +377,7 @@ li:hover{
   top :25px;
   right: 35px;
   width: 100px;
-  opacity: 0;
+ 
   
 }
 
@@ -395,6 +395,7 @@ li:hover{
   margin : 3px 3px;
   transition-property: border color background-color;
   transition-duration: 0.3s;
+  /* opacity: 0; */
 
 }
 

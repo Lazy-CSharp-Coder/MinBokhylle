@@ -683,8 +683,8 @@ const displayPublisherItems =
 
 // endre denne til button hvis du får tid til det
 
-const publisherButton = document.querySelector("#publisherButton");
-publisherButton.addEventListener("click", showPublisher);
+const publisher = document.querySelector("#publisher");
+publisher.addEventListener("click", showPublisher);
 const publisherDiv = document.querySelector("#publisherDiv");
 console.log(publisherDiv);
 let isPublisherShowing = false;
@@ -847,7 +847,7 @@ const displayBookItems =
     this.language.textContent = bookDatabase.books[numberInArray].language;
     this.published.textContent = getDateString(bookDatabase.books[numberInArray].published);
     this.publisher.textContent = bookDatabase.books[numberInArray].publisher;
-    this.publisher.appendChild(publisherButton);
+    // this.publisher.appendChild(publisherButton);
 
     // legge inn forfattere
     const author = bookDatabase.books[numberInArray].author;

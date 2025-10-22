@@ -392,8 +392,17 @@ li:hover{
 .dataText {
   color:var(--itemTextColor);
   margin : 10px 0px;
+}
 
+.publisherText {
 
+  transition-property: scale color;
+  transition-duration: 0.2s;
+}
+
+.publisherText:hover {
+  scale : 1.03;
+  color: lightskyblue;
 }
 
 .seriesText {

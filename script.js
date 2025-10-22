@@ -842,6 +842,7 @@ const displayBookItems =
     console.log(bookDatabase.books[numberInArray].series.otherBooksInSeries);
     this.otherBooksInSeries.textContent = bookDatabase.books[numberInArray].series.otherBooksInSeries.join(", ");
     this.otherBooksButton.classList.add("otherBooksButton");
+    this.otherBooksButton.addEventListener("click", removeAllAndDisplaySearch);
     this.cover.appendChild(this.otherBooksButton);
     this.genre.textContent = bookDatabase.books[numberInArray].genre.join(", ");
     this.characters.textContent = bookDatabase.books[numberInArray].characters.join(", ");
@@ -1205,9 +1206,6 @@ function closeSearchWindow()
 }
 
 
-
-const otherBooksButton = document.querySelector("#otherBooksButton");
-otherBooksButton.addEventListener("click", removeAllAndDisplaySearch);
 
 let darkMode = true;
 const darkLightIcon = document.querySelector("#darkLightIcon");

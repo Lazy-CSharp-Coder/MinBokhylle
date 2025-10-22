@@ -537,9 +537,14 @@ li:hover{
 }
 
 .authorGenderImage {
-  width: 32px;
+  width: 20px;
 
   align-self: center;
+}
+
+.genderTextDiv
+{
+  gap: 20px;
 }
 
 .authorPublisherWrapper {

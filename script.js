@@ -449,12 +449,14 @@ const displayAuthorItems =
   retrieveAuthor: function(authorString)
   {
     let authorObject = 0;
+    console.log("I am retrieving author : " + authorString);
     // legg inn søk i author key
     for(let i = 0; i < bookDatabase.authors.length; ++i)
     {
         if(bookDatabase.authors[i].name === authorString) 
         {
            authorObject = bookDatabase.authors[i];
+           console.log(authorObject);
            i = bookDatabase.authors.length;
         }
     }
@@ -463,7 +465,8 @@ const displayAuthorItems =
     
     // legg inn data 
     this.authorImage.src = authorObject.image;
-    if(authorObject.gender == "female") this.authorGenderImage.src = "/Icons/womanb.png",
+    if(authorObject.gender === "female") this.authorGenderImage.src = "/Icons/womanb.png";
+    else this.authorGenderImage.src = "/Icons/manb.png";
     this.authorName.textContent = authorObject.name;
     this.authorBorn.textContent = getDateString(authorObject.born);
     this.authorLocation.textContent = authorObject.location;

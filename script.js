@@ -8,7 +8,7 @@ const bookDatabase =
               characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
                             "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
               language : "English",
-              published : new Date(2008, 10, 1),
+              published : new Date(2008, 9, 1),
               publisher : "Orbit"
             }, 
             { name : "Beyond The Shadows",
@@ -19,7 +19,7 @@ const bookDatabase =
               characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
                             "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
               language : "English",
-              published : new Date(2008, 10, 28),
+              published : new Date(2008, 9, 28),
               publisher : "Orbit"
             },
             { name : "Shadows Edge",
@@ -30,7 +30,7 @@ const bookDatabase =
               language : "English",
               characters : [ "Azoth", "Durzo Blint", "Elene Cromwyll", "Jarl", "Logan Gyre", "Rimbold Drake", "Viridiana Sovari", 
                             "Gwinvere Kirena", "Feir Cousat", "Dorian Ursuul", "Solonariwan Tofusin", "Jenine Gyre", "Neph Dada"],
-              published : new Date(2008, 11, 25),
+              published : new Date(2008, 10, 25),
               publisher : "Orbit"
             },
             { name : "Ship Of Magic",
@@ -41,7 +41,7 @@ const bookDatabase =
               language : "English",
               characters : [ "Althea Vestrit", "Ephron Vestrit", "Ronica Vestrit", "Keffria Vestrit", "Kyle Haven", "Wintrow Haven", "Malta Haven", 
                             "Vivacia", "Paragon (Liveship)", "Brashen Trell", "Amber (Liveship Traders)", "Kennit"],
-              published: new Date(1998, 3, 2),
+              published: new Date(1998, 2, 2),
               publisher : "Bantam"
             },
             { name : "Dragons Of Winter Night",
@@ -52,7 +52,7 @@ const bookDatabase =
               characters : [ "Tanis Half-Elven", "Sturm Brightblade", "Flint Fireforge", "Tika Waylan", "Caramon Majere", "Raistlin Majere", "Lauralanthalasa", "Kitiara uth Matar", "Tasslehoff Burrfoot", 
                             "Alhana Starbreeze"," Riverwind", "Goldmoon", "Kylan Iverson", "Garn", "Aylaen", "Norgaard", "Wulfe", "Raegar", "Gilthanas", "Derek Crownguard"],
               language : "English",
-              published: new Date(1985, 7, 1),
+              published: new Date(1985, 6, 1),
               publisher : "TSR"
             },
             { name : "The Serpent Mage ",
@@ -62,7 +62,7 @@ const bookDatabase =
               genre : [ "Fantasy", "Fiction", "Epic Fantasy"],
               language : "English",
               characters : ["Haplo", "Alfred", "Devon", "Grundle", "Alake", "Sang-Drax"],
-              published: new Date(1992, 1, 1),
+              published: new Date(1992, 0, 1),
               publisher : "Bantam"
             },
             { name : "Menneskefluene",
@@ -72,7 +72,7 @@ const bookDatabase =
               genre : [ "Crime", "Fiction"],
               language : "Norwegian",
               characters : ["Kolbjørn Kristiansen (K2)", "Paticia"],
-              published: new Date(2014, 6, 1),
+              published: new Date(2014, 5, 1),
               publisher : "Cappelen"
             },{
                name : "The Final Empire",
@@ -82,7 +82,7 @@ const bookDatabase =
               genre : [ "Fantasy", "Fiction"],
               language : "English",
               characters : ["Marsh", "Vin", "Elend Venture", "Sazed", "Kelsier", "Dockson", "Hammond", "Breeze", "Clubs", "Spook", "The Lord Ruler", "Lord Renoux", "Yeden", "OreSeur"],
-              published: new Date(2006, 6, 17),
+              published: new Date(2006, 5, 17),
               publisher : "Tor Books"
             }
          ],
@@ -1144,7 +1144,7 @@ function searchAndListResults()
 {
   // set display: none på author og publisher
   const heightOfAuthorWin = authorDiv.offsetHeight;
-  console.log(height);
+
 
   authorDiv.classList.remove("grid");
   authorDiv.classList.add("hiddenDisplay");

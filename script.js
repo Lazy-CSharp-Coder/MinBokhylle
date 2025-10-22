@@ -889,7 +889,7 @@ function displayBook(event)
   
   // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)
 
-  displayBookItems.retrieveBook(currentBookArrayNumber);
+
 
   const bookDiv = document.querySelector("#bookDiv");
 
@@ -917,6 +917,7 @@ function displayBook(event)
       console.log("eri i lukk og fromsearch er : " + fromSearch);
       if(!fromSearch && voiceEnabled) soundEffects.accessingBooks.play();
       fromSearch = false;
+      displayBookItems.retrieveBook(currentBookArrayNumber);
       bookDiv.classList.add("scaleInAnim");
       bookDiv.classList.remove("scaleOutAnim");
       bookDiv.addEventListener("animationend", function() { bookDiv.classList.remove("scaleInAnim"); }, 
@@ -926,7 +927,7 @@ function displayBook(event)
   else
   {  
       // spille av førstegangsbeskjed
-    
+    displayBookItems.retrieveBook(currentBookArrayNumber);
     if(hasBookIntroBeenPlayed == false) 
     {
       if(voiceEnabled) soundEffects.bookIntro.play();

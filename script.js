@@ -841,7 +841,7 @@ const displayBookItems =
     
     console.log(bookDatabase.books[numberInArray].series.otherBooksInSeries);
     this.otherBooksInSeries.textContent = bookDatabase.books[numberInArray].series.otherBooksInSeries.join(", ");
-    this.otherBooksInSeries.appendChild(this.otherBooksButton);
+    this.cover.appendChild(this.otherBooksButton);
     this.genre.textContent = bookDatabase.books[numberInArray].genre.join(", ");
     this.characters.textContent = bookDatabase.books[numberInArray].characters.join(", ");
     this.language.textContent = bookDatabase.books[numberInArray].language;

@@ -250,7 +250,7 @@ function playIntroductionAndEnterDatabase()
   console.log("Timen er : " + hour);
   if(hour > 5 && hour < 6) 
   {
-     soundEffects.maintenance.play();
+     if(voiceEnabled) soundEffects.maintenance.play();
      return 0;
   }
   if(hour < 5) timeGreeting = soundEffects.night;
@@ -553,7 +553,7 @@ function showAuthor(event)
         authorDiv.classList.remove("scaleOutAnim");
         if(authorNumberShowing != numInList)
         {          
-          soundEffects.accessing.play();
+          if(voiceEnabled) soundEffects.accessing.play();
           authorDiv.classList.add("scaleInAnim");
       
           if(numInList != -1)
@@ -595,7 +595,7 @@ function showAuthor(event)
       else completed = displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
       if(completed)
       {
-        soundEffects.accessing.play(); 
+        if(voiceEnabled) soundEffects.accessing.play(); 
         showAuthorInfo();
         authorNumberShowing = numInList;
         isAuthorShowing = true;
@@ -616,7 +616,7 @@ function showAuthor(event)
         {
           const authorErrorCountText = document.querySelector("#authorErrorCountText");
           authorErrorWin.classList.remove("scaleInAnim");
-          soundEffects.requestNotFound.play();
+          if(voiceEnabled) soundEffects.requestNotFound.play();
           closeWindowAutomatically(authorErrorWin, authorErrorCountText, 5, authorDiv);
        
         }, {once:true});
@@ -740,14 +740,14 @@ function showPublisher()
       else
       {
         console.log("er i animation for å vise publisher");
-        soundEffects.accessing.play();
+        if(voiceEnabled) soundEffects.accessing.play();
         publisherDiv.classList.add("scaleInAnim");
         publisherDiv.classList.remove("hidden");
         publisherDiv.classList.add("show");
 
         publisherDiv.addEventListener("animationend", function() 
         {
-            soundEffects.website.play();
+            if(voiceEnabled) soundEffects.website.play();
             publisherDiv.classList.remove("scaleInAnim");
             isPublisherShowing = true;
             publisherButton.textContent = "Close database";
@@ -776,7 +776,7 @@ function showPublisher()
       {
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
         publisherErrorWin.classList.remove("scaleInAnim");
-        soundEffects.requestNotFound.play();
+        if(voiceEnabled) soundEffects.requestNotFound.play();
         closeWindowAutomatically(publisherErrorWin, publisherErrorCountText, 5, publisherDiv);
 
       }, {once:true});
@@ -903,7 +903,7 @@ function displayBook(event)
     bookDiv.addEventListener("animationend", function() 
     { 
       console.log("eri i lukk og fromsearch er : " + fromSearch);
-      if(!fromSearch) soundEffects.accessingBooks.play();
+      if(!fromSearch && voiceEnabled) soundEffects.accessingBooks.play();
       fromSearch = false;
       bookDiv.classList.add("scaleInAnim");
       bookDiv.classList.remove("scaleOutAnim");
@@ -917,9 +917,9 @@ function displayBook(event)
     
     if(hasBookIntroBeenPlayed == false) 
     {
-      soundEffects.bookIntro.play();
+      if(voiceEnabled) soundEffects.bookIntro.play();
       hasBookIntroBeenPlayed = true;
-    } else  if(!fromSearch) soundEffects.accessingBooks.play();
+    } else  if(!fromSearch && voiceEnabled) soundEffects.accessingBooks.play();
     console.log("From search er " + fromSearch);
     fromSearch = false;
     bookDiv.classList.add("scaleInAnim");
@@ -959,7 +959,7 @@ creditButton.addEventListener("click", function ()
   else
   {
   //  creditIconDiv.classList.add("slideInBottomAnim");
-   soundEffects.iconsCreatedBy.play();
+   if(voiceEnabled) soundEffects.iconsCreatedBy.play();
    creditIconDiv.classList.add("scaleInAnim");
    creditIconDiv.classList.add("showDisplay");
    creditIconDiv.classList.remove("hiddenDisplay");
@@ -1001,7 +1001,7 @@ let inSearchMode = false;
 function actionNotPermitted()
 {
   // legg inn audio her
-  soundEffects.featureNotAvailable.play();
+  if(voiceEnabled) soundEffects.featureNotAvailable.play();
 
 }
 
@@ -1014,7 +1014,7 @@ function removeAllAndDisplaySearch()
 
    if(inSearchMode)
    {
-     soundEffects.alreadyInSearchMode.play();
+     if(voiceEnabled) soundEffects.alreadyInSearchMode.play();
      return;
    }
 
@@ -1074,7 +1074,7 @@ function searchAndListResults()
   const delayInc = 1;
   
   
-  soundEffects.enterSearchMode.play();
+  if(voiceEnabled) soundEffects.enterSearchMode.play();
   console.log("should have played sound");
   matchFoundText.textContent = "Awaiting search";
   clickToAccessText.textContent = "...";
@@ -1114,7 +1114,7 @@ function searchAndListResults()
       { 
         const childrenArray = Array.from(item.parentNode.children);
         currentBookArrayNumber = matchingBooksInSearch[childrenArray.indexOf(item)];
-        soundEffects.switching.play();
+        if(voiceEnabled) soundEffects.switching.play();
         closeSearchWindow();
         fromSearch = true;
         displayBook();
@@ -1136,14 +1136,14 @@ function searchAndListResults()
       });
       item.addEventListener("animationend", () => 
       { 
-              // soundEffects.enterListItems.play(); 
+              // if(voiceEnabled) soundEffects.enterListItems.play(); 
         if(index == array.length -1)
         { 
           searchingStatus.textContent = "Awaiting user input";
           matchFoundText.textContent = "Entries added";
           clickToAccessText.style.opacity = "1";
           clickToAccessText.textContent = "Click list item to access book";
-          soundEffects.clickListItem.play();
+          if(voiceEnabled) soundEffects.clickListItem.play();
         
         }
       });
@@ -1158,7 +1158,7 @@ function searchAndListResults()
     setTimeout(()=>{
       searchingStatus.textContent = "Awaiting user input";
       matchFoundText.textContent = "No entries found";
-      soundEffects.noEntriesFound.play();
+      if(voiceEnabled) soundEffects.noEntriesFound.play();
       clickToAccessText.textContent = "Click close to exit search"
     
     }, 2200); 
@@ -1208,13 +1208,13 @@ function darkLightModeToggle()
     if(darkMode) 
     {
         main.classList.add("lightMode");
-        soundEffects.lightMode.play();
+        if(voiceEnabled) soundEffects.lightMode.play();
         darkMode = false;
     }
     else
     {
         main.classList.remove("lightMode");
-        soundEffects.darkMode.play();
+        if(voiceEnabled) soundEffects.darkMode.play();
         darkMode = true;
     }
 }
@@ -1228,7 +1228,7 @@ let voiceEnabled = true;
 const aiVoiceButton = document.querySelector("#aiVoiceButton");
 aiVoiceButton.addEventListener("click", function()
 {
-   if(voiceEnabled)
+   if(voiceEnabled && !startPage)
    {
      aiVoiceButton.textContent = "Enable AI Voice";
      voiceEnabled = false;

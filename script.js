@@ -1120,6 +1120,8 @@ let matchingBooksInSearch = [];
 function searchAndListResults()
 {
   // set display: none på author og publisher
+  const heightOfAuthorWin = authorDiv.offsetHeight;
+  console.log(height);
 
   authorDiv.classList.remove("grid");
   authorDiv.classList.add("hiddenDisplay");

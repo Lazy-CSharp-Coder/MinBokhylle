@@ -1222,7 +1222,7 @@ function darkLightModeToggle()
 
 darkLightIcon.addEventListener("click", darkLightModeToggle);
 
-// disable AI Voice button
+// disable AI Voice button 
 
 let voiceEnabled = true;
 const aiVoiceButton = document.querySelector("#aiVoiceButton");

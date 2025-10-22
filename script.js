@@ -1228,7 +1228,7 @@ let voiceEnabled = true;
 const aiVoiceButton = document.querySelector("#aiVoiceButton");
 aiVoiceButton.addEventListener("click", function()
 {
-   if(voiceEnabled && !startPage)
+   if(voiceEnabled && !isOnStartPage)
    {
      aiVoiceButton.textContent = "Enable AI Voice";
      voiceEnabled = false;

@@ -801,7 +801,17 @@ li:hover{
   font-family: var(--primaryFontFamily);
   align-self:center;
   justify-self:flex-end;
+
+  transition-property: border color background-color;
+  transition-duration: 0.3s;
 }
+
+.closeSearchButton:hover {
+  border : 2px solid lightskyblue;
+  color:lightseagreen;
+  background-color: black;
+}
+
 
 .clickToAccessText {
   align-self: center;

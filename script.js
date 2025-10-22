@@ -926,6 +926,7 @@ function displayBook(event)
       { 
         bookDiv.classList.remove("scaleInAnim"); 
         displayBookItems.cover.classList.add("fadeInAnim");
+  
       
       }, 
       {once:true}); 

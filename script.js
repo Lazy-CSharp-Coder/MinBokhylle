@@ -1222,6 +1222,24 @@ function darkLightModeToggle()
 
 darkLightIcon.addEventListener("click", darkLightModeToggle);
 
+// disable AI Voice button
+
+let voiceEnabled = true;
+const AIVoiceButton = document.querySelector("#AIVoiceButton");
+AIVoiceButton.addEventListener("click" function()
+{
+   if(voiceEnabled)
+   {
+     AIVoiceButton.textContent = "Enable AI Voice";
+     voiceEnabled = false;
+   }
+   else
+   {
+      AIVoiceButton.textContent = "Disable AI Voice";
+      voiceEnabled = true;
+   }
+});
+
 
 // knapp for å skippe introen
 

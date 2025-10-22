@@ -653,6 +653,8 @@ li:hover{
 }
 
 @media (max-width: 426px) {
+
+  main { flex-direction: column;}
   .databasePage {
      
      flex-direction: column;
@@ -978,7 +980,7 @@ footer {
 @media (max-width:426px)
 {
   .myInfoDiv {
-    display: none;
+    /* display: none; */
   }
 
  

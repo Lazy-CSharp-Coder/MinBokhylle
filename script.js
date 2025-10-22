@@ -536,7 +536,8 @@ function showAuthor(event)
       const allNodes = Array.from(event.target.parentNode.children);
       console.log(allNodes);
       numInList = allNodes.indexOf(event.target);
-      console.log(numInList);
+      console.log("Author number in list : " + numInList);
+      console.log("Author number showing : " + authorNumberShowing);
    
     }
     console.log ("is authorShowing" + isAuthorShowing + numInList + authorNumberShowing);
@@ -552,8 +553,14 @@ function showAuthor(event)
           soundEffects.accessing.play();
           authorDiv.classList.add("scaleInAnim");
       
-          if(numInList != -1) displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+          if(numInList != -1)
+          {
+             displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+             console.log(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+          }
           else displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);
+          
+          
           isAuthorShowing = true;
           authorNumberShowing = numInList;
         }
@@ -579,6 +586,7 @@ function showAuthor(event)
       if(numInList != -1)
       {
         completed = displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author[numInList]);
+        console.log(bookDatabase.books[currentBookArrayNumber].author[numInList]);
       
       }
       else completed = displayAuthorItems.retrieveAuthor(bookDatabase.books[currentBookArrayNumber].author);

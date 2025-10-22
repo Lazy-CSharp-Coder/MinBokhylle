@@ -310,6 +310,9 @@ function setListAndAnimate()
   let delay = 0;
   const delayInc = 300;
 
+  skipButton.classList.add("hiddenDisplay");
+  aiVoiceButton.classList.remove("hiddenDisplay");
+  
   bookDatabase.books.forEach(function(item) 
   {
     const newListItem = document.createElement("li");
@@ -324,7 +327,7 @@ function setListAndAnimate()
     
   
     delay += delayInc;
-
+   
     newListItem.addEventListener("click", displayBook);
   });
 

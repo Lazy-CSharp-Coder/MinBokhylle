@@ -921,7 +921,7 @@ function displayBook(event)
     { 
       // ordne cover til neste anim
 
-      displayBookItems.cover.classList.remove("scaleInAmin");
+      displayBookItems.cover.classList.remove("scaleInAnim");
       displayBookItems.cover.classList.add("hidden");
       
 

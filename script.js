@@ -1225,17 +1225,17 @@ darkLightIcon.addEventListener("click", darkLightModeToggle);
 // disable AI Voice button
 
 let voiceEnabled = true;
-const AIVoiceButton = document.querySelector("#AIVoiceButton");
-AIVoiceButton.addEventListener("click" function()
+const aiVoiceButton = document.querySelector("#aiVoiceButton");
+AIVoiceButton.addEventListener("click", function()
 {
    if(voiceEnabled)
    {
-     AIVoiceButton.textContent = "Enable AI Voice";
+     aiVoiceButton.textContent = "Enable AI Voice";
      voiceEnabled = false;
    }
    else
    {
-      AIVoiceButton.textContent = "Disable AI Voice";
+      aiVoiceButton.textContent = "Disable AI Voice";
       voiceEnabled = true;
    }
 });

@@ -493,8 +493,9 @@ li:hover{
 
   flex-direction: column;
 
-  background-image: url("Images/typewriter.jpg");
+  /* background-image: url("Images/writerwoman.jpg");
   background-size: cover;
+  opacity: 0.2; */
 }
 
 .authorImgIconDiv {

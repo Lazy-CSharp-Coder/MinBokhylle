@@ -1281,6 +1281,7 @@ aiVoiceButton.addEventListener("click", function()
    else
    {
       aiVoiceButton.textContent = "Disable AI Voice";
+      soundEffects.activate.play();
       voiceEnabled = true;
    }
 });

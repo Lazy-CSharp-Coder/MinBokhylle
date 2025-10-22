@@ -13,7 +13,7 @@
   --primaryTextColor: #dcdcdc;
   --primaryFontFamily : "BBH Sans Bogle";
   --secondaryFontFamily : "Oswald";
-  --windowBackgroundColor : black;
+  --windowBackgroundColor : rgb(50, 50, 50);
   --bookListTextColor : white;
   --itemTextColor: azure;
   --primaryBoxShadow :  13px 13px 11px 0px rgba(0,0,0,0.64);
@@ -410,12 +410,13 @@ li:hover{
 .authorInfoDiv
 {
 
-  grid-template-columns: auto 250px;
+  grid-template-columns: auto auto;
   grid-template-rows: repeat(3, auto);
   /* border:var(--primaryBorder); */
   /* border-radius: 8px; */
   padding: 10px 20px;
-  column-gap: 10px;
+  column-gap: 30px;
+  row-gap: 5px;
   align-items: center;
   background-color: var(--windowBackgroundColor);
   /* box-shadow: var(--primaryBoxShadow); */
@@ -426,8 +427,9 @@ li:hover{
   border:var(--primaryBorder);
   border-radius: 8px;
   /* padding: 20px 40px; */
-  column-gap: 20px;
+
   align-items: center;
+  justify-content: center;
   background-color: var(--windowBackgroundColor);
   box-shadow: var(--primaryBoxShadow);
 
@@ -453,6 +455,14 @@ li:hover{
   margin-top: 10px;
   /* margin-bottom: 5px; */
 }
+
+.authorText {
+  margin : 5px 0px;
+}
+
+
+/* publisher classes */
+
 .publisherButton, .otherBooksButton {
   font-family: var(--primaryFontFamily);
   border-radius : 2px;

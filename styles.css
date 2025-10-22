@@ -391,10 +391,11 @@ li:hover{
 
 }
 
+/* this works hashing it out
+
 .authorDiv
 {
-  /* display: grid; */
-  /* opacity: 0; */
+
   grid-template-columns: auto 250px;
   grid-template-rows: repeat(4, auto);
   border:var(--primaryBorder);
@@ -404,7 +405,31 @@ li:hover{
   align-items: center;
   background-color: var(--windowBackgroundColor);
   box-shadow: var(--primaryBoxShadow);
+} */
+
+.authorInfoDiv
+{
+
+  grid-template-columns: auto 250px;
+  grid-template-rows: repeat(4, auto);
+  border:var(--primaryBorder);
+  border-radius: 8px;
+  padding: 20px 40px;
+  column-gap: 20px;
+  align-items: center;
+  background-color: var(--windowBackgroundColor);
+  box-shadow: var(--primaryBoxShadow);
+} 
+.authorDiv {
+  flex-direction: column;
 }
+
+.auuthorImgIconDiv {
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
 
 .authorImage {
   border-radius: 50%;

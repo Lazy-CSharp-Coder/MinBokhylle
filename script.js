@@ -1226,7 +1226,7 @@ darkLightIcon.addEventListener("click", darkLightModeToggle);
 
 let voiceEnabled = true;
 const aiVoiceButton = document.querySelector("#aiVoiceButton");
-AIVoiceButton.addEventListener("click", function()
+aiVoiceButton.addEventListener("click", function()
 {
    if(voiceEnabled)
    {

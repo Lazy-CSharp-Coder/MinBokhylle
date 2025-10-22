@@ -434,7 +434,12 @@ function enterDatabase()
 
 function getDateString(date)
 {
-  return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  
+  return `${date.getDate()}th of ${monthNames[date.getMonth()]}, ${date.getFullYear()}`;
 
 }
 
@@ -500,6 +505,7 @@ const displayAuthorItems =
     if(authorObject.gender === "female") this.authorGenderImage.src = "/Icons/womanb.png";
     else this.authorGenderImage.src = "/Icons/manb.png";
     this.authorName.textContent = authorObject.name;
+    console.log("autor date object : " + authorObject.born);
     this.authorBorn.textContent = getDateString(authorObject.born);
     this.authorLocation.textContent = authorObject.location;
     if(authorObject.pensAs == undefined) this.authorPensAs.textContent = authorObject.name;

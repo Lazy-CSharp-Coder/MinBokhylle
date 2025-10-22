@@ -798,6 +798,7 @@ function showPublisher()
 const displayBookItems =
 {
   bookname: document.querySelector("#bookName"),
+  cover : document.querySelector("bookCoverImg"),
   authorsList : document.querySelector("#authorsList"),
   seriesName : document.querySelector("#seriesName"),
   seriesNumber : document.querySelector("#seriesNumber"),
@@ -831,6 +832,7 @@ const displayBookItems =
     this.clearAuthorList();
 
     this.bookname.textContent = bookDatabase.books[numberInArray].name;
+    this.cover.src = bookDatabase.books[numberInArray].cover;
     this.seriesName.textContent = bookDatabase.books[numberInArray].series.name;
     this.seriesNumber.textContent = bookDatabase.books[numberInArray].series.number;
     if(bookDatabase.books[numberInArray].series.completed) this.seriesCompleted.textContent = "Yes";

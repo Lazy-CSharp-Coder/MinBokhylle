@@ -74,7 +74,17 @@ const bookDatabase =
               characters : ["Kolbjørn Kristiansen (K2)", "Paticia"],
               published: new Date(2014, 6, 1),
               publisher : "Cappelen"
-          }
+            },{
+               name : "The Final Empire",
+               cover : "/Images/menneskefluene.jpg",
+              author : "Brandon Sanderson",
+              series : { name : "Mistborn", number : 1, completed: true, otherBooksInSeries : ["The Well of Ascension", "The Hero of Ages"] } ,
+              genre : [ "Fantasy", "Fiction"],
+              language : "English",
+              characters : ["Marsh", "Vin", "Elend Venture", "Sazed", "Kelsier", "Dockson", "Hammond", "Breeze", "Clubs", "Spook", "The Lord Ruler", "Lord Renoux", "Yeden", "OreSeur"],
+              published: new Date(2006, 6, 17),
+              publisher : "Tor Books"
+            }
          ],
   authors : [ { name: "Margaret Weis", 
                 image: "/Images/margaretweis.png", 

@@ -656,15 +656,10 @@ li:hover{
   100% { transform: translateY(-600px);}
 }
 
-.mobileSetting {
-  display: none;
-}
-
 
 @media (max-width: 426px) {
  
   .databasePage {
-     
      flex-direction: column;
      align-items: center;
   }
@@ -999,6 +994,13 @@ footer {
   font-size: 16px;
   color:orange;
 }
+
+
+.iconDiv {
+  display: flex;
+  flex-direction: column;
+}
+
 
 @media (max-width:426px)
 {

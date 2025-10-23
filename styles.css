@@ -963,7 +963,9 @@ footer {
 }
 
 .mobileFooterDiv {
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: column;
+  gap : 2px;
 }
 
 .myInfoWrapper {

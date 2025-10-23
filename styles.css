@@ -701,6 +701,9 @@ li:hover{
     font-size: 10px;
   }
 
+  .webPageLink {
+    font-size: 6px;
+  }
   .authorDiv
   {
     font-size:10px;

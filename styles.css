@@ -571,7 +571,7 @@ li:hover{
   border-radius: 2px;
   background-color: var(--windowBackgroundColor);
   box-shadow: var(--primaryBoxShadow);
-  padding-top: 10px;
+  padding-top: 20px;
 }
 
 .fadeOutErrorWin {
@@ -590,6 +590,7 @@ li:hover{
 
 .authorPublisherWrapper {
   flex-direction: column;
+  align-items: center;
   gap: 35px;
 }
 
@@ -715,6 +716,11 @@ li:hover{
   .otherBooksButton {
     top :150px;
     right : 5px;
+  }
+
+  .errorImg {
+    width: 50px;
+
   }
 }
 

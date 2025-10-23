@@ -607,7 +607,9 @@ function showAuthor(event)
    
     }
     console.log ("is authorShowing" + isAuthorShowing + numInList + authorNumberShowing);
-
+    
+    if(window.innerWidth < 426) authorDiv.style.width = bookDiv.offsetWidth + "px";
+    
     if(isAuthorShowing)
     {
       authorDiv.classList.add("scaleOutAnim");
@@ -686,6 +688,7 @@ function showAuthor(event)
         authorErrorWin.classList.remove("hiddenDisplay");
         authorErrorWin.classList.add("scaleInAnim");
         authorErrorWin.style.height = height + "px";
+        if(window.innerWidth < 426) authorErrorWin.style.width = bookDiv.offsetWidth + "px";
         authorErrorWin.addEventListener("animationend", function()
         {
           const authorErrorCountText = document.querySelector("#authorErrorCountText");
@@ -846,6 +849,8 @@ function showPublisher()
       publisherErrorWin.classList.remove("hiddenDisplay");
       publisherErrorWin.classList.add("scaleInAnim");
       publisherErrorWin.style.height = height + "px";
+      console.log("bookdiv width : " + bookDiv.offsetWidth);
+      if(window.innerWidth < 426) publisherErrorWin.style.width = bookDiv.offsetWidth + "px";
       publisherErrorWin.addEventListener("animationend", function()
       {
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");
@@ -955,8 +960,6 @@ function displayBook(event)
   
   // legge inn data med funksjon i objektet - håndert internt - oppgi kun objektnummer (nummer i array)
 
-
-
   const bookDiv = document.querySelector("#bookDiv");
 
   if(isBookShowing) 
@@ -978,9 +981,6 @@ function displayBook(event)
     bookDiv.classList.add("show");
     bookDiv.classList.add("scaleOutAnim");
     bookDiv.classList.remove("hidden");
-
-
-
     bookDiv.addEventListener("animationend", function() 
     { 
       // ordne cover til neste anim

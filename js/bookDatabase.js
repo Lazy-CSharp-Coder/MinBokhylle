@@ -1,5 +1,6 @@
 const bookDatabase = 
-{  books : [  { name : "The Way Of Shadows", 
+{  books : [  { 
+              name : "The Way Of Shadows", 
               cover : "/Images/thewayofshadows.jpg",
               author :  "Brent Weeks",
               series :  { name :"The Night Angel Trioligy",  number: "1 [of 3]", completed : true, otherBooksInSeries : ["Beyond The Shadows", "Shadows Edge"] } ,

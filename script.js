@@ -453,12 +453,12 @@ function getDateString(date)
   ];
 
   // sette opp riktig endelse 
-  
+
   let day = date.getDate();
   if(day == 1) day += "st";
   else if(day == 2) day += "nd";
        else if(day ==  3) day += "rd";
-            else day += day + "th";
+            else day += "th";
   
   return `${day} of ${monthNames[date.getMonth()]}, ${date.getFullYear()}`;
 

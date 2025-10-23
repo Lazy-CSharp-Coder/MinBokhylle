@@ -451,8 +451,16 @@ function getDateString(date)
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
+
+  // sette opp riktig endelse 
   
-  return `${date.getDate()}th of ${monthNames[date.getMonth()]}, ${date.getFullYear()}`;
+  let day = date.getDate();
+  if(day == 1) day += "st";
+  else if(day == 2) day += "nd";
+       else if(day ==  3) day += "rd";
+            else day += day + "th";
+  
+  return `${day} of ${monthNames[date.getMonth()]}, ${date.getFullYear()}`;
 
 }
 
@@ -801,7 +809,7 @@ function showPublisher()
    }
 
    if(window.innerWidth < 426) publisherDiv.style.width = bookDiv.offsetWidth + "px";
-   
+
    const publisherString = bookDatabase.books[currentBookArrayNumber].publisher;
    console.log(publisherString);
    if(displayPublisherItems.retreivePublisher(publisherString)) // publisher found

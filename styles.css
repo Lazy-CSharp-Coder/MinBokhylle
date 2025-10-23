@@ -94,12 +94,11 @@ header {
       background-size:auto;
       
     }
-    
+    :root {
+      --primaryBoxShadow : none;
+    }
+   
 }
-/* @media (min-width : 426px) {
-  .lightModeImg { display: none;}
-  .darkModeImg {display: inline;}
-} */
 
 .flex {
   display: flex;
@@ -109,6 +108,8 @@ header {
 .grid {
   display:grid;
 }
+
+
 /* MAIN */
 
 .lightMode {
@@ -163,11 +164,7 @@ h2 {
 }
 
 
-
 main {
-  /* display: flex; */
-  /* align-items: center; */
-  /* justify-content: center; */
   flex-grow: 1;
   background-color: black;
 
@@ -179,7 +176,7 @@ main {
   height: 100%;
 }
 
-/* her kommer startsiden */
+/*-----------  her kommer startsiden  -----------------*/
 
 .startPage {
   flex-direction: column;
@@ -302,16 +299,12 @@ label {
   margin: 4px 0px;
 }
 
-/* her kommer selve hovedsiden som viser database info */
+/* -------- her kommer selve hovedsiden som viser database info --------------*/
 
 .databasePage {
-  /* display: grid; */
+
   grid-template-columns: 210px 562px 468px;
   justify-self:center;
-
-  /* display: flex;
-  flex-direction: row;
-  justify-content: center; */
   gap: 50px;
 }
 
@@ -466,15 +459,13 @@ li:hover{
 
   grid-template-columns: auto auto;
   grid-template-rows: repeat(3, auto);
-  /* border:var(--primaryBorder); */
-  /* border-radius: 8px; */
   padding-top: 0;
   padding-bottom : 20px;
   column-gap: 50px;
   row-gap: 5px;
   align-items: center;
   background-color: var(--windowBackgroundColor);
-  /* box-shadow: var(--primaryBoxShadow); */
+
 }
 
 .authorDiv {
@@ -482,18 +473,12 @@ li:hover{
   flex-direction: column;
   border:var(--primaryBorder);
   border-radius: var(--primaryBorderRadius);
-  /* padding: 20px 40px; */
-
   align-items: center;
   justify-content: center;
   background-color: var(--windowBackgroundColor);
   box-shadow: var(--primaryBoxShadow);
 
   flex-direction: column;
-
-  /* background-image: url("Images/writerwoman.jpg");
-  background-size: cover;
-  opacity: 0.2; */
 }
 
 .authorImgIconDiv {
@@ -513,16 +498,10 @@ li:hover{
   
   width: 100px;
   margin-top: 12px;
-  /* margin-bottom: 5px; */
 }
 
 .authorText {
   margin : 5px 0px;
-}
-
-.authorImage {
-  /* width: 100px; */
-
 }
 
 .authorGenderImage {
@@ -536,7 +515,7 @@ li:hover{
   gap: 20px;
 }
 
-/* publisher classes */
+/* publisher vindu classes */
 
 .publisherButton {
   margin-left : 30px;
@@ -660,11 +639,12 @@ li:hover{
 
 
 @media (max-width: 426px) {
-
+ 
   .databasePage {
      
      flex-direction: column;
      align-items: center;
+
   }
 
   .databasePageText,
@@ -677,16 +657,17 @@ li:hover{
     }
 
   .listOfBooks {
+    
     font-size: 12px;
     gap: 5px;
     width: 200px;
   }
 
   .bookDiv
-  {
-    /* display: grid; */
+  { 
     font-size: 10px;
-    column-gap: 0px;
+    column-gap: 5px;
+    padding : 5px 15px;
     grid-template-columns: 20px 100px 200px;
     grid-template-rows: repeat(11, auto);
   }
@@ -695,33 +676,33 @@ li:hover{
 
   .publisherDiv
   {
-    /* display: grid; */
     font-size: 10px;
-    /* opacity: 0; */
-    /* grid-template-columns: auto 250px; */
-    /* grid-template-rows: repeat(5, auto); */
-  
   }
 
   .authorDiv
   {
-    /* display: grid; */
     font-size:10px;
-    /* opacity: 0; */
-    /* grid-template-columns: auto 250px; */
-    /* grid-template-rows: repeat(4, auto); */
-  
-  }
+   }
 
   .otherBooksButton {
-    font-size: 5px;;
+    font-size: 10px;;
   
   }
 
   .mobileSetting {
     display: inline;
   }
+
+  .bookCoverImg {
+    top :15px;
+    right :20px;
+    width : 75px;
+  }
   
+  .otherBooksButton {
+    top :150px;
+    right : 5px;
+  }
 }
 
 

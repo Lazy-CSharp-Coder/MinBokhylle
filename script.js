@@ -480,6 +480,11 @@ function closeWindowAutomatically(divNode, countDisplay, duration, nodeReapperin
         divNode.classList.add("hiddenDisplay");
         nodeReappering.classList.remove("hiddenDisplay");
         nodeReappering.classList.add("grid");
+        if(window.innerWidth < 426) 
+        {
+          const authorPublisherWrapper = document.querySelector("#authorPublisherWrapper");
+          authorPublisherWrapper.style.flexDirection = "column";
+        }
       }, {once:true});
     }
   }, 1000);

@@ -7,17 +7,18 @@ import { updateClock } from "./js/clock.js";
 
 const femaleCheck = document.querySelector("#femaleCheck");
 const maleCheck = document.querySelector("#maleCheck");
+
 const enterBookshelfButton = document.querySelector("#enterBookshelfButton");
+enterBookshelfButton.addEventListener("click", enterDatabase);
+
 const aiVoiceDiv = document.querySelector("#aiVoiceDiv");  
-console.log(aiVoiceDiv);
 const accessingDiv = document.querySelector("#accessingDiv");
 
-// sette Adeline som default her
+// sette opp Adeline som default AI voice her
 
 let soundEffects = femaleEffects;
 femaleCheck.checked = true;
-
-
+ 
 femaleCheck.addEventListener("change", () => 
   { 
     femaleCheck.checked = true; 
@@ -25,6 +26,7 @@ femaleCheck.addEventListener("change", () =>
     soundEffects = femaleEffects; 
 
   });
+
 maleCheck.addEventListener("change", () => 
 { 
    maleCheck.checked = true; 
@@ -33,12 +35,13 @@ maleCheck.addEventListener("change", () =>
 
 });
 
-enterBookshelfButton.addEventListener("click", enterDatabase);
-
 // sette opp klokken
 
 updateClock();
 setInterval(updateClock, 1000);
+
+
+// her starter anim på forside
 
 function introducingBookshelf()
 {
@@ -190,7 +193,7 @@ function loadAiHelper(duration, statusUpdateNode)
 
 }
 
-// funsjon for å starte opp hele greien
+// funksjon for å starte opp databasen
 
 function enterDatabase() 
 {
@@ -229,11 +232,26 @@ function getDateString(date)
   // sette opp riktig endelse 
 
   let day = date.getDate();
-  if(day == 1) day += "st";
-  else if(day == 2) day += "nd";
-       else if(day ==  3) day += "rd";
-            else day += "th";
-  
+
+  switch(day)
+  {
+    case 1 : 
+    case 21 : 
+    case 31 : day += "st";
+              break;
+
+    case 2  : 
+    case 22 : day += "nd";
+              break;
+             
+    case 3  : 
+    case 23 : day += "rd";
+              break;
+
+    default : day += "th";      
+              break;                 
+  };
+
   return `${day} of ${monthNames[date.getMonth()]}, ${date.getFullYear()}`;
 
 }

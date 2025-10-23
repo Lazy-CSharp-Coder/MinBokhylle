@@ -361,6 +361,7 @@ function setListAndAnimate()
     const newListItem = document.createElement("li");
     console.log(newListItem);
     newListItem.textContent = item.name;
+    if(voiceEnabled) soundEffects.retrieving.play();
 
     setTimeout(() => 
     { newListItem.classList.add("slideInTopAnim");

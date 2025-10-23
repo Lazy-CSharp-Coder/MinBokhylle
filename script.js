@@ -64,10 +64,12 @@ function playIntroductionAndEnterDatabase()
      console.log("det er tid for maitenance");
      return 0;
   }
+
   if(hour < 5) timeGreeting = soundEffects.night;
   else if(hour < 12) timeGreeting = soundEffects.morning;
        else if(hour < 19) timeGreeting = soundEffects.afternoon;
             else timeGreeting = soundEffects.evening;
+  
   // sette opp hele introduksjon her
   const introduction = soundEffects.introduction;
 
@@ -94,9 +96,6 @@ function playIntroductionAndEnterDatabase()
           databasePage.classList.remove("hiddenDisplay");
           databasePage.classList.add("fadeInAnim");
           console.log("window inner width er nå : " + window.innerWidth);
-         
-          // databasePage.classList.add("flex");
-
 
           const main = document.querySelector("main");
           main.style.backgroundColor = "transparent";
@@ -111,10 +110,7 @@ function playIntroductionAndEnterDatabase()
              setListAndAnimate();
         }, {once:true});
 
-         
-
       }, {once:true});
-
       // sett backgroundcolor: none for å få frem bilde
   
     }, {once:true});
@@ -131,6 +127,7 @@ function setListAndAnimate()
   const delayInc = 300;
 
   skipButton.classList.add("hiddenDisplay");
+  // skipButtonMobile.classList.remove("mobileSetting");
   aiVoiceButton.classList.remove("hiddenDisplay");
   
   bookDatabase.books.forEach(function(item) 
@@ -277,6 +274,7 @@ function closeWindowAutomatically(divNode, countDisplay, duration, nodeReapperin
 }
 
 // lager ett objekt som inneholder alle feltene til boken som skal manipuleres
+
 const displayAuthorItems =
 {
   authorName : document.querySelector("#authorName"),
@@ -1184,7 +1182,7 @@ function skipIntroduction()
 }
 
 skipButton.addEventListener("click", skipIntroduction);
-skipButtonMobile.addEventListener("click", skipIntroduction);
+// skipButtonMobile.addEventListener("click", skipIntroduction);
 
 if(window.innerWidth < 426) 
 {

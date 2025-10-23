@@ -125,9 +125,9 @@ header {
   .darkModeImg { display: none;}
   .lightModeImg { display: inline;}
   .authorImage {  box-shadow: var(--primaryBoxShadow); }
-  .bookCoverImg {  box-shadow :13px 13px 5px 0px rgba(0,0,0,0.64); }
+  .bookCoverImg { box-shadow: 5px 5px 15px 5px #000000; }
   .publisherText { color:black; }
-  .otherBooksButton { color: #dcdcdc; background-color: black;}
+  .otherBooksButton {}  /* legge til shadow ? */
   .otherBooksButton:hover { color:darkblue; background-color: white; border: 2px solid black; }
   
 }

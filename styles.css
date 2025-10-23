@@ -16,11 +16,13 @@
   --secondaryFontFamily : "Oswald";
   --windowBackgroundColor : rgb(0, 0, 0);
   --bookListTextColor : white;
-  --itemTextColor: #00E6BF;
+  --itemTextColor : #78b2d9;
+  /* --itemTextColor: #00E6BF; */
   /* --itemTextColor :#3D9140; */
   /* --itemTextColor: rgb(107, 255, 255);   */
   --primaryBoxShadow :  13px 13px 11px 0px rgba(0,0,0,0.64);
   --primaryBorderRadius : 2px;
+  --selecionColorWindow : #d60033;
 }
 
 /* BODY */
@@ -360,6 +362,11 @@ li:hover{
 
 .authorsList {
   padding-left : 17px;
+
+}
+
+.authorsList li:hover {
+  color:var(--selecionColorWindow);
 }
 
 .bookDiv

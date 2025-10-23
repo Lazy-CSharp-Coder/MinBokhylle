@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="no">
+
 <!-- head = informasjon til nettleser -->
 
 <head>
@@ -11,6 +12,7 @@
   <link rel="stylesheet" href="styles.css" />
   <script type="module" src="script.js"></script>
 </head>
+
 <!-- body = informasjon til nettsiden -->
 
 <body>
@@ -52,7 +54,6 @@
        
     </section>
 
-
     <section id="databasePage" class="section databasePage hiddenDisplay">
       <div class="flex headerAndListDiv">
         <h2> Books from database</h2>
@@ -77,7 +78,7 @@
           <li></li>
 
         </ul>
-        <!-- <div class="seriesInfo"> -->
+
         <img class="smallIconImg darkModeImg" src="/Icons/serieswhite.png" alt="icon"> 
         <img class="smallIconImg lightModeImg" src="/Icons/series.png" alt="icon"> 
         <p class="keyTitleClass">Series name :</p>
@@ -97,10 +98,10 @@
         <img class="smallIconImg lightModeImg" src="/Icons/other.png" alt="icon"> 
         <p class="keyTitleClass">Other books in series : </p>
         <p id="otherBooksInSeries" class="seriesText">
-          <!-- <button id="otherBooksButton" class="otherBooksButton">Search for matches</button> -->
+
         </p>
         <button id="otherBooksButton" class="otherBooksButton">Other books in series</button>
-        <!-- </div> -->
+  
         <img class="smallIconImg darkModeImg" src="/Icons/genrewhite.png" alt="icon"> 
         <img class="smallIconImg lightModeImg" src="/Icons/genre.png" alt="icon"> 
         <p class="keyTitleClass">Genre : </p>
@@ -124,9 +125,7 @@
         <img class="smallIconImg darkModeImg" src="/Icons/publisherwhite.png" alt="icon"> 
         <img class="smallIconImg lightModeImg" src="/Icons/publisher.png" alt="icon"> 
         <p class="keyTitleClass">Publisher :</p>
-        <p id="publisher" class="dataText publisherText">Origin <button id="publisherButton" class="publisherButton">Search Database
-          </button></p>
-        <!-- <button id="publisherButton" class="publisherButton">Search Database </button> -->
+        <p id="publisher" class="dataText publisherText">Origin </p>
         <img id="bookCoverImg" class="bookCoverImg hidden" src="/Images/thewayofshadows.jpg" alt="no cover">
       </div>
       </div>
@@ -162,8 +161,7 @@
             <img id="authorGenderImage" class="authorGenderImage hiddenDisplay" src="/Icons/manb.png"></img>
            </div>
           <div id="authorInfoDiv" class="grid authorInfoDiv">
-            <!-- <p class="keyTitleClass">Author name :</p> -->
-      
+         
             <p class="keyTitleClass authorText">Born :</p>
             <p id="authorBorn" class="dataText authorText">12. July 1988</p>
 
@@ -181,28 +179,10 @@
           <p>This window will close in</p>
           <p id="authorErrorCountText" class="errorCountText">-</p>
         </div>
-        <!-- this works -- commenting it ous -->
-        <!-- <div id="authorDiv" class="grid authorDiv hidden">
-          <img id="authorGenderImage" class="authorGenderImage" src="/Icons/manb.png"></img>
-          <img id="authorImage" class="authorImage" src="Images/brentweeks.png">
-          <p class="keyTitleClass">Author name :</p>
-          <p id="authorName" class="colorMain">Brent Weeks (default) </p>
-          <p class="keyTitleClass">Born :</p>
-          <p id="authorBorn" class="dataText">12. July 1988</p>
-          <p class="keyTitleClass">Location :</p>
-          <p id="authorLocation" class="dataText">Independence, Missori U.S</p>
-          <P class="keyTitleClass">Pens as :</p>
-          <p id="authorPensAs" class="dataText">Brent Weeks</p>
-        </div>
-        <div id="authorErrorWin" class="errorWin hiddenDisplay">
-          <img src="/Icons/error.png" id="errorImg" class="errorImg" alt="no error img">
-          <p class="publisherErrorText">Entry not found</p>
-          <p>This window will close in</p>
-          <p id="authorErrorCountText" class="errorCountText">-</p>
-        </div>
-         -->
+
+
         <div id="publisherDiv" class="grid publisherDiv hidden">
-          <!-- <p></p> <img id="authorImage" class="authorImage" src="Images/brentweeks.png"> -->
+ 
           <img class="smallIconImg darkModeImg" src="Icons/buildingwhite.png" alt="icon">
           <img class="smallIconImg lightModeImg" src="Icons/building.png" alt="icon">
           <p class="keyTitleClass">Publisher name :</p>

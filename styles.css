@@ -654,6 +654,11 @@ li:hover{
   100% { transform: translateY(-600px);}
 }
 
+.mobileSetting {
+  display: none;
+}
+
+
 @media (max-width: 426px) {
 
   .databasePage {
@@ -686,7 +691,7 @@ li:hover{
     grid-template-rows: repeat(11, auto);
   }
 
-  .bookCoverImg { width : 10px; }
+  .bookCoverImg { width : 50px; }
 
   .publisherDiv
   {
@@ -708,11 +713,14 @@ li:hover{
   
   }
 
-  .publisherButton, .otherBooksButton {
-    font-size: 10px;;
+  .otherBooksButton {
+    font-size: 5px;;
   
   }
 
+  .mobileSetting {
+    display: inline;
+  }
   
 }
 

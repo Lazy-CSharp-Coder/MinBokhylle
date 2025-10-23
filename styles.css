@@ -7,6 +7,7 @@
 * {
   box-sizing: border-box;
 }
+
 :root{
   --primaryBorder : 2px solid lightskyblue;
   --primaryBackgroundColor : black;
@@ -15,7 +16,8 @@
   --secondaryFontFamily : "Oswald";
   --windowBackgroundColor : rgb(0, 0, 0);
   --bookListTextColor : white;
-  --itemTextColor :#3D9140;
+  --itemTextColor: #00E6BF;
+  /* --itemTextColor :#3D9140; */
   /* --itemTextColor: rgb(107, 255, 255);   */
   --primaryBoxShadow :  13px 13px 11px 0px rgba(0,0,0,0.64);
   --primaryBorderRadius : 2px;
@@ -89,6 +91,7 @@ header {
     h1 {
       font-size: 15px;
     }
+    
     body {
       overflow-y: auto;
       /* background-image: url("/Images/books2mobile.jpg"); */
@@ -300,6 +303,14 @@ label {
   margin: 4px 0px;
 }
 
+@media (max-width: 426) {
+  .headingStart {
+    font-size: 15px;
+  }
+}
+
+
+
 /* -------- her kommer selve hovedsiden som viser database info --------------*/
 
 .databasePage {
@@ -476,6 +487,7 @@ li:hover{
   border-radius: var(--primaryBorderRadius);
   align-items: center;
   justify-content: center;
+  background-color: rgba(0,0,0, 0.5);
   background-color: var(--windowBackgroundColor);
   box-shadow: var(--primaryBoxShadow);
 
@@ -710,16 +722,12 @@ li:hover{
 /* søke div som er skjult */
 
 .searchDiv {
-  /* display: flex; */
-  flex-direction: column;
-  /* display: none; */
- 
-  font-family: "Oswald";
 
+  flex-direction: column;
+  font-family: "Oswald";
   align-items: center;
   justify-content: flex-start;
   color:var(--primaryTextColor);
-
   width: 350px;
   height:fit-content;
   background-color:var(--windowBackgroundColor);

@@ -1113,7 +1113,6 @@ function actionNotPermitted()
 
 }
 
-
 // fjern vinduer som er i veien og vis search
 
 function removeAllAndDisplaySearch()
@@ -1153,6 +1152,8 @@ const closeSearchButton = document.querySelector("#closeSearchButton");
 closeSearchButton.addEventListener("click", closeSearchWindow);
 let matchingBooksInSearch = [];
 
+// sett i gang search og list resultat - hvis det er noen
+
 function searchAndListResults()
 {
   // set display: none på author og publisher
@@ -1182,7 +1183,6 @@ function searchAndListResults()
 
   let delay = 2;
   const delayInc = 1;
-  
   
   if(voiceEnabled) soundEffects.enterSearchMode.play();
   console.log("should have played sound");
@@ -1231,8 +1231,6 @@ function searchAndListResults()
       
       });
 
-
-
       item.addEventListener("animationstart", () =>
       {
 
@@ -1241,7 +1239,6 @@ function searchAndListResults()
         else matchFoundText.textContent = "Adding entry"
 
         item.classList.remove("hidden");
-       
 
       });
       item.addEventListener("animationend", () => 

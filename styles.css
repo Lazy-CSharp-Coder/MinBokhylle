@@ -35,12 +35,9 @@ body {
   margin: 0;
   top: 0;
   padding: 0;
-
   min-height: 100vh;
-
   font-family:var(--secondaryFontFamily);
   font-size: 14px;
-
   background-color: var(--primaryBackgroundColor);
   background-image: url("Images/books2.jpg");
   background-size: cover;
@@ -100,25 +97,21 @@ header {
       overflow-y: auto;
       /* background-image: url("/Images/books2mobile.jpg"); */
       background-size:auto;
-      
     }
     :root {
       --primaryBoxShadow : none;
     }
-   
 }
 
 .flex {
   display: flex;
-  
-}
+  }
 
 .grid {
   display:grid;
 }
 
-
-/* MAIN */
+/* light mode class */
 
 .lightMode {
   background-image: url("/Images/books1.jpg");
@@ -148,9 +141,11 @@ header {
   display: block;
 }
 
+/* ''''''''' */
+
+
 ul li::marker {
   content: "💠";  
-  /* content: "🔵"; */
 }
 
 h1 {
@@ -171,6 +166,7 @@ h2 {
 
 }
 
+/*  MAIN starter her  */
 
 main {
   flex-grow: 1;
@@ -208,7 +204,6 @@ main {
   animation-fill-mode: backwards;
   margin: 0;
 
-
 }
 
 .subHeadingStart {
@@ -233,6 +228,7 @@ main {
 .aiVoiceHeading {
   font-size: 20px;
 }
+
 .aiCheck {
   width: 20px;
   height: 20px;
@@ -257,10 +253,8 @@ label {
 }
 
 .enterBookshelfButton {
-  
   align-items: center;
   gap: 20px;
-
   padding: 10px 20px;
   padding-right: 27px;
   font-size: 20px;
@@ -313,12 +307,9 @@ label {
   }
 }
 
-
-
 /* -------- her kommer selve hovedsiden som viser database info --------------*/
 
 .databasePage {
-
   grid-template-columns: 210px 562px 468px;
   justify-self:center;
   gap: 50px;
@@ -326,14 +317,12 @@ label {
 
 .headerAndListDiv {
   flex-direction: column;
-  
 }
 
 .listOfBooks
 {
   flex-direction: column;
   font-family: "Roboto";
-  /* width:250px; */
   gap: 20px;
   font-size: 14px;
   color:var(--bookListTextColor);
@@ -344,21 +333,15 @@ li {
   transition-duration: 0.2s;
   padding-left: 5px;
 
-
 }
 
 li:hover{
   color:lightskyblue;
   scale : 1.04;
-
 }
 
 .authorsList li::marker {
-  /* content: "🤵🏼"; */
-  /* content : "📚";   */
-  /* content :"📖"; */
   content: "🔘";
-
 
 }
 
@@ -385,21 +368,17 @@ li:hover{
   z-index: 9;
   box-shadow: var(--primaryBoxShadow); 
   align-items: center;
-    
-
-}
+ }
 
 .bookCoverImg {
   position: absolute;
   top :28px;
   right: 35px;
   width: 100px;
- 
-  
+   
 }
 
 .otherBooksButton {
-
   position: absolute;
   top: 200px;
   right: 20px;
@@ -423,7 +402,7 @@ li:hover{
 
 .smallIconImg 
 {
-     width: 15px;
+   width: 15px;
 }
 
 .titleBookText, .colorMain {
@@ -459,25 +438,8 @@ li:hover{
 
 }
 
-/* this works hashing it out
-
-.authorDiv
-{
-
-  grid-template-columns: auto 250px;
-  grid-template-rows: repeat(4, auto);
-  border:var(--primaryBorder);
-  border-radius: 8px;
-  padding: 20px 40px;
-  column-gap: 20px;
-  align-items: center;
-  background-color: var(--windowBackgroundColor);
-  box-shadow: var(--primaryBoxShadow);
-} */
-
 .authorInfoDiv
 {
-
   grid-template-columns: auto auto;
   grid-template-rows: repeat(3, auto);
   padding-top: 0;
@@ -506,9 +468,8 @@ li:hover{
 .authorImgIconDiv {
   padding : 5px 10px;
   flex-direction: column;
-
   align-items: center;
-  
+ 
 }
 
 .authorName {
@@ -603,6 +564,8 @@ li:hover{
   gap: 35px;
 }
 
+/* animation classes - samler de denne gangen  */
+
 .scaleInAnim {
   animation-name: scaleIn;
   animation-duration: 1.5s;
@@ -655,7 +618,6 @@ li:hover{
   0% { transform: translateY(0);}
   100% { transform: translateY(-600px);}
 }
-
 
 @media (max-width: 426px) {
  
@@ -726,11 +688,10 @@ li:hover{
 
   .errorImg {
     width: 50px;
-
   }
 }
 
-/* søke div class som er skjult */
+/* klasser for søkediv  */
 
 .searchDiv {
 
@@ -749,7 +710,6 @@ li:hover{
   padding-top: 10px;
   padding-bottom: 20px;
   box-shadow: var(--primaryBoxShadow);
-
 }
 
 .searchingIcon {
@@ -757,7 +717,6 @@ li:hover{
   top : 25px;
   left : 30px;
   width : 32px;
-
   animation-name: rotateRight;
   animation-duration: 1s;
   animation-timing-function:linear;
@@ -770,8 +729,6 @@ li:hover{
   color:var(--primaryTextColor);
   font-size: 20px;
   padding-left : 10px;
-
-
 }
 
 .searchPoint {
@@ -809,7 +766,6 @@ li:hover{
   width:100%;
 
 }
-
 
 .searchResultsList li::marker 
 {
@@ -890,8 +846,6 @@ li:hover{
   color:darkgrey;
 }
 
-
-
 .slideInBottomAnim {
   animation-name: slideInBottom;
   animation-duration: 1s;
@@ -905,8 +859,6 @@ li:hover{
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
-
-
 
 @keyframes slideInBottom {
   0%  { transform: translateY(300px); } 
@@ -928,6 +880,9 @@ li:hover{
     font-size: 10px;
   }
 }
+
+
+
 /* FOOTER */
 footer {
   /* display: flex;
@@ -995,13 +950,11 @@ footer {
   color:orange;
 }
 
-
 .iconDiv {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-
 
 @media (max-width:426px)
 {

@@ -1143,7 +1143,6 @@ aiVoiceButton.addEventListener("click", function()
    }
 });
 
-
 // knapp for å skippe introen
 
 const skipButton = document.querySelector("#skipButton");

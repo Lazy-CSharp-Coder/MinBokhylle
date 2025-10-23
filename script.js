@@ -1352,7 +1352,9 @@ aiVoiceButton.addEventListener("click", function()
 // knapp for å skippe introen
 
 const skipButton = document.querySelector("#skipButton");
-skipButton.addEventListener("click", function() 
+const skipButtonMobile = document.querySelector("#skipButtonMobile");
+
+function skipIntroduction()
 {
   if(isOnStartPage)
   {
@@ -1382,5 +1384,9 @@ skipButton.addEventListener("click", function()
     }, {once:true});
     isOnStartPage = false;
   }
-});
+}
+
+
+skipButton.addEventListener("click", skipIntroduction);
+skipButtonMobile.addEventListener("click", skipIntroduction);
 

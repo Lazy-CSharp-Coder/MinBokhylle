@@ -173,7 +173,8 @@ const maleEffects =
    maintenance : new Audio("/Sounds/maintenancej.mp3"),
    website : new Audio("/Sounds/webpagej.mp3"),
 
-   activate : new Audio("/Sounds/activatej.mp3")
+   activate : new Audio("/Sounds/activatej.mp3"),
+   retrieving : new Audio("/Sounds/retrievingj.mp3")
 
 }
 
@@ -203,7 +204,8 @@ const femaleEffects =
    maintenance : new Audio("/Sounds/maintenancea.mp3"),
    website : new Audio("/Sounds/webpagea.mp3"),
 
-   activate : new Audio("/Sounds/activatea.mp3")
+   activate : new Audio("/Sounds/activatea.mp3"),
+   retrieving : new Audio("/Sounds/retrievinga.mp3")
 
 }
 

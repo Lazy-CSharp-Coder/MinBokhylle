@@ -442,7 +442,7 @@ li:hover{
 
 .publisherText:hover {
   scale : 1.03;
-  color: lightskyblue;
+  color: var(--selecionColorWindow);
 }
 
 .seriesText {

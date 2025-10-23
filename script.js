@@ -280,6 +280,8 @@ function playIntroductionAndEnterDatabase()
   if(hour == 5) 
   {
      if(voiceEnabled) soundEffects.maintenance.play();
+     const accessingStatusText = document.querySelector("#accessingStatusText");
+     accessingStatusText.textContent = "Server closed for maintenance";
      console.log("det er tid for maitenance");
      return 0;
   }

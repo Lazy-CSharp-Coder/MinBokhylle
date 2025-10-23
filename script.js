@@ -277,9 +277,10 @@ function playIntroductionAndEnterDatabase()
   const hour = timeNow.getHours();
   let timeGreeting;
   console.log("Timen er : " + hour);
-  if(hour > 5 && hour < 6) 
+  if(hour == 5) 
   {
      if(voiceEnabled) soundEffects.maintenance.play();
+     console.log("det er tid for maitenance");
      return 0;
   }
   if(hour < 5) timeGreeting = soundEffects.night;

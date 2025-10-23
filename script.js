@@ -377,7 +377,7 @@ function setListAndAnimate()
 
 }
 
-// laste inn data - bruker intervall
+// laste inn fake data - bruker intervall
 
 function loadAiHelper(duration, statusUpdateNode)
 {
@@ -416,6 +416,7 @@ function loadAiHelper(duration, statusUpdateNode)
 
 }
 
+// funsjon for å starte opp hele greien
 
 function enterDatabase() 
 {
@@ -441,9 +442,6 @@ function enterDatabase()
   }, {once:true});
 
 }
-
-
-
 
 // funksjon som returnerer en string med en dato som passer
 
@@ -765,11 +763,11 @@ function removePublisher()
        publisherDiv.classList.add("hidden");
        publisherDiv.classList.remove("show");
        publisherDiv.classList.remove("scaleOutAnim");
-       publisherButton.textContent = "Search database";
+
 
        if(window.innerWidth < 426)
        {     
-          console.log("in mobile mode");
+          console.log("in mobile mode - setter tilbake til column");
           const authorPublisherWrapper = document.querySelector("#authorPublisherWrapper");
           authorPublisherWrapper.style.flexDirection = "column";
        }
@@ -826,7 +824,7 @@ function showPublisher()
             if(voiceEnabled) soundEffects.website.play();
             publisherDiv.classList.remove("scaleInAnim");
             isPublisherShowing = true;
-            publisherButton.textContent = "Close database";
+     
 
         }, { once: true});
       }

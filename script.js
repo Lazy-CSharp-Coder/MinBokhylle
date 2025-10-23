@@ -800,6 +800,8 @@ function showPublisher()
      return;
    }
 
+   if(window.innerWidth < 426) publisherDiv.style.width = bookDiv.offsetWidth + "px";
+   
    const publisherString = bookDatabase.books[currentBookArrayNumber].publisher;
    console.log(publisherString);
    if(displayPublisherItems.retreivePublisher(publisherString)) // publisher found

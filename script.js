@@ -1386,7 +1386,12 @@ function skipIntroduction()
   }
 }
 
-
 skipButton.addEventListener("click", skipIntroduction);
 skipButtonMobile.addEventListener("click", skipIntroduction);
+
+if(window.innerWidth < 426) 
+{
+  const authorPublisherWrapper = document.querySelector("#authorPublisherWrapper");
+  authorPublisherWrapper.style.alignItems = "center";
+}
 

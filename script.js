@@ -850,7 +850,15 @@ function showPublisher()
       publisherErrorWin.classList.add("scaleInAnim");
       publisherErrorWin.style.height = height + "px";
       console.log("bookdiv width : " + bookDiv.offsetWidth);
-      if(window.innerWidth < 426) publisherErrorWin.style.width = bookDiv.offsetWidth + "px";
+      if(window.innerWidth < 426)
+      { 
+        publisherErrorWin.style.width = bookDiv.offsetWidth + "px";
+        if(!isAuthorShowing) 
+        { 
+            const authorPublisherWrapper = document.querySelector("#authorPublisherWrapper");
+            authorPublisherWrapper.style.flexDirection = "column-reverse";
+        }
+      }
       publisherErrorWin.addEventListener("animationend", function()
       {
         const publisherErrorCountText = document.querySelector("#publisherErrorCountText");

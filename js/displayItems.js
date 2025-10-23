@@ -39,6 +39,6 @@ const displayAuthorItems =
 
     return 1;
   }
-};
+}
 
 export { displayAuthorItems };

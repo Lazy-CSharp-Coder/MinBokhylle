@@ -1291,7 +1291,7 @@ function searchAndListResults()
       if(voiceEnabled) soundEffects.noEntriesFound.play();
       clickToAccessText.textContent = "Click close to exit search"
     
-    }, 2200); 
+    }, 3200); 
 
   }
   

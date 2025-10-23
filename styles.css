@@ -303,9 +303,9 @@ label {
   margin: 4px 0px;
 }
 
-@media (max-width: 426) {
+@media (max-width: 426px) {
   .headingStart {
-    font-size: 15px;
+    font-size: 35px;
   }
 }
 

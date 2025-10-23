@@ -2,6 +2,7 @@
 import { bookDatabase } from "./js/bookDatabase.js"; 
 import { maleEffects, femaleEffects } from "./js/soundEffects.js";
 import { updateClock } from "./js/clock.js";
+import { displayAuthorItems } from "./js/displayItems.js";
 
 // startpage funsjoner og eventlisteners 
 

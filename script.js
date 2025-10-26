@@ -122,7 +122,15 @@ function playIntroductionAndEnterDatabase()
   return 1;     
 }
 
-// denne funksjonen henter boktittlene fra databasen og legger i listen + anim
+
+// henter list element, legger til eventlistener og legger inn bøkenes tittel + anim
+
+const listOfBooks = document.querySelector("#listOfBooks");
+let isBookShowing = false;
+let currentBookArrayNumber = 0;
+let fromSearch = false;
+let hasBookIntroBeenPlayed = false;
+
 
 function setListAndAnimate()
 {
@@ -753,12 +761,6 @@ const displayBookItems =
   
 };
 
-// henter list element, legger til eventlistener og legger inn bøkenes tittel
-const listOfBooks = document.querySelector("#listOfBooks");
-let isBookShowing = false;
-let currentBookArrayNumber = 0;
-let fromSearch = false;
-let hasBookIntroBeenPlayed = false;
 
 function displayBook(event)
 {
